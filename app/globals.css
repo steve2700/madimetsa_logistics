@@ -1,15 +1,13 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-
 @custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Geist', 'Geist Fallback';
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-brand-black: #1a1a1a;
-  --color-brand-gold: #c8a84b;
+  --color-brand-gold: #e8a33d;
   --color-brand-surface: #f5f4f0;
   --color-brand-white: #ffffff;
   --color-brand-red: #b91c1c;
@@ -32,7 +30,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
 }
-
 :root {
   --background: #f5f4f0;
   --foreground: #1a1a1a;
@@ -42,15 +39,14 @@
   --secondary-foreground: #1a1a1a;
   --muted: #e8e7e3;
   --muted-foreground: #555555;
-  --accent: #c8a84b;
+  --accent: #e8a33d;
   --accent-foreground: #1a1a1a;
   --destructive: #b91c1c;
   --border: #d4d3cf;
   --input: #d4d3cf;
-  --ring: #c8a84b;
+  --ring: #e8a33d;
   --radius: 0.25rem;
 }
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
