@@ -68,6 +68,11 @@ const navLinks = [
 
 type DropdownKey = 'services' | 'areas' | null
 
+// Darker amber for text on a light background — the button/hero amber (#e8a33d)
+// doesn't have enough contrast against white to use for links.
+const GOLD_TEXT = '#b8791f'
+const GOLD_BTN = '#e8a33d'
+
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<DropdownKey>(null)
@@ -111,28 +116,27 @@ export default function SiteHeader() {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#0a0a0a]/96 backdrop-blur-md shadow-[0_1px_0_rgba(232,163,29,0.18)]'
-          : 'bg-[#0a0a0a]'
+      className={`sticky top-0 z-40 transition-all duration-300 bg-white ${
+        scrolled ? 'shadow-[0_1px_0_rgba(0,0,0,0.08)]' : ''
       }`}
     >
       {/* ── Top bar ── */}
-      <div className="hidden md:block border-b border-white/[0.07]">
+      <div className="hidden md:block border-b border-black/[0.07] bg-[#f5f4f0]">
         <div className="max-w-6xl mx-auto px-6 h-9 flex justify-between items-center">
-          <p className="text-white/40 text-xs tracking-wide">
+          <p className="text-black/45 text-xs tracking-wide">
             Serving all of Gauteng — Johannesburg · Pretoria · Sandton · Centurion &amp; more
           </p>
           <div className="flex items-center gap-5">
             <a
               href="mailto:info@madimetsalogistics.co.za"
-              className="text-white/40 hover:text-white transition-colors text-xs tracking-wide"
+              className="text-black/45 hover:text-black transition-colors text-xs tracking-wide"
             >
               info@madimetsalogistics.co.za
             </a>
             <a
               href="tel:0723089983"
-              className="text-[#e8a33d] hover:text-white transition-colors text-xs font-semibold tracking-widest"
+              style={{ color: GOLD_TEXT }}
+              className="hover:text-black transition-colors text-xs font-semibold tracking-widest"
             >
               072 308 9983
             </a>
@@ -141,7 +145,7 @@ export default function SiteHeader() {
       </div>
 
       {/* ── Main nav ── */}
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 border-b border-black/[0.06]">
         <div className="flex items-center justify-between h-16 md:h-[70px]">
 
           {/* Logo */}
@@ -172,8 +176,9 @@ export default function SiteHeader() {
                     <button
                       onMouseEnter={() => setOpenDropdown(link.dropdown as DropdownKey)}
                       onClick={() => setOpenDropdown(isOpen ? null : link.dropdown as DropdownKey)}
+                      style={isActive || isOpen ? { color: GOLD_TEXT } : undefined}
                       className={`relative flex items-center gap-1 px-3 py-2 text-[13px] font-medium tracking-wide transition-colors ${
-                        isActive || isOpen ? 'text-[#e8a33d]' : 'text-white/65 hover:text-white'
+                        isActive || isOpen ? '' : 'text-black/65 hover:text-black'
                       }`}
                       aria-expanded={isOpen}
                       aria-haspopup="true"
@@ -186,39 +191,42 @@ export default function SiteHeader() {
                         <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                       {isActive && !isOpen && (
-                        <span className="absolute inset-x-3 bottom-0 h-[2px] bg-[#e8a33d] rounded-full" />
+                        <span className="absolute inset-x-3 bottom-0 h-[2px] rounded-full" style={{ background: GOLD_BTN }} />
                       )}
                     </button>
 
                     {/* ── Services dropdown ── */}
                     {link.dropdown === 'services' && isOpen && (
                       <div
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[540px] bg-[#111111] border border-white/[0.08] shadow-2xl"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[540px] bg-white border border-black/[0.08] shadow-2xl"
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
-                        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#e8a33d] to-transparent" />
+                        <div className="h-[2px]" style={{ background: `linear-gradient(to right, transparent, ${GOLD_BTN}, transparent)` }} />
                         <div className="p-5">
-                          <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/30 mb-4">All Services</p>
+                          <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-black/35 mb-4">All Services</p>
                           <ul className="grid grid-cols-2 gap-x-6 gap-y-0.5">
                             {services.map((s) => (
                               <li key={s.href}>
                                 <Link
                                   href={s.href}
-                                  className="flex flex-col py-2.5 border-b border-white/[0.05] group/item"
+                                  className="flex flex-col py-2.5 border-b border-black/[0.05] group/item"
                                 >
-                                  <span className={`text-[13px] font-semibold transition-colors ${pathname === s.href ? 'text-[#e8a33d]' : 'text-white/80 group-hover/item:text-[#e8a33d]'}`}>
+                                  <span
+                                    style={pathname === s.href ? { color: GOLD_TEXT } : undefined}
+                                    className={`text-[13px] font-semibold transition-colors ${pathname === s.href ? '' : 'text-black/80 group-hover/item:text-black'}`}
+                                  >
                                     {s.label}
                                   </span>
-                                  <span className="text-[11px] text-white/35 mt-0.5">{s.desc}</span>
+                                  <span className="text-[11px] text-black/40 mt-0.5">{s.desc}</span>
                                 </Link>
                               </li>
                             ))}
                           </ul>
-                          <div className="mt-4 pt-4 border-t border-white/[0.06] flex justify-between items-center">
-                            <Link href="/services" className="text-[12px] text-[#e8a33d] hover:text-white font-semibold tracking-wide uppercase transition-colors">
+                          <div className="mt-4 pt-4 border-t border-black/[0.06] flex justify-between items-center">
+                            <Link href="/services" style={{ color: GOLD_TEXT }} className="text-[12px] hover:text-black font-semibold tracking-wide uppercase transition-colors">
                               View all services
                             </Link>
-                            <a href="tel:0723089983" className="text-[12px] text-white/35 hover:text-white transition-colors">
+                            <a href="tel:0723089983" className="text-[12px] text-black/40 hover:text-black transition-colors">
                               Dispatch: 072 308 9983
                             </a>
                           </div>
@@ -229,18 +237,18 @@ export default function SiteHeader() {
                     {/* ── Areas dropdown ── */}
                     {link.dropdown === 'areas' && isOpen && (
                       <div
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[560px] bg-[#111111] border border-white/[0.08] shadow-2xl"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[560px] bg-white border border-black/[0.08] shadow-2xl"
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
-                        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#e8a33d] to-transparent" />
+                        <div className="h-[2px]" style={{ background: `linear-gradient(to right, transparent, ${GOLD_BTN}, transparent)` }} />
                         <div className="p-5">
-                          <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/30 mb-4">
+                          <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-black/35 mb-4">
                             Gauteng Service Areas
                           </p>
                           <div className="grid grid-cols-2 gap-x-6">
                             {areaRegions.map((group) => (
                               <div key={group.region} className="mb-4">
-                                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#e8a33d]/70 mb-2">
+                                <p className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2" style={{ color: `${GOLD_TEXT}b3` }}>
                                   {group.region}
                                 </p>
                                 <ul className="space-y-0">
@@ -248,10 +256,9 @@ export default function SiteHeader() {
                                     <li key={area.slug}>
                                       <Link
                                         href={`/logistics-${area.slug}`}
-                                        className={`block py-1.5 text-[13px] border-b border-white/[0.04] transition-colors ${
-                                          pathname === `/logistics-${area.slug}`
-                                            ? 'text-[#e8a33d]'
-                                            : 'text-white/65 hover:text-white'
+                                        style={pathname === `/logistics-${area.slug}` ? { color: GOLD_TEXT } : undefined}
+                                        className={`block py-1.5 text-[13px] border-b border-black/[0.04] transition-colors ${
+                                          pathname === `/logistics-${area.slug}` ? '' : 'text-black/65 hover:text-black'
                                         }`}
                                       >
                                         {area.name}
@@ -262,11 +269,11 @@ export default function SiteHeader() {
                               </div>
                             ))}
                           </div>
-                          <div className="mt-2 pt-4 border-t border-white/[0.06] flex justify-between items-center">
-                            <Link href="/areas" className="text-[12px] text-[#e8a33d] hover:text-white font-semibold tracking-wide uppercase transition-colors">
+                          <div className="mt-2 pt-4 border-t border-black/[0.06] flex justify-between items-center">
+                            <Link href="/areas" style={{ color: GOLD_TEXT }} className="text-[12px] hover:text-black font-semibold tracking-wide uppercase transition-colors">
                               View all areas
                             </Link>
-                            <span className="text-[11px] text-white/25">18 areas covered</span>
+                            <span className="text-[11px] text-black/30">18 areas covered</span>
                           </div>
                         </div>
                       </div>
@@ -279,13 +286,14 @@ export default function SiteHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  style={isActive ? { color: GOLD_TEXT } : undefined}
                   className={`relative px-3 py-2 text-[13px] font-medium tracking-wide transition-colors ${
-                    isActive ? 'text-[#e8a33d]' : 'text-white/65 hover:text-white'
+                    isActive ? '' : 'text-black/65 hover:text-black'
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute inset-x-3 bottom-0 h-[2px] bg-[#e8a33d] rounded-full" />
+                    <span className="absolute inset-x-3 bottom-0 h-[2px] rounded-full" style={{ background: GOLD_BTN }} />
                   )}
                 </Link>
               )
@@ -295,7 +303,8 @@ export default function SiteHeader() {
           {/* Desktop CTA */}
           <a
             href="tel:0723089983"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-[#e8a33d] text-[#0a0a0a] text-[13px] font-bold tracking-wide hover:bg-[#f5b859] transition-colors shrink-0"
+            style={{ background: GOLD_BTN }}
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-[#0a0a0a] text-[13px] font-bold tracking-wide hover:brightness-95 transition-all shrink-0"
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
@@ -306,7 +315,8 @@ export default function SiteHeader() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setIsMenuOpen((v) => !v)}
-            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] text-white focus:outline-none focus:ring-2 focus:ring-[#e8a33d] focus:ring-offset-1 focus:ring-offset-[#0a0a0a]"
+            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] text-black focus:outline-none focus:ring-2 focus:ring-offset-1"
+            style={{ '--tw-ring-color': GOLD_BTN } as React.CSSProperties}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-nav"
@@ -325,8 +335,8 @@ export default function SiteHeader() {
         aria-label="Mobile navigation"
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-[900px] opacity-100' : 'max-h-0 opacity-0'}`}
       >
-        <div className="h-px bg-gradient-to-r from-transparent via-[#e8a33d]/40 to-transparent" />
-        <div className="bg-[#0d0d0d] px-6 pt-3 pb-6">
+        <div className="h-px" style={{ background: `linear-gradient(to right, transparent, ${GOLD_BTN}66, transparent)` }} />
+        <div className="bg-[#f9f8f5] px-6 pt-3 pb-6">
           <ul className="space-y-0">
             {navLinks.map((link) => {
               const active = pathname === link.href
@@ -337,7 +347,7 @@ export default function SiteHeader() {
                   <li key={link.href}>
                     <button
                       onClick={() => setMobileServicesOpen((v) => !v)}
-                      className="flex items-center justify-between w-full py-3.5 text-[15px] font-medium border-b border-white/[0.06] text-white/75 hover:text-white transition-colors"
+                      className="flex items-center justify-between w-full py-3.5 text-[15px] font-medium border-b border-black/[0.06] text-black/75 hover:text-black transition-colors"
                       aria-expanded={mobileServicesOpen}
                     >
                       Services
@@ -353,14 +363,15 @@ export default function SiteHeader() {
                             <Link
                               href={s.href}
                               onClick={() => setIsMenuOpen(false)}
-                              className={`flex py-2.5 text-[13px] border-b border-white/[0.04] transition-colors ${pathname === s.href ? 'text-[#e8a33d]' : 'text-white/55 hover:text-white'}`}
+                              style={pathname === s.href ? { color: GOLD_TEXT } : undefined}
+                              className={`flex py-2.5 text-[13px] border-b border-black/[0.04] transition-colors ${pathname === s.href ? '' : 'text-black/55 hover:text-black'}`}
                             >
                               {s.label}
                             </Link>
                           </li>
                         ))}
                         <li>
-                          <Link href="/services" onClick={() => setIsMenuOpen(false)} className="block pt-3 text-[12px] font-bold tracking-widest uppercase text-[#e8a33d]">
+                          <Link href="/services" onClick={() => setIsMenuOpen(false)} style={{ color: GOLD_TEXT }} className="block pt-3 text-[12px] font-bold tracking-widest uppercase">
                             All Services →
                           </Link>
                         </li>
@@ -376,7 +387,7 @@ export default function SiteHeader() {
                   <li key={link.href}>
                     <button
                       onClick={() => setMobileAreasOpen((v) => !v)}
-                      className="flex items-center justify-between w-full py-3.5 text-[15px] font-medium border-b border-white/[0.06] text-white/75 hover:text-white transition-colors"
+                      className="flex items-center justify-between w-full py-3.5 text-[15px] font-medium border-b border-black/[0.06] text-black/75 hover:text-black transition-colors"
                       aria-expanded={mobileAreasOpen}
                     >
                       Areas
@@ -389,7 +400,7 @@ export default function SiteHeader() {
                       <div className="pl-4 py-3 space-y-4">
                         {areaRegions.map((group) => (
                           <div key={group.region}>
-                            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#e8a33d]/70 mb-1.5">
+                            <p className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1.5" style={{ color: `${GOLD_TEXT}b3` }}>
                               {group.region}
                             </p>
                             <ul className="space-y-0">
@@ -398,8 +409,9 @@ export default function SiteHeader() {
                                   <Link
                                     href={`/logistics-${area.slug}`}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className={`block py-2 text-[13px] border-b border-white/[0.04] transition-colors ${
-                                      pathname === `/logistics-${area.slug}` ? 'text-[#e8a33d]' : 'text-white/55 hover:text-white'
+                                    style={pathname === `/logistics-${area.slug}` ? { color: GOLD_TEXT } : undefined}
+                                    className={`block py-2 text-[13px] border-b border-black/[0.04] transition-colors ${
+                                      pathname === `/logistics-${area.slug}` ? '' : 'text-black/55 hover:text-black'
                                     }`}
                                   >
                                     {area.name}
@@ -409,7 +421,7 @@ export default function SiteHeader() {
                             </ul>
                           </div>
                         ))}
-                        <Link href="/areas" onClick={() => setIsMenuOpen(false)} className="block pt-1 text-[12px] font-bold tracking-widest uppercase text-[#e8a33d]">
+                        <Link href="/areas" onClick={() => setIsMenuOpen(false)} style={{ color: GOLD_TEXT }} className="block pt-1 text-[12px] font-bold tracking-widest uppercase">
                           All Areas →
                         </Link>
                       </div>
@@ -423,10 +435,11 @@ export default function SiteHeader() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`flex items-center justify-between w-full py-3.5 text-[15px] font-medium border-b border-white/[0.06] transition-colors ${active ? 'text-[#e8a33d]' : 'text-white/75 hover:text-white'}`}
+                    style={active ? { color: GOLD_TEXT } : undefined}
+                    className={`flex items-center justify-between w-full py-3.5 text-[15px] font-medium border-b border-black/[0.06] transition-colors ${active ? '' : 'text-black/75 hover:text-black'}`}
                   >
                     {link.label}
-                    {active && <span className="w-1.5 h-1.5 rounded-full bg-[#e8a33d]" aria-hidden="true" />}
+                    {active && <span className="w-1.5 h-1.5 rounded-full" style={{ background: GOLD_BTN }} aria-hidden="true" />}
                   </Link>
                 </li>
               )
@@ -436,7 +449,8 @@ export default function SiteHeader() {
           <div className="mt-5 space-y-2.5">
             <a
               href="tel:0723089983"
-              className="flex items-center justify-center gap-2.5 w-full py-4 bg-[#e8a33d] text-[#0a0a0a] font-bold text-[15px] tracking-wide hover:bg-[#f5b859] transition-colors"
+              style={{ background: GOLD_BTN }}
+              className="flex items-center justify-center gap-2.5 w-full py-4 text-[#0a0a0a] font-bold text-[15px] tracking-wide hover:brightness-95 transition-all"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
@@ -445,7 +459,7 @@ export default function SiteHeader() {
             </a>
             <a
               href="mailto:info@madimetsalogistics.co.za"
-              className="flex items-center justify-center gap-2.5 w-full py-3 border border-white/15 text-white/70 font-medium text-[13px] tracking-wide hover:text-white hover:border-white/30 transition-colors"
+              className="flex items-center justify-center gap-2.5 w-full py-3 border border-black/15 text-black/60 font-medium text-[13px] tracking-wide hover:text-black hover:border-black/30 transition-colors"
             >
               info@madimetsalogistics.co.za
             </a>
