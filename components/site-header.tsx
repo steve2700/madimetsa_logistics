@@ -5,16 +5,14 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const services = [
-  { href: '/generator-repairs', label: 'Generator Repairs', desc: 'All faults, all brands' },
-  { href: '/generator-servicing', label: 'Generator Servicing', desc: 'Oil, filters, full inspection' },
-  { href: '/generator-maintenance', label: 'Maintenance Plans', desc: 'Scheduled service contracts' },
-  { href: '/emergency-generator-repair', label: 'Emergency Callouts', desc: 'Same-day response' },
-  { href: '/generator-installation', label: 'Generator Installation', desc: 'New unit setup & wiring' },
-  { href: '/load-bank-testing', label: 'Load Bank Testing', desc: 'Capacity verification' },
-  { href: '/avr-repairs', label: 'AVR & Voltage Repairs', desc: 'Stable power output' },
-  { href: '/control-panel-repairs', label: 'Control Panel Repairs', desc: 'Controllers & relays' },
-  { href: '/fuel-system-repairs', label: 'Fuel System Repairs', desc: 'Injectors & pumps' },
-  { href: '/generator-rewinding', label: 'Generator Rewinding', desc: 'Alternator rewinding' },
+  { href: '/freight-transport', label: 'Freight Transport', desc: 'Full & part-load haulage' },
+  { href: '/warehousing', label: 'Warehousing & Distribution', desc: 'Storage & pick-and-pack' },
+  { href: '/fleet-management', label: 'Fleet Management', desc: 'Tracked, maintained fleet' },
+  { href: '/supply-chain-solutions', label: 'Supply Chain Solutions', desc: 'End-to-end logistics' },
+  { href: '/cross-border-logistics', label: 'Cross-Border Logistics', desc: 'SADC region transport' },
+  { href: '/express-delivery', label: 'Express Delivery', desc: 'Same-day & next-day' },
+  { href: '/contract-logistics', label: 'Contract Logistics', desc: 'Dedicated fleet contracts' },
+  { href: '/freight-forwarding', label: 'Freight Forwarding', desc: 'Import & export handling' },
 ]
 
 const areaRegions = [
@@ -103,20 +101,19 @@ export default function SiteHeader() {
   }, [])
 
   const isServiceActive = (path: string) =>
-    path.includes('repair') || path.includes('service') || path.includes('maintenance') ||
-    path.includes('installation') || path.includes('testing') || path.includes('avr') ||
-    path.includes('control') || path.includes('fuel') || path.includes('rewinding') ||
-    path.includes('emergency') || path === '/services'
+    path.includes('freight') || path.includes('warehous') || path.includes('fleet') ||
+    path.includes('supply-chain') || path.includes('cross-border') || path.includes('express') ||
+    path.includes('contract-logistics') || path === '/services'
 
   const isAreaActive = (path: string) =>
-    path === '/areas' || path.includes('generator-repairs-')
+    path === '/areas' || path.includes('logistics-')
 
   return (
     <header
       ref={headerRef}
       className={`sticky top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0a0a0a]/96 backdrop-blur-md shadow-[0_1px_0_rgba(200,168,75,0.18)]'
+          ? 'bg-[#0a0a0a]/96 backdrop-blur-md shadow-[0_1px_0_rgba(232,163,29,0.18)]'
           : 'bg-[#0a0a0a]'
       }`}
     >
@@ -126,32 +123,37 @@ export default function SiteHeader() {
           <p className="text-white/40 text-xs tracking-wide">
             Serving all of Gauteng — Johannesburg · Pretoria · Sandton · Centurion &amp; more
           </p>
-          <a
-            href="tel:0603160484"
-            className="text-[#c8a84b] hover:text-white transition-colors text-xs font-semibold tracking-widest"
-          >
-            060 316 0484
-          </a>
+          <div className="flex items-center gap-5">
+            <a
+              href="mailto:info@madimetsalogistics.co.za"
+              className="text-white/40 hover:text-white transition-colors text-xs tracking-wide"
+            >
+              info@madimetsalogistics.co.za
+            </a>
+            <a
+              href="tel:0723089983"
+              className="text-[#e8a33d] hover:text-white transition-colors text-xs font-semibold tracking-widest"
+            >
+              072 308 9983
+            </a>
+          </div>
         </div>
       </div>
 
       {/* ── Main nav ── */}
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16 md:h-[66px]">
+        <div className="flex items-center justify-between h-16 md:h-[70px]">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group" aria-label="Generator Repair Services — home">
-            <Image src="/logo_lite.png" alt="Generator Repair Services" width={36} height={36} className="object-contain" priority />
-            <div className="leading-none hidden sm:block">
-              <span className="block text-white font-black text-[12px] tracking-[0.2em] uppercase group-hover:text-[#c8a84b] transition-colors">
-                Generator
-              </span>
-              <span className="flex items-center gap-1 mt-[2px]">
-                <span className="block h-px w-2.5 bg-[#c8a84b]" />
-                <span className="text-[#c8a84b] text-[8px] font-bold tracking-[0.3em] uppercase">Repair Services</span>
-                <span className="block h-px w-2.5 bg-[#c8a84b]" />
-              </span>
-            </div>
+          <Link href="/" className="flex items-center shrink-0 group" aria-label="Madimetsa Logistics — home">
+            <Image
+              src="/logo-wordmark.png"
+              alt="Madimetsa Logistics"
+              width={220}
+              height={110}
+              className="object-contain h-12 md:h-14 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -171,7 +173,7 @@ export default function SiteHeader() {
                       onMouseEnter={() => setOpenDropdown(link.dropdown as DropdownKey)}
                       onClick={() => setOpenDropdown(isOpen ? null : link.dropdown as DropdownKey)}
                       className={`relative flex items-center gap-1 px-3 py-2 text-[13px] font-medium tracking-wide transition-colors ${
-                        isActive || isOpen ? 'text-[#c8a84b]' : 'text-white/65 hover:text-white'
+                        isActive || isOpen ? 'text-[#e8a33d]' : 'text-white/65 hover:text-white'
                       }`}
                       aria-expanded={isOpen}
                       aria-haspopup="true"
@@ -184,7 +186,7 @@ export default function SiteHeader() {
                         <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                       {isActive && !isOpen && (
-                        <span className="absolute inset-x-3 bottom-0 h-[2px] bg-[#c8a84b] rounded-full" />
+                        <span className="absolute inset-x-3 bottom-0 h-[2px] bg-[#e8a33d] rounded-full" />
                       )}
                     </button>
 
@@ -194,7 +196,7 @@ export default function SiteHeader() {
                         className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[540px] bg-[#111111] border border-white/[0.08] shadow-2xl"
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
-                        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#c8a84b] to-transparent" />
+                        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#e8a33d] to-transparent" />
                         <div className="p-5">
                           <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/30 mb-4">All Services</p>
                           <ul className="grid grid-cols-2 gap-x-6 gap-y-0.5">
@@ -204,7 +206,7 @@ export default function SiteHeader() {
                                   href={s.href}
                                   className="flex flex-col py-2.5 border-b border-white/[0.05] group/item"
                                 >
-                                  <span className={`text-[13px] font-semibold transition-colors ${pathname === s.href ? 'text-[#c8a84b]' : 'text-white/80 group-hover/item:text-[#c8a84b]'}`}>
+                                  <span className={`text-[13px] font-semibold transition-colors ${pathname === s.href ? 'text-[#e8a33d]' : 'text-white/80 group-hover/item:text-[#e8a33d]'}`}>
                                     {s.label}
                                   </span>
                                   <span className="text-[11px] text-white/35 mt-0.5">{s.desc}</span>
@@ -213,11 +215,11 @@ export default function SiteHeader() {
                             ))}
                           </ul>
                           <div className="mt-4 pt-4 border-t border-white/[0.06] flex justify-between items-center">
-                            <Link href="/services" className="text-[12px] text-[#c8a84b] hover:text-white font-semibold tracking-wide uppercase transition-colors">
+                            <Link href="/services" className="text-[12px] text-[#e8a33d] hover:text-white font-semibold tracking-wide uppercase transition-colors">
                               View all services
                             </Link>
-                            <a href="tel:0603160484" className="text-[12px] text-white/35 hover:text-white transition-colors">
-                              Emergency: 060 316 0484
+                            <a href="tel:0723089983" className="text-[12px] text-white/35 hover:text-white transition-colors">
+                              Dispatch: 072 308 9983
                             </a>
                           </div>
                         </div>
@@ -230,7 +232,7 @@ export default function SiteHeader() {
                         className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[560px] bg-[#111111] border border-white/[0.08] shadow-2xl"
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
-                        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#c8a84b] to-transparent" />
+                        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#e8a33d] to-transparent" />
                         <div className="p-5">
                           <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/30 mb-4">
                             Gauteng Service Areas
@@ -238,17 +240,17 @@ export default function SiteHeader() {
                           <div className="grid grid-cols-2 gap-x-6">
                             {areaRegions.map((group) => (
                               <div key={group.region} className="mb-4">
-                                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#c8a84b]/70 mb-2">
+                                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#e8a33d]/70 mb-2">
                                   {group.region}
                                 </p>
                                 <ul className="space-y-0">
                                   {group.areas.map((area) => (
                                     <li key={area.slug}>
                                       <Link
-                                        href={`/generator-repairs-${area.slug}`}
+                                        href={`/logistics-${area.slug}`}
                                         className={`block py-1.5 text-[13px] border-b border-white/[0.04] transition-colors ${
-                                          pathname === `/generator-repairs-${area.slug}`
-                                            ? 'text-[#c8a84b]'
+                                          pathname === `/logistics-${area.slug}`
+                                            ? 'text-[#e8a33d]'
                                             : 'text-white/65 hover:text-white'
                                         }`}
                                       >
@@ -261,7 +263,7 @@ export default function SiteHeader() {
                             ))}
                           </div>
                           <div className="mt-2 pt-4 border-t border-white/[0.06] flex justify-between items-center">
-                            <Link href="/areas" className="text-[12px] text-[#c8a84b] hover:text-white font-semibold tracking-wide uppercase transition-colors">
+                            <Link href="/areas" className="text-[12px] text-[#e8a33d] hover:text-white font-semibold tracking-wide uppercase transition-colors">
                               View all areas
                             </Link>
                             <span className="text-[11px] text-white/25">18 areas covered</span>
@@ -278,12 +280,12 @@ export default function SiteHeader() {
                   key={link.href}
                   href={link.href}
                   className={`relative px-3 py-2 text-[13px] font-medium tracking-wide transition-colors ${
-                    isActive ? 'text-[#c8a84b]' : 'text-white/65 hover:text-white'
+                    isActive ? 'text-[#e8a33d]' : 'text-white/65 hover:text-white'
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute inset-x-3 bottom-0 h-[2px] bg-[#c8a84b] rounded-full" />
+                    <span className="absolute inset-x-3 bottom-0 h-[2px] bg-[#e8a33d] rounded-full" />
                   )}
                 </Link>
               )
@@ -292,8 +294,8 @@ export default function SiteHeader() {
 
           {/* Desktop CTA */}
           <a
-            href="tel:0603160484"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-[#b91c1c] text-white text-[13px] font-bold tracking-wide hover:bg-red-800 transition-colors shrink-0"
+            href="tel:0723089983"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-[#e8a33d] text-[#0a0a0a] text-[13px] font-bold tracking-wide hover:bg-[#f5b859] transition-colors shrink-0"
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
@@ -304,7 +306,7 @@ export default function SiteHeader() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setIsMenuOpen((v) => !v)}
-            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] text-white focus:outline-none focus:ring-2 focus:ring-[#c8a84b] focus:ring-offset-1 focus:ring-offset-[#0a0a0a]"
+            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] text-white focus:outline-none focus:ring-2 focus:ring-[#e8a33d] focus:ring-offset-1 focus:ring-offset-[#0a0a0a]"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-nav"
@@ -323,7 +325,7 @@ export default function SiteHeader() {
         aria-label="Mobile navigation"
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-[900px] opacity-100' : 'max-h-0 opacity-0'}`}
       >
-        <div className="h-px bg-gradient-to-r from-transparent via-[#c8a84b]/40 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-[#e8a33d]/40 to-transparent" />
         <div className="bg-[#0d0d0d] px-6 pt-3 pb-6">
           <ul className="space-y-0">
             {navLinks.map((link) => {
@@ -351,14 +353,14 @@ export default function SiteHeader() {
                             <Link
                               href={s.href}
                               onClick={() => setIsMenuOpen(false)}
-                              className={`flex py-2.5 text-[13px] border-b border-white/[0.04] transition-colors ${pathname === s.href ? 'text-[#c8a84b]' : 'text-white/55 hover:text-white'}`}
+                              className={`flex py-2.5 text-[13px] border-b border-white/[0.04] transition-colors ${pathname === s.href ? 'text-[#e8a33d]' : 'text-white/55 hover:text-white'}`}
                             >
                               {s.label}
                             </Link>
                           </li>
                         ))}
                         <li>
-                          <Link href="/services" onClick={() => setIsMenuOpen(false)} className="block pt-3 text-[12px] font-bold tracking-widest uppercase text-[#c8a84b]">
+                          <Link href="/services" onClick={() => setIsMenuOpen(false)} className="block pt-3 text-[12px] font-bold tracking-widest uppercase text-[#e8a33d]">
                             All Services →
                           </Link>
                         </li>
@@ -387,17 +389,17 @@ export default function SiteHeader() {
                       <div className="pl-4 py-3 space-y-4">
                         {areaRegions.map((group) => (
                           <div key={group.region}>
-                            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#c8a84b]/70 mb-1.5">
+                            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#e8a33d]/70 mb-1.5">
                               {group.region}
                             </p>
                             <ul className="space-y-0">
                               {group.areas.map((area) => (
                                 <li key={area.slug}>
                                   <Link
-                                    href={`/generator-repairs-${area.slug}`}
+                                    href={`/logistics-${area.slug}`}
                                     onClick={() => setIsMenuOpen(false)}
                                     className={`block py-2 text-[13px] border-b border-white/[0.04] transition-colors ${
-                                      pathname === `/generator-repairs-${area.slug}` ? 'text-[#c8a84b]' : 'text-white/55 hover:text-white'
+                                      pathname === `/logistics-${area.slug}` ? 'text-[#e8a33d]' : 'text-white/55 hover:text-white'
                                     }`}
                                   >
                                     {area.name}
@@ -407,7 +409,7 @@ export default function SiteHeader() {
                             </ul>
                           </div>
                         ))}
-                        <Link href="/areas" onClick={() => setIsMenuOpen(false)} className="block pt-1 text-[12px] font-bold tracking-widest uppercase text-[#c8a84b]">
+                        <Link href="/areas" onClick={() => setIsMenuOpen(false)} className="block pt-1 text-[12px] font-bold tracking-widest uppercase text-[#e8a33d]">
                           All Areas →
                         </Link>
                       </div>
@@ -421,25 +423,33 @@ export default function SiteHeader() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`flex items-center justify-between w-full py-3.5 text-[15px] font-medium border-b border-white/[0.06] transition-colors ${active ? 'text-[#c8a84b]' : 'text-white/75 hover:text-white'}`}
+                    className={`flex items-center justify-between w-full py-3.5 text-[15px] font-medium border-b border-white/[0.06] transition-colors ${active ? 'text-[#e8a33d]' : 'text-white/75 hover:text-white'}`}
                   >
                     {link.label}
-                    {active && <span className="w-1.5 h-1.5 rounded-full bg-[#c8a84b]" aria-hidden="true" />}
+                    {active && <span className="w-1.5 h-1.5 rounded-full bg-[#e8a33d]" aria-hidden="true" />}
                   </Link>
                 </li>
               )
             })}
           </ul>
 
-          <a
-            href="tel:0603160484"
-            className="mt-5 flex items-center justify-center gap-2.5 w-full py-4 bg-[#b91c1c] text-white font-bold text-[15px] tracking-wide hover:bg-red-800 transition-colors"
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
-            </svg>
-            Call 060 316 0484
-          </a>
+          <div className="mt-5 space-y-2.5">
+            <a
+              href="tel:0723089983"
+              className="flex items-center justify-center gap-2.5 w-full py-4 bg-[#e8a33d] text-[#0a0a0a] font-bold text-[15px] tracking-wide hover:bg-[#f5b859] transition-colors"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+              </svg>
+              Call 072 308 9983
+            </a>
+            <a
+              href="mailto:info@madimetsalogistics.co.za"
+              className="flex items-center justify-center gap-2.5 w-full py-3 border border-white/15 text-white/70 font-medium text-[13px] tracking-wide hover:text-white hover:border-white/30 transition-colors"
+            >
+              info@madimetsalogistics.co.za
+            </a>
+          </div>
         </div>
       </div>
     </header>
