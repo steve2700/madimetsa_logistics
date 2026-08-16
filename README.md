@@ -1,8 +1,8 @@
-# Generator Repair Services Gauteng
+# Madimetsa Logistics Gauteng
 
-Professional generator repair, servicing, maintenance and installation website built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**.
+Freight transport, warehousing, fleet management and cross-border logistics website built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**.
 
-Live site: [www.generatorrepairservices.co.za](https://www.generatorrepairservices.co.za)
+Live site: [www.madimetsalogistics.co.za](https://www.madimetsalogistics.co.za)
 
 ---
 
@@ -28,55 +28,55 @@ app/
 ├── layout.tsx                      # Root layout (nav, footer, mobile call bar)
 ├── globals.css                     # Global styles + Tailwind base
 ├── robots.ts                       # robots.txt generation
-├── sitemap.ts                      # sitemap.xml generation (38 URLs)
+├── sitemap.ts                      # sitemap.xml generation (36 URLs)
 │
 ├── about/                          # About Us
 ├── areas/                          # Service areas overview
 ├── contact/                        # Contact & quote request form
 ├── faq/                            # Frequently asked questions
 ├── gallery/                        # Photo gallery with lightbox
-├── generator-repair-cost/          # Pricing guide
 ├── privacy-policy/                 # Privacy policy (POPIA compliant)
 ├── services/                       # All services overview
 ├── terms/                          # Terms & conditions
 │
-├── avr-repairs/                    # AVR & voltage regulator repairs
-├── control-panel-repairs/          # Control panel repairs
-├── emergency-generator-repair/     # Emergency callouts
-├── fuel-system-repairs/            # Fuel system repairs
-├── generator-installation/         # Generator installation
-├── generator-maintenance/          # Maintenance plans
-├── generator-repairs/              # Generator repairs (main)
-├── generator-rewinding/            # Alternator rewinding
-├── generator-servicing/            # Generator servicing
-├── load-bank-testing/              # Load bank testing
+├── freight-transport/              # Freight transport
+├── warehousing/                    # Warehousing & distribution
+├── fleet-management/               # Fleet management
+├── supply-chain-solutions/         # Supply chain solutions
+├── cross-border-logistics/         # Cross-border logistics
+├── express-delivery/               # Express delivery
+├── contract-logistics/             # Contract logistics
+├── freight-forwarding/             # Freight forwarding
 │
-├── generator-repairs-alberton/     # Area page — Alberton
-├── generator-repairs-benoni/       # Area page — Benoni
-├── generator-repairs-boksburg/     # Area page — Boksburg
-├── generator-repairs-centurion/    # Area page — Centurion
-├── generator-repairs-edenvale/     # Area page — Edenvale
-├── generator-repairs-fourways/     # Area page — Fourways
-├── generator-repairs-germiston/    # Area page — Germiston
-├── generator-repairs-johannesburg/ # Area page — Johannesburg
-├── generator-repairs-kempton-park/ # Area page — Kempton Park
-├── generator-repairs-krugersdorp/  # Area page — Krugersdorp
-├── generator-repairs-midrand/      # Area page — Midrand
-├── generator-repairs-pretoria/     # Area page — Pretoria
-├── generator-repairs-randburg/     # Area page — Randburg
-├── generator-repairs-roodepoort/   # Area page — Roodepoort
-├── generator-repairs-sandton/      # Area page — Sandton
-├── generator-repairs-soweto/       # Area page — Soweto
-├── generator-repairs-springs/      # Area page — Springs
-└── generator-repairs-vereeniging/  # Area page — Vereeniging
+├── logistics-alberton/             # Area page, Alberton
+├── logistics-benoni/               # Area page, Benoni
+├── logistics-boksburg/             # Area page, Boksburg
+├── logistics-centurion/            # Area page, Centurion
+├── logistics-edenvale/             # Area page, Edenvale
+├── logistics-fourways/             # Area page, Fourways
+├── logistics-germiston/            # Area page, Germiston
+├── logistics-johannesburg/         # Area page, Johannesburg
+├── logistics-kempton-park/         # Area page, Kempton Park
+├── logistics-krugersdorp/          # Area page, Krugersdorp
+├── logistics-midrand/              # Area page, Midrand
+├── logistics-pretoria/             # Area page, Pretoria
+├── logistics-randburg/             # Area page, Randburg
+├── logistics-roodepoort/           # Area page, Roodepoort
+├── logistics-sandton/              # Area page, Sandton
+├── logistics-soweto/               # Area page, Soweto
+├── logistics-springs/              # Area page, Springs
+└── logistics-vereeniging/          # Area page, Vereeniging
 
 components/
+├── site-header.tsx                 # Main nav, services & areas dropdowns
+├── site-footer.tsx                 # Footer, brand plate, services & areas links
 ├── breadcrumbs.tsx                 # Breadcrumb nav (schema-ready)
-├── gallery-grid.tsx                # Masonry gallery with category filter + lightbox
-└── hero-slideshow.tsx              # Auto-rotating hero image slideshow (client component)
+└── gallery-grid.tsx                # Masonry gallery with category filter + lightbox
 
 public/images/                      # All optimised images (WebP + PNG + JPG)
 ```
+
+> Note: this structure is carried over from the previous build and updated for the logistics rebrand. Confirm folder names against your actual repo before relying on this as documentation, since some routes or components may differ.
 
 ---
 
@@ -123,22 +123,22 @@ Every page is built with a layered SEO approach:
 - Geo-targeted `keywords` (Johannesburg, Pretoria, Midrand, Centurion, Sandton, etc.)
 
 ### Structured Data (JSON-LD)
-The services page injects the following schema blocks:
+The homepage and services page inject the following schema blocks:
 
 | Schema Type | Purpose |
 |---|---|
-| `LocalBusiness` | NAP, area served, opening hours, geo coordinates, offer catalogue |
-| `ItemList` | Links to all 10 service pages |
-| `Service` (×10) | One node per service, linked to `LocalBusiness` via `@id` |
-| `FAQPage` | 5 Q&As eligible for Google rich results |
+| `LocalBusiness` | NAP, area served, offer catalogue |
+| `ItemList` | Links to all 8 service pages |
+| `Service` (×8) | One node per service, linked to `LocalBusiness` via `@id` |
+| `FAQPage` | Q&As eligible for Google rich results |
 | `BreadcrumbList` | Breadcrumb trail for rich results |
 
 ### Sitemap
 Auto-generated at `/sitemap.xml` via `app/sitemap.ts`:
 - 10 main/info pages
-- 10 service pages
+- 8 service pages
 - 18 area pages (one per Gauteng location)
-- 38 URLs total
+- 36 URLs total
 
 ### Robots
 `/robots.txt` via `app/robots.ts`:
@@ -154,12 +154,12 @@ Auto-generated at `/sitemap.xml` via `app/sitemap.ts`:
 |---|---|
 | Brand black | `#0a0a0a` |
 | Dark grey | `#1a1a1a` |
-| Gold | `#c8a84b` |
-| Red (emergency) | `#b91c1c` |
+| Gold, amber | `#e8a33d` |
+| Red, urgent freight | `#b91c1c` |
 | Off-white surface | `#f5f4f0` |
-| Body font | System sans-serif stack |
+| Body font | Geist, system sans-serif fallback |
 
-All interactive elements follow consistent hover patterns: dark → gold on light backgrounds, white → gold on dark backgrounds.
+Header and footer both use the amber accent (`#e8a33d`) for active links, dividers and buttons. The header runs on a light background (white top nav, cream contact bar) so the logo's black wordmark stays readable; the footer stays dark, with the logo placed on a small white plate for the same reason.
 
 ---
 
@@ -174,13 +174,9 @@ Key images:
 
 | File | Used on |
 |---|---|
-| `Industrial_Generator_Repair_Team.webp` | Hero slideshow, gallery |
-| `2026-06-11_Generator_Preventative_Maintenance.webp` | Hero slideshow, maintenance section, gallery |
-| `Technician_Servicing_Generator.webp` | Hero slideshow, servicing section |
-| `generator-repair-technician-onsite-midrand.webp` | Hero slideshow, emergency section |
-| `compressed_Diesel_Gen_Repair.webp` | Repairs section |
-| `compressed_Ryobi_Petrol_Generator_3.5kVA_Maintenance.webp` | Gallery |
-| `compressed_Grip_7.5KVA_Petrol_Generator_Repair.jpg` | Gallery |
+| `hero-madimetsa-logistics-truck.png` | Hero, services section, why choose us, pricing section |
+
+> The site currently runs on a single fleet photo across several sections. Add more freight, warehouse and fleet photos to `public/images/` and swap them into `app/page.tsx` as they become available.
 
 ---
 
@@ -191,7 +187,7 @@ The site deploys automatically to **Vercel** on every push to `main`.
 Environment variables required: none (no API keys or external services).
 
 After deploying:
-1. Submit `https://www.generatorrepairservices.co.za/sitemap.xml` to Google Search Console
+1. Submit `https://www.madimetsalogistics.co.za/sitemap.xml` to Google Search Console
 2. Verify the canonical domain (`www`) in Search Console
 3. Check structured data with [Google's Rich Results Test](https://search.google.com/test/rich-results)
 
@@ -199,7 +195,7 @@ After deploying:
 
 ## Contact
 
-**Generator Repair Services Gauteng**
-Phone: 060 316 0484
-Email: info@generatorrepairservices.co.za
-Website: www.generatorrepairservices.co.za
+**Madimetsa Logistics**
+Phone: 072 308 9983
+Email: info@madimetsalogistics.co.za
+Website: www.madimetsalogistics.co.za
