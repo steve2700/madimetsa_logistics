@@ -2,27 +2,21 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumbs from '@/components/breadcrumbs'
-import HeroSlideshow from '@/components/hero-slideshow'
 
 export const metadata: Metadata = {
-  title: 'Generator Services Gauteng | Repairs, Servicing, Maintenance & More',
+  title: 'Logistics Services | Freight, Warehousing, Fleet & More | Madimetsa Logistics',
   description:
-    'Full range of professional generator services across Gauteng. Expert repairs, scheduled servicing, emergency callouts, AVR repairs, load testing & installation. Call 060 316 0484.',
+    'Full range of logistics services across South Africa. Freight transport, warehousing, fleet management, supply chain solutions, cross-border logistics & more. Call 072 308 9983.',
   keywords: [
-    'generator services Gauteng',
-    'generator repair Johannesburg',
-    'generator repair Pretoria',
-    'generator repair Midrand',
-    'generator repair Centurion',
-    'generator repair Sandton',
-    'generator servicing Gauteng',
-    'emergency generator repair Gauteng',
-    'generator maintenance Gauteng',
-    'generator installation Gauteng',
-    'AVR repair Gauteng',
-    'load bank testing Gauteng',
-    'generator control panel repair Gauteng',
-    'generator rewinding Gauteng',
+    'logistics services South Africa',
+    'freight transport Gauteng',
+    'warehousing Johannesburg',
+    'fleet management South Africa',
+    'supply chain solutions Gauteng',
+    'cross-border logistics South Africa',
+    'express delivery South Africa',
+    'contract logistics Gauteng',
+    'freight forwarding South Africa',
   ],
   robots: {
     index: true,
@@ -30,152 +24,39 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' },
   },
   alternates: {
-    canonical: 'https://www.generatorrepairservices.co.za/services',
+    canonical: 'https://www.madimetsalogistics.co.za/services',
   },
   openGraph: {
-    title: 'Generator Services Gauteng | Repairs, Servicing & Maintenance',
+    title: 'Logistics Services | Madimetsa Logistics',
     description:
-      'Full range of professional generator services across Gauteng. Emergency callouts, all brands. Call 060 316 0484.',
-    url: 'https://www.generatorrepairservices.co.za/services',
+      'Freight transport, warehousing, fleet management and cross-border logistics, dispatched nationwide from our Gauteng hubs. Call 072 308 9983.',
+    url: 'https://www.madimetsalogistics.co.za/services',
     type: 'website',
-    images: [
-      {
-        url: 'https://www.generatorrepairservices.co.za/images/Industrial_Generator_Repair_Team.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Generator Repair Services Gauteng — professional technician team',
-      },
-    ],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Madimetsa Logistics services' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Generator Services Gauteng | Repairs, Servicing & Maintenance',
-    description:
-      'Expert generator repairs, servicing, emergency callouts & maintenance across Gauteng. All brands. Call 060 316 0484.',
-    images: ['https://www.generatorrepairservices.co.za/images/Industrial_Generator_Repair_Team.webp'],
+    title: 'Logistics Services | Madimetsa Logistics',
+    description: 'Freight transport, warehousing, fleet management and cross-border logistics, dispatched nationwide. Call 072 308 9983.',
+    images: ['/og-image.jpg'],
   },
 }
 
 // ── Structured Data ────────────────────────────────────────────────────────────
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://www.generatorrepairservices.co.za/#business',
-  name: 'Generator Repair Services Gauteng',
-  description:
-    'Professional generator repair, servicing, maintenance, installation and emergency callout services across Gauteng. All brands, all sizes.',
-  url: 'https://www.generatorrepairservices.co.za',
-  telephone: '+27603160484',
-  email: 'info@generatorrepairservices.co.za',
-  areaServed: [
-    { '@type': 'City', name: 'Johannesburg' },
-    { '@type': 'City', name: 'Pretoria' },
-    { '@type': 'City', name: 'Midrand' },
-    { '@type': 'City', name: 'Centurion' },
-    { '@type': 'City', name: 'Sandton' },
-    { '@type': 'City', name: 'Randburg' },
-    { '@type': 'City', name: 'Roodepoort' },
-    { '@type': 'City', name: 'Germiston' },
-    { '@type': 'City', name: 'Boksburg' },
-    { '@type': 'AdministrativeArea', name: 'Gauteng' },
-  ],
-  address: {
-    '@type': 'PostalAddress',
-    addressRegion: 'Gauteng',
-    addressCountry: 'ZA',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: -26.2041,
-    longitude: 28.0473,
-  },
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '07:00', closes: '17:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '08:00', closes: '13:00' },
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Generator Services',
-    itemListElement: [
-      'Generator Repairs',
-      'Generator Servicing',
-      'Generator Maintenance Plans',
-      'Emergency Generator Callouts',
-      'Generator Installation',
-      'Load Bank Testing',
-      'AVR & Voltage Regulator Repairs',
-      'Control Panel Repairs',
-      'Fuel System Repairs',
-      'Generator Rewinding',
-    ].map((name, i) => ({ '@type': 'Offer', position: i + 1, itemOffered: { '@type': 'Service', name } })),
-  },
-  image: 'https://www.generatorrepairservices.co.za/images/Industrial_Generator_Repair_Team.webp',
-  priceRange: '$$',
-}
-
 const serviceListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Generator Services — Generator Repair Services Gauteng',
+  name: 'Logistics Services — Madimetsa Logistics',
   itemListElement: [
-    { '@type': 'ListItem', position: 1,  name: 'Generator Repairs',            url: 'https://www.generatorrepairservices.co.za/generator-repairs' },
-    { '@type': 'ListItem', position: 2,  name: 'Generator Servicing',          url: 'https://www.generatorrepairservices.co.za/generator-servicing' },
-    { '@type': 'ListItem', position: 3,  name: 'Generator Maintenance Plans',  url: 'https://www.generatorrepairservices.co.za/generator-maintenance' },
-    { '@type': 'ListItem', position: 4,  name: 'Emergency Generator Callouts', url: 'https://www.generatorrepairservices.co.za/emergency-generator-repair' },
-    { '@type': 'ListItem', position: 5,  name: 'Generator Installation',       url: 'https://www.generatorrepairservices.co.za/generator-installation' },
-    { '@type': 'ListItem', position: 6,  name: 'Load Bank Testing',            url: 'https://www.generatorrepairservices.co.za/load-bank-testing' },
-    { '@type': 'ListItem', position: 7,  name: 'AVR & Voltage Regulator Repairs', url: 'https://www.generatorrepairservices.co.za/avr-repairs' },
-    { '@type': 'ListItem', position: 8,  name: 'Control Panel Repairs',        url: 'https://www.generatorrepairservices.co.za/control-panel-repairs' },
-    { '@type': 'ListItem', position: 9,  name: 'Fuel System Repairs',          url: 'https://www.generatorrepairservices.co.za/fuel-system-repairs' },
-    { '@type': 'ListItem', position: 10, name: 'Generator Rewinding',          url: 'https://www.generatorrepairservices.co.za/generator-rewinding' },
-  ],
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What generator brands do you repair in Gauteng?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We repair all major generator brands including Cummins, Perkins, Caterpillar, Deutz, Volvo, FG Wilson, Kohler, Kipor, Ryobi, and more — both diesel and petrol, across all of Gauteng.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How quickly can you respond to an emergency generator callout in Gauteng?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Our emergency response team typically arrives on-site within 2–4 hours of your call anywhere in Gauteng. Contracted maintenance clients receive priority dispatch.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you offer generator maintenance contracts for businesses in Gauteng?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. We offer customised maintenance plans for businesses, property managers, and industrial clients across Gauteng. Plans include scheduled servicing, priority callouts, and full compliance documentation.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What areas in Gauteng do you cover?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We cover all of Gauteng including Johannesburg, Pretoria, Midrand, Centurion, Sandton, Randburg, Roodepoort, Germiston, Boksburg, and surrounding areas.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can you repair a generator that won\'t start automatically during loadshedding?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Automatic start failures are usually caused by a faulty AMF/ATS controller, battery issues, or a fuel system problem. Our technicians carry diagnostic tools and common parts to resolve most auto-start faults on the first visit.',
-      },
-    },
+    { '@type': 'ListItem', position: 1, name: 'Freight Transport',           url: 'https://www.madimetsalogistics.co.za/freight-transport' },
+    { '@type': 'ListItem', position: 2, name: 'Warehousing & Distribution',  url: 'https://www.madimetsalogistics.co.za/warehousing' },
+    { '@type': 'ListItem', position: 3, name: 'Fleet Management',           url: 'https://www.madimetsalogistics.co.za/fleet-management' },
+    { '@type': 'ListItem', position: 4, name: 'Supply Chain Solutions',     url: 'https://www.madimetsalogistics.co.za/supply-chain-solutions' },
+    { '@type': 'ListItem', position: 5, name: 'Cross-Border Logistics',     url: 'https://www.madimetsalogistics.co.za/cross-border-logistics' },
+    { '@type': 'ListItem', position: 6, name: 'Express Delivery',           url: 'https://www.madimetsalogistics.co.za/express-delivery' },
+    { '@type': 'ListItem', position: 7, name: 'Contract Logistics',         url: 'https://www.madimetsalogistics.co.za/contract-logistics' },
+    { '@type': 'ListItem', position: 8, name: 'Freight Forwarding',         url: 'https://www.madimetsalogistics.co.za/freight-forwarding' },
   ],
 }
 
@@ -183,229 +64,180 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',     item: 'https://www.generatorrepairservices.co.za' },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.generatorrepairservices.co.za/services' },
+    { '@type': 'ListItem', position: 1, name: 'Home',     item: 'https://www.madimetsalogistics.co.za' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.madimetsalogistics.co.za/services' },
   ],
 }
 
-// Per-service schema — one Service node per entry
+// Per-service Service schema node
 const serviceNodes = [
-  { name: 'Generator Repairs Gauteng',            url: '/generator-repairs',        area: 'Gauteng' },
-  { name: 'Generator Servicing Gauteng',          url: '/generator-servicing',      area: 'Gauteng' },
-  { name: 'Generator Maintenance Plans Gauteng',  url: '/generator-maintenance',    area: 'Gauteng' },
-  { name: 'Emergency Generator Repair Gauteng',   url: '/emergency-generator-repair', area: 'Gauteng' },
-  { name: 'Generator Installation Gauteng',       url: '/generator-installation',   area: 'Gauteng' },
-  { name: 'Load Bank Testing Gauteng',            url: '/load-bank-testing',        area: 'Gauteng' },
-  { name: 'AVR & Voltage Regulator Repairs',      url: '/avr-repairs',              area: 'Gauteng' },
-  { name: 'Control Panel Repairs Gauteng',        url: '/control-panel-repairs',    area: 'Gauteng' },
-  { name: 'Fuel System Repairs Gauteng',          url: '/fuel-system-repairs',      area: 'Gauteng' },
-  { name: 'Generator Rewinding Gauteng',          url: '/generator-rewinding',      area: 'Gauteng' },
+  { name: 'Freight Transport',          url: '/freight-transport' },
+  { name: 'Warehousing & Distribution', url: '/warehousing' },
+  { name: 'Fleet Management',           url: '/fleet-management' },
+  { name: 'Supply Chain Solutions',     url: '/supply-chain-solutions' },
+  { name: 'Cross-Border Logistics',     url: '/cross-border-logistics' },
+  { name: 'Express Delivery',           url: '/express-delivery' },
+  { name: 'Contract Logistics',         url: '/contract-logistics' },
+  { name: 'Freight Forwarding',         url: '/freight-forwarding' },
 ].map((s) => ({
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: s.name,
-  url: `https://www.generatorrepairservices.co.za${s.url}`,
-  provider: { '@id': 'https://www.generatorrepairservices.co.za/#business' },
-  areaServed: { '@type': 'AdministrativeArea', name: s.area },
-  serviceType: 'Generator Repair and Maintenance',
+  url: `https://www.madimetsalogistics.co.za${s.url}`,
+  provider: { '@id': 'https://www.madimetsalogistics.co.za/#business' },
+  areaServed: { '@type': 'Country', name: 'South Africa' },
+  serviceType: 'Freight and Logistics',
 }))
 
 // ── Page data ──────────────────────────────────────────────────────────────────
 
 const services = [
   {
-    href: '/generator-repairs',
-    title: 'Generator Repairs',
-    shortTitle: 'Repairs',
-    image: '/images/compressed_Diesel_Gen_Repair.webp',
-    alt: 'Generator repair technician diagnosing a diesel generator fault in Gauteng',
+    href: '/freight-transport',
+    title: 'Freight Transport',
+    shortTitle: 'Freight',
+    image: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Madimetsa Logistics truck loaded for a freight transport route',
     badge: 'Most Requested',
-    badgeColor: 'bg-[#c8a84b] text-[#0a0a0a]',
     description:
-      'From minor electrical faults to major mechanical failures, our certified technicians diagnose and repair all generator types quickly and correctly across Johannesburg, Pretoria, Midrand and the wider Gauteng area. We carry common parts on every vehicle, meaning most repairs are completed on the first visit.',
+      'Full and part-load haulage across South Africa, handled by a tracked, maintained fleet. Whether it is a single pallet or a full trailer, we move general freight, palletised goods and contract cargo on routes dispatched daily from our Gauteng hubs.',
     points: [
-      'All brands: Cummins, Perkins, Caterpillar, Deutz, Volvo & more',
-      'Diesel and petrol generators of all sizes',
-      'Diagnostic tools for fast, accurate fault-finding',
-      'Workmanship guarantee on every repair',
+      'Full and part loads for businesses of all sizes',
+      'GPS-tracked fleet with real-time visibility',
+      'Same-day and next-day dispatch on most routes',
+      'Written quote before any freight moves',
     ],
   },
   {
-    href: '/generator-servicing',
-    title: 'Generator Servicing',
-    shortTitle: 'Servicing',
-    image: '/images/Technician_Servicing_Generator.webp',
-    alt: 'Technician performing a full generator service including oil change and filter replacement',
+    href: '/warehousing',
+    title: 'Warehousing & Distribution',
+    shortTitle: 'Warehousing',
+    image: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Warehousing and distribution storage facility used by Madimetsa Logistics',
     badge: null,
-    badgeColor: '',
     description:
-      'Regular servicing is the single most effective way to extend your generator\'s lifespan and prevent unexpected breakdowns. Our comprehensive service covers oil and filter changes, coolant inspection, belt checks, battery testing, and a full load test — available across all Gauteng regions.',
+      'Secure storage and efficient distribution, so your stock is exactly where it needs to be when an order comes in. We handle receiving, storage, pick-and-pack, and onward distribution as one connected service, not separate handoffs.',
     points: [
-      'Full oil and filter change with quality-spec lubricants',
-      'Coolant system inspection and top-up',
-      'Air and fuel filter replacement',
-      'Battery and charging system check',
+      'Secure, monitored storage facilities',
+      'Pick-and-pack fulfilment for outgoing orders',
+      'Stock handling integrated with our dispatch network',
+      'Flexible short-term or ongoing storage arrangements',
     ],
   },
   {
-    href: '/generator-maintenance',
-    title: 'Maintenance Plans',
-    shortTitle: 'Maintenance',
-    image: '/images/2026-06-11_Generator_Preventative_Maintenance.webp',
-    alt: 'Planned maintenance schedule for standby generators across Gauteng businesses',
+    href: '/fleet-management',
+    title: 'Fleet Management',
+    shortTitle: 'Fleet',
+    image: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Madimetsa Logistics fleet management and vehicle tracking',
     badge: 'Popular for Business',
-    badgeColor: 'bg-[#1a1a1a] text-white border border-white/20',
     description:
-      'A maintenance plan removes the guesswork entirely. We track your generator\'s service intervals, contact you when it\'s due, and handle everything from scheduling to paperwork. Businesses and property managers across Gauteng rely on our contracts to keep standby systems ready for loadshedding.',
+      'A tracked, regularly maintained fleet is the backbone of dependable dispatch. We manage vehicle scheduling, servicing and tracking so freight moves on time, every time, without the guesswork of relying on ad hoc transport.',
     points: [
-      'Customised service schedules by hours run or calendar interval',
-      'Priority callout response for contracted clients',
-      'Full service records and compliance documentation',
-      'Discounted rates on parts and emergency callouts',
+      'Regular vehicle servicing and maintenance schedules',
+      'Live GPS tracking across the entire fleet',
+      'Route planning for efficient, on-time delivery',
+      'Fleet sized to fit loads of any size',
     ],
   },
   {
-    href: '/emergency-generator-repair',
-    title: 'Emergency Callouts',
-    shortTitle: 'Emergency',
-    image: '/images/generator-repair-technician-onsite-midrand.webp',
-    alt: 'Emergency generator repair technician responding to a breakdown in Johannesburg',
-    badge: '2–4 Hour Response',
-    badgeColor: 'bg-[#b91c1c] text-white',
-    description:
-      'When your generator fails mid-loadshedding or during a critical power event, every minute counts. Our emergency response team is deployed across Gauteng — Johannesburg, Pretoria, Midrand, Centurion and beyond — with most callouts receiving an on-site technician within 2–4 hours.',
-    points: [
-      'Same-day emergency callouts across all of Gauteng',
-      'Mobile workshops stocked with common failure parts',
-      'Priority dispatch for contracted maintenance clients',
-      'Available for residential, commercial and industrial emergencies',
-    ],
-  },
-  {
-    href: '/generator-installation',
-    title: 'Generator Installation',
-    shortTitle: 'Installation',
-    image: '/images/generator-installation.png',
-    alt: 'Professional generator installation including electrical connections and changeover switch',
+    href: '/supply-chain-solutions',
+    title: 'Supply Chain Solutions',
+    shortTitle: 'Supply Chain',
+    image: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'End-to-end supply chain solutions managed by Madimetsa Logistics',
     badge: null,
-    badgeColor: '',
     description:
-      'A professional installation is critical to the safety and longevity of your generator. Our team handles the complete process: site assessment, foundation or mounting, fuel line installation, electrical connections, changeover switch wiring, and commissioning. All work complies with SANS standards.',
+      'From collection to warehousing to final delivery, we manage the full chain as one dependable partner. Businesses with ongoing logistics needs get a single point of contact instead of juggling multiple service providers.',
     points: [
-      'Site assessment and generator sizing advice',
-      'Automatic and manual changeover switch installation',
-      'Fuel tank and supply line installation',
-      'SANS-compliant electrical connections',
+      'End-to-end management from collection to delivery',
+      'Single point of contact across the full chain',
+      'Scalable for growing or seasonal business needs',
+      'Regular reporting on shipments and stock movement',
     ],
   },
   {
-    href: '/load-bank-testing',
-    title: 'Load Bank Testing',
-    shortTitle: 'Load Testing',
-    image: '/images/load-bank-testing.png',
-    alt: 'Load bank testing of an industrial standby generator to verify rated output capacity',
+    href: '/cross-border-logistics',
+    title: 'Cross-Border Logistics',
+    shortTitle: 'Cross-Border',
+    image: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Cross-border freight logistics into the wider SADC region',
     badge: null,
-    badgeColor: '',
     description:
-      'Standby generators that rarely run under full load accumulate wet stacking — unburned fuel deposits in the exhaust system — reducing efficiency and causing premature failure. Load bank testing applies a controlled electrical load, verifying rated output and clearing wet stacking. Compliance documentation provided.',
+      'We offer cross-border logistics into the wider SADC region, handling the route, timeline and requirements so your freight clears borders without unnecessary delay. Contact us with your destination and cargo details for a straightforward plan.',
     points: [
-      'Tests generator at 50%, 75% and 100% rated capacity',
-      'Clears wet stacking in diesel generators',
-      'Provides compliance documentation for insurers',
-      'Identifies capacity shortfalls before they become emergencies',
+      'Routes into the wider SADC region',
+      'Guidance on required documentation per destination',
+      'Coordinated timelines for cross-border cargo',
+      'Same tracked fleet and communication standards as local routes',
     ],
   },
   {
-    href: '/avr-repairs',
-    title: 'AVR & Voltage Regulator Repairs',
-    shortTitle: 'AVR Repairs',
-    image: '/images/avr-repair.png',
-    alt: 'Automatic voltage regulator repair and replacement for generators in Gauteng',
-    badge: null,
-    badgeColor: '',
+    href: '/express-delivery',
+    title: 'Express Delivery',
+    shortTitle: 'Express',
+    image: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Express same-day delivery dispatch from Madimetsa Logistics',
+    badge: '2-4 Hour Response',
     description:
-      'A faulty Automatic Voltage Regulator causes fluctuating or incorrect output voltage, which can damage connected equipment. Our technicians diagnose AVR faults, replace failed units with quality-matched components, and test voltage stability under load to confirm clean, consistent power output.',
+      'When freight needs to move fast, we prioritise it. Same-day and next-day dispatch nationwide, with the fastest turnaround on collections from our Gauteng hubs, for the moments when waiting is not an option.',
     points: [
-      'Diagnosis of voltage fluctuation and instability faults',
-      'AVR replacement with OEM-spec or quality aftermarket units',
-      'Voltage output testing under varying load conditions',
-      'Applicable to all generator brands and alternator types',
+      'Same-day dispatch available on most routes',
+      'Priority handling for urgent freight',
+      'Fastest turnaround from our Gauteng hubs',
+      'Straightforward quote for the fastest available option',
     ],
   },
   {
-    href: '/control-panel-repairs',
-    title: 'Control Panel Repairs',
-    shortTitle: 'Control Panels',
-    image: '/images/control-panel.png',
-    alt: 'Generator control panel repair and programming service in Gauteng',
-    badge: null,
-    badgeColor: '',
-    description:
-      'Modern generators rely on digital control panels and AMF (Automatic Main Failure) controllers to manage automatic starting and load transfer. When these systems fault, your generator may fail to start during loadshedding. We repair, reprogram and replace control panels across all major controller brands.',
-    points: [
-      'AMF and ATS controller diagnosis and repair',
-      'DSE, ComAp, Deepsea and SmartGen controller support',
-      'Relay, fuse and circuit board replacement',
-      'Full auto-start and shutdown cycle testing',
-    ],
-  },
-  {
-    href: '/fuel-system-repairs',
-    title: 'Fuel System Repairs',
-    shortTitle: 'Fuel Systems',
-    image: '/images/fuel-system.png',
-    alt: 'Generator fuel system repair including injector cleaning and fuel pump replacement',
-    badge: null,
-    badgeColor: '',
-    description:
-      'Diesel degradation, water contamination, and blocked injectors are among the most common causes of generator failure in South Africa. Our fuel system service covers fuel polishing, injector cleaning and replacement, lift pump and injection pump repairs, and fuel tank cleaning.',
-    points: [
-      'Fuel polishing and contamination removal',
-      'Injector cleaning, testing and replacement',
-      'Fuel lift pump and injection pump repairs',
-      'Fuel tank inspection and internal cleaning',
-    ],
-  },
-  {
-    href: '/generator-rewinding',
-    title: 'Generator Rewinding',
-    shortTitle: 'Rewinding',
-    image: '/images/expert_generator_maintanance.webp',
-    alt: 'Generator alternator rewinding service at our Gauteng workshop',
+    href: '/contract-logistics',
+    title: 'Contract Logistics',
+    shortTitle: 'Contract',
+    image: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Dedicated contract logistics fleet arrangement for ongoing business freight',
     badge: 'Workshop Service',
-    badgeColor: 'bg-[#1a1a1a] text-white border border-white/20',
     description:
-      'When a generator alternator suffers winding failure — from insulation breakdown, overloading, or moisture ingress — rewinding is often the most cost-effective solution. Our workshop rewinds stators and rotors to factory specifications with full insulation resistance testing before return.',
+      'For businesses with recurring freight needs, a contract arrangement removes the guesswork entirely. We set up scheduled collection times and a dedicated fleet allocation, so your goods move on a predictable timetable every time.',
     points: [
-      'Stator and rotor rewinding to OEM specifications',
-      'Insulation resistance testing before and after rewind',
-      'Suitable for all alternator brands and frame sizes',
-      'Often 40–60% cheaper than full alternator replacement',
+      'Scheduled, recurring collection times',
+      'Dedicated fleet allocation for ongoing contracts',
+      'Predictable, transparent contract pricing',
+      'Single dependable partner for all contracted freight',
+    ],
+  },
+  {
+    href: '/freight-forwarding',
+    title: 'Freight Forwarding',
+    shortTitle: 'Forwarding',
+    image: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Import and export freight forwarding handled by Madimetsa Logistics',
+    badge: null,
+    description:
+      'Import and export freight handled with the same reliability as our domestic routes. We coordinate the movement of goods across the full journey, keeping you informed at every stage rather than leaving you to chase updates.',
+    points: [
+      'Import and export freight coordination',
+      'Clear communication at every stage of the journey',
+      'Coordinated handoffs to minimise delays',
+      'Suited to once-off shipments and ongoing trade',
     ],
   },
 ]
 
-// ── FAQ data (visible on page + matches FAQPage schema) ───────────────────────
 const faqs = [
   {
-    q: 'What generator brands do you repair in Gauteng?',
-    a: 'We repair all major brands including Cummins, Perkins, Caterpillar, Deutz, Volvo, FG Wilson, Kohler, Kipor, Ryobi, and more — both diesel and petrol, all sizes.',
+    q: 'How much does freight transport cost?',
+    a: 'Cost depends on load size, distance, route and turnaround time. We give a clear written quote before any freight moves, so you know the number before you decide.',
   },
   {
-    q: 'How quickly can you respond to an emergency callout?',
-    a: 'Our emergency team typically arrives within 2–4 hours anywhere in Gauteng. Contracted maintenance clients receive priority dispatch.',
+    q: 'How quickly can you arrange a pickup?',
+    a: 'We offer same-day and next-day dispatch nationwide, depending on load size and route, with the fastest turnaround on collections from our Gauteng hubs.',
   },
   {
-    q: 'Do you offer maintenance contracts for businesses?',
-    a: 'Yes — customised plans for businesses, property managers, and industrial clients. Includes scheduled servicing, priority callouts, and compliance documentation.',
+    q: 'Do you handle cross-border freight?',
+    a: 'Yes. We offer cross-border logistics into the wider SADC region. Get in touch with your destination and cargo details and we will talk you through the route and requirements.',
   },
   {
-    q: 'Which areas in Gauteng do you cover?',
-    a: 'All of Gauteng: Johannesburg, Pretoria, Midrand, Centurion, Sandton, Randburg, Roodepoort, Germiston, Boksburg and surrounding areas.',
-  },
-  {
-    q: "Can you fix a generator that won't auto-start during loadshedding?",
-    a: 'Yes. Auto-start failures are usually a faulty AMF/ATS controller, battery, or fuel issue. Most are resolved on the first visit with parts carried on our vehicles.',
+    q: 'Can you handle ongoing, recurring freight needs?',
+    a: 'Yes. Our contract logistics service sets up scheduled collection times and a dedicated fleet allocation, so your goods move on a predictable timetable.',
   },
 ]
 
@@ -415,9 +247,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── Structured data ── */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceListSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {serviceNodes.map((node, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(node) }} />
@@ -430,40 +260,44 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* ── Hero — rotating real job photos ── */}
+      {/* ── Hero ── */}
       <section className="relative bg-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <HeroSlideshow />
+          <Image
+            src="/images/hero-madimetsa-logistics-truck.png"
+            alt="Madimetsa Logistics truck ready for dispatch across South Africa"
+            fill
+            priority
+            className="object-cover object-center opacity-20"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/55" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-14 md:py-20">
-          <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">
+          <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">
             What We Do
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5 max-w-3xl">
-            Professional Generator Services Across Gauteng
+            Every Logistics Service, Under One Roof
           </h1>
-          <p className="text-white/65 text-lg md:text-xl leading-relaxed max-w-2xl mb-3">
-            From emergency repairs during loadshedding to long-term maintenance contracts,
-            our certified technicians handle every aspect of generator care — all brands,
-            all sizes, across Johannesburg, Pretoria, Midrand, Centurion and all of Gauteng.
-          </p>
-          <p className="text-white/40 text-sm mb-8">
-            Serving Gauteng businesses and homeowners since 2010 · Workmanship guaranteed
+          <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
+            Freight transport, warehousing, fleet management and cross-border logistics,
+            dispatched nationwide from our Gauteng hubs. One dependable partner for the
+            full chain.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="tel:0603160484"
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#b91c1c] text-white font-bold text-base hover:bg-red-800 transition-colors"
-              aria-label="Call Generator Repair Services on 060 316 0484"
+              href="tel:0723089983"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#b91c1c] text-white font-black text-lg hover:bg-red-800 transition-colors"
             >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
               </svg>
-              Call 060 316 0484
+              Call 072 308 9983
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-7 py-3.5 border border-[#c8a84b]/50 text-[#c8a84b] font-semibold text-base hover:bg-[#c8a84b] hover:text-[#0a0a0a] transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[#e8a33d]/50 text-[#e8a33d] font-semibold text-base hover:bg-[#e8a33d] hover:text-[#0a0a0a] transition-colors"
             >
               Request a Quote
             </Link>
@@ -479,7 +313,7 @@ export default function ServicesPage() {
               <li key={s.href}>
                 <a
                   href={`#${s.href.replace('/', '')}`}
-                  className="inline-block px-3.5 py-1.5 text-[12px] font-medium text-[#1a1a1a]/70 hover:text-[#c8a84b] hover:bg-[#f5f4f0] transition-colors rounded-sm whitespace-nowrap border border-transparent hover:border-[#c8a84b]/20"
+                  className="inline-block px-3.5 py-1.5 text-[12px] font-medium text-[#1a1a1a]/70 hover:text-[#e8a33d] hover:bg-[#f5f4f0] transition-colors whitespace-nowrap border border-transparent hover:border-[#e8a33d]/20"
                 >
                   {s.shortTitle}
                 </a>
@@ -512,10 +346,10 @@ export default function ServicesPage() {
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#c8a84b]" />
-                    <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#c8a84b]" />
+                    <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8a33d]" />
+                    <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8a33d]" />
                     {service.badge && (
-                      <div className={`absolute top-4 right-4 px-3 py-1 text-[11px] font-bold tracking-wider uppercase ${service.badgeColor}`}>
+                      <div className="absolute top-4 right-4 px-3 py-1 text-[11px] font-bold tracking-wider uppercase bg-[#e8a33d] text-[#0a0a0a]">
                         {service.badge}
                       </div>
                     )}
@@ -524,11 +358,11 @@ export default function ServicesPage() {
                   {/* Content */}
                   <div>
                     <h2 id={`service-heading-${index}`} className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a1a1a] mb-4 leading-tight">
-                      <Link href={service.href} className="hover:text-[#c8a84b] transition-colors">
+                      <Link href={service.href} className="hover:text-[#e8a33d] transition-colors">
                         {service.title}
                       </Link>
                     </h2>
-                    <div className="w-10 h-0.5 bg-[#c8a84b] mb-5" />
+                    <div className="w-10 h-0.5 bg-[#e8a33d] mb-5" />
                     <p className="text-base md:text-lg leading-relaxed text-[#1a1a1a]/70 mb-6">
                       {service.description}
                     </p>
@@ -537,8 +371,8 @@ export default function ServicesPage() {
                         <li key={point} className="flex items-start gap-3 text-sm text-[#1a1a1a]/75">
                           <span className="mt-1 w-4 h-4 shrink-0 flex items-center justify-center">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                              <circle cx="7" cy="7" r="6.5" stroke="#c8a84b" strokeWidth="1"/>
-                              <path d="M4 7l2 2 4-4" stroke="#c8a84b" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                              <circle cx="7" cy="7" r="6.5" stroke="#e8a33d" strokeWidth="1"/>
+                              <path d="M4 7l2 2 4-4" stroke="#e8a33d" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
                           </span>
                           {point}
@@ -548,15 +382,15 @@ export default function ServicesPage() {
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link
                         href={service.href}
-                        className="inline-flex items-center justify-center px-6 py-3 bg-[#1a1a1a] text-white font-semibold text-sm hover:bg-[#c8a84b] hover:text-[#0a0a0a] transition-colors"
+                        className="inline-flex items-center justify-center px-6 py-3 bg-[#1a1a1a] text-white font-semibold text-sm hover:bg-[#e8a33d] hover:text-[#0a0a0a] transition-colors"
                       >
                         Learn more
                       </Link>
                       <a
-                        href="tel:0603160484"
-                        className="inline-flex items-center justify-center px-6 py-3 border border-[#1a1a1a]/20 text-[#1a1a1a] font-semibold text-sm hover:border-[#c8a84b] hover:text-[#c8a84b] transition-colors"
+                        href="tel:0723089983"
+                        className="inline-flex items-center justify-center px-6 py-3 border border-[#1a1a1a]/20 text-[#1a1a1a] font-semibold text-sm hover:border-[#e8a33d] hover:text-[#e8a33d] transition-colors"
                       >
-                        Book this service
+                        Get a quote
                       </a>
                     </div>
                   </div>
@@ -568,10 +402,10 @@ export default function ServicesPage() {
         })}
       </main>
 
-      {/* ── FAQ section (matches FAQPage schema) ── */}
+      {/* ── FAQ section ── */}
       <section className="py-16 md:py-20 bg-[#0a0a0a]" aria-labelledby="faq-heading">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-3">Common Questions</p>
+          <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-3">Common Questions</p>
           <h2 id="faq-heading" className="text-2xl md:text-3xl font-black text-white mb-10">
             Frequently Asked Questions
           </h2>
@@ -585,11 +419,11 @@ export default function ServicesPage() {
           </div>
           <p className="mt-8 text-white/30 text-sm">
             More questions?{' '}
-            <Link href="/faq" className="text-[#c8a84b] hover:underline">
+            <Link href="/faq" className="text-[#e8a33d] hover:underline">
               Visit our full FAQ page
             </Link>{' '}
             or{' '}
-            <a href="tel:0603160484" className="text-[#c8a84b] hover:underline">
+            <a href="tel:0723089983" className="text-[#e8a33d] hover:underline">
               call us directly
             </a>
             .
@@ -603,17 +437,17 @@ export default function ServicesPage() {
           <h2 id="related-heading" className="text-xl font-bold text-[#1a1a1a] mb-6">Explore More</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { href: '/areas',                 label: 'Service Areas', sub: 'All Gauteng locations' },
-              { href: '/generator-repair-cost', label: 'Repair Costs',  sub: 'Honest pricing guide' },
-              { href: '/gallery',               label: 'Photo Gallery', sub: 'See our real work' },
-              { href: '/contact',               label: 'Get a Quote',   sub: 'Free assessment' },
+              { href: '/areas',   label: 'Service Areas', sub: 'Where we operate' },
+              { href: '/faq',     label: 'FAQ',            sub: 'Common questions answered' },
+              { href: '/about',   label: 'About Us',       sub: 'Who we are' },
+              { href: '/contact', label: 'Get a Quote',    sub: 'Free assessment' },
             ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group p-4 bg-white border border-[#1a1a1a]/8 hover:border-[#c8a84b]/40 transition-colors"
+                className="group p-4 bg-white border border-[#1a1a1a]/8 hover:border-[#e8a33d]/40 transition-colors"
               >
-                <p className="font-bold text-sm text-[#1a1a1a] group-hover:text-[#c8a84b] transition-colors mb-1">{item.label}</p>
+                <p className="font-bold text-sm text-[#1a1a1a] group-hover:text-[#e8a33d] transition-colors mb-1">{item.label}</p>
                 <p className="text-xs text-[#1a1a1a]/50">{item.sub}</p>
               </Link>
             ))}
@@ -621,31 +455,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Emergency CTA ── */}
-      <section className="bg-[#0a0a0a] text-white" aria-label="Emergency callout call to action">
+      {/* ── CTA ── */}
+      <section className="bg-[#0a0a0a] text-white" aria-label="Contact Madimetsa Logistics">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-xl">
-              <h2 className="text-2xl md:text-3xl font-black mb-3">Need Generator Service Today?</h2>
+              <h2 className="text-2xl md:text-3xl font-black mb-3">Need Freight Moved Nationwide?</h2>
               <p className="text-white/60 text-base leading-relaxed">
-                Emergency or planned, we cover all of Gauteng. Call now for a same-day
-                callout or to schedule a service appointment at a time that suits you.
+                Once off or ongoing, we cover all of Gauteng and dispatch nationwide.
+                Call now for a quote or to schedule a collection.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <a
-                href="tel:0603160484"
+                href="tel:0723089983"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#b91c1c] text-white font-black text-lg hover:bg-red-800 transition-colors"
-                aria-label="Call 060 316 0484 for generator services"
               >
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
                 </svg>
-                060 316 0484
+                072 308 9983
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-semibold text-base hover:border-[#c8a84b] hover:text-[#c8a84b] transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-semibold text-base hover:border-[#e8a33d] hover:text-[#e8a33d] transition-colors"
               >
                 Request a Quote
               </Link>
