@@ -73,6 +73,10 @@ const areas = [
   { name: 'Vereeniging', slug: 'vereeniging' },
 ]
 
+// Slugs that currently have a dedicated /logistics-<slug> page built.
+// Add a slug here the moment its page goes live, nothing else needs to change.
+const builtAreaSlugs = new Set(['johannesburg', 'pretoria', 'sandton', 'centurion'])
+
 const trustPillars = [
   {
     heading: 'Reliable Fleet',
@@ -470,6 +474,9 @@ export default function HomePage() {
 
       {/* ═══════════════════════════════════════════════════════════════
           AREAS — region columns
+          Only areas with a live /logistics-<slug> page are links.
+          Everything else renders as a plain, non-clickable label so
+          nothing here can 404.
       ═══════════════════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-[#f5f4f0]" aria-labelledby="areas-heading">
         <div className="max-w-6xl mx-auto px-6">
@@ -521,22 +528,32 @@ export default function HomePage() {
                   {group.region}
                 </p>
                 <ul className="space-y-2.5">
-                  {group.areas.map((area, i) => (
-                    <li key={area}>
-                      <Link
-                        href={`/logistics-${group.slugs[i]}`}
-                        className="flex items-center justify-between text-sm font-medium text-[#1a1a1a]/65 hover:text-[#e8a33d] transition-colors group/item"
-                      >
-                        {area}
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                          className="opacity-0 group-hover/item:opacity-100 transition-opacity text-[#e8a33d]"
-                          aria-hidden="true"
-                        >
-                          <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </Link>
-                    </li>
-                  ))}
+                  {group.areas.map((area, i) => {
+                    const slug = group.slugs[i]
+                    const isBuilt = builtAreaSlugs.has(slug)
+                    return (
+                      <li key={area}>
+                        {isBuilt ? (
+                          <Link
+                            href={`/logistics-${slug}`}
+                            className="flex items-center justify-between text-sm font-medium text-[#1a1a1a]/65 hover:text-[#e8a33d] transition-colors group/item"
+                          >
+                            {area}
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                              className="opacity-0 group-hover/item:opacity-100 transition-opacity text-[#e8a33d]"
+                              aria-hidden="true"
+                            >
+                              <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </Link>
+                        ) : (
+                          <span className="block text-sm font-medium text-[#1a1a1a]/35 cursor-default">
+                            {area}
+                          </span>
+                        )}
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
             ))}
