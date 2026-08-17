@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.generatorrepairservices.co.za'
+const BASE_URL = 'https://www.madimetsalogistics.co.za'
 
 const GAUTENG_CITIES = [
   'Johannesburg', 'Pretoria', 'Sandton', 'Midrand', 'Centurion',
@@ -8,16 +8,14 @@ const GAUTENG_CITIES = [
 ]
 
 const SERVICES = [
-  { name: 'Generator Repairs', url: '/generator-repairs' },
-  { name: 'Generator Servicing', url: '/generator-servicing' },
-  { name: 'Generator Maintenance', url: '/generator-maintenance' },
-  { name: 'Emergency Generator Callouts', url: '/emergency-generator-repair' },
-  { name: 'Generator Installation', url: '/generator-installation' },
-  { name: 'Load Bank Testing', url: '/load-bank-testing' },
-  { name: 'AVR & Voltage Regulator Repairs', url: '/avr-repairs' },
-  { name: 'Control Panel Repairs', url: '/control-panel-repairs' },
-  { name: 'Fuel System Repairs', url: '/fuel-system-repairs' },
-  { name: 'Generator Rewinding', url: '/generator-rewinding' },
+  { name: 'Freight Transport', url: '/freight-transport' },
+  { name: 'Warehousing & Distribution', url: '/warehousing' },
+  { name: 'Fleet Management', url: '/fleet-management' },
+  { name: 'Supply Chain Solutions', url: '/supply-chain-solutions' },
+  { name: 'Cross Border Logistics', url: '/cross-border-logistics' },
+  { name: 'Express Delivery', url: '/express-delivery' },
+  { name: 'Contract Logistics', url: '/contract-logistics' },
+  { name: 'Freight Forwarding', url: '/freight-forwarding' },
 ]
 
 export default function OrganizationSchema() {
@@ -27,19 +25,18 @@ export default function OrganizationSchema() {
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/#business`,
-        name: 'Generator Repair Services',
-        legalName: 'Generator Repair Services',
+        name: 'Madimetsa Logistics',
+        legalName: 'Madimetsa Logistics',
         description:
-          'Professional generator repair, servicing and maintenance across Gauteng. Emergency callouts available for all brands of diesel and petrol generators.',
+          'Freight transport, warehousing, fleet management and cross border logistics, serving businesses across South Africa.',
         url: BASE_URL,
-        telephone: '+27603160484',
-        email: 'info@generatorrepairservices.co.za',
-        foundingDate: '2009',
+        telephone: '+27723089983',
+        email: 'info@madimetsalogistics.co.za',
         priceRange: '$$',
         currenciesAccepted: 'ZAR',
         paymentAccepted: 'Cash, EFT',
         image: `${BASE_URL}/og-image.jpg`,
-        logo: `${BASE_URL}/logo_lite.png`,
+        logo: `${BASE_URL}/logo-wordmark.png`,
         address: {
           '@type': 'PostalAddress',
           addressRegion: 'Gauteng',
@@ -67,36 +64,35 @@ export default function OrganizationSchema() {
         contactPoint: [
           {
             '@type': 'ContactPoint',
-            telephone: '+27603160484',
+            telephone: '+27723089983',
             contactType: 'customer service',
-            contactOption: 'TollFree',
             areaServed: 'ZA',
             availableLanguage: 'English',
           },
           {
             '@type': 'ContactPoint',
-            telephone: '+27603160484',
-            contactType: 'emergency',
+            telephone: '+27723089983',
+            contactType: 'dispatch',
             areaServed: 'ZA',
             availableLanguage: 'English',
           },
         ],
         areaServed: {
-          '@type': 'State',
-          name: 'Gauteng',
-          containedInPlace: {
-            '@type': 'Country',
-            name: 'South Africa',
-            sameAs: 'https://www.wikidata.org/wiki/Q258',
+          '@type': 'Country',
+          name: 'South Africa',
+          sameAs: 'https://www.wikidata.org/wiki/Q258',
+          containsPlace: {
+            '@type': 'State',
+            name: 'Gauteng',
+            containsPlace: GAUTENG_CITIES.map((city) => ({
+              '@type': 'City',
+              name: city,
+            })),
           },
-          containsPlace: GAUTENG_CITIES.map((city) => ({
-            '@type': 'City',
-            name: city,
-          })),
         },
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Generator Services',
+          name: 'Logistics Services',
           itemListElement: SERVICES.map((s, i) => ({
             '@type': 'ListItem',
             position: i + 1,
@@ -115,8 +111,8 @@ export default function OrganizationSchema() {
         '@type': 'WebSite',
         '@id': `${BASE_URL}/#website`,
         url: BASE_URL,
-        name: 'Generator Repair Services',
-        description: 'Professional generator repair, servicing and maintenance across Gauteng.',
+        name: 'Madimetsa Logistics',
+        description: 'Freight transport, warehousing and fleet management, serving businesses across South Africa.',
         publisher: { '@id': `${BASE_URL}/#business` },
         inLanguage: 'en-ZA',
         potentialAction: {
