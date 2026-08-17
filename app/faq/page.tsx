@@ -4,26 +4,24 @@ import { Breadcrumbs } from '@/components/breadcrumbs'
 import { FAQSchema } from '@/components/faq-schema'
 
 export const metadata: Metadata = {
-  title: 'Generator Repair FAQ Gauteng | Cost, Service & Emergency Questions Answered',
+  title: 'Freight & Logistics FAQ | Madimetsa Logistics South Africa',
   description:
-    'Answers to the most common questions about generator repairs, servicing costs, emergency callouts and maintenance in Gauteng. From our certified technicians. Call 060 316 0484.',
+    'Answers to common questions about freight transport, dispatch times, cross-border shipments and coverage from Madimetsa Logistics. Call 072 308 9983.',
   keywords: [
-    'generator repair FAQ Gauteng',
-    'how much does generator repair cost South Africa',
-    'generator service cost Gauteng',
-    'emergency generator repair Gauteng',
-    'generator maintenance questions',
-    'generator not starting Gauteng',
-    'load bank testing Gauteng',
-    'generator repair warranty South Africa',
+    'freight transport FAQ South Africa',
+    'logistics company questions',
+    'freight cost South Africa',
+    'cross-border freight questions',
+    'same-day freight dispatch',
+    'nationwide delivery South Africa',
   ],
   alternates: {
-    canonical: 'https://www.generatorrepairservices.co.za/faq',
+    canonical: 'https://www.madimetsalogistics.co.za/faq',
   },
   openGraph: {
-    title: 'Generator Repair FAQ Gauteng | Cost, Service & Emergency Questions',
-    description: 'Common questions about generator repairs, costs and maintenance answered by our certified Gauteng technicians.',
-    url: 'https://www.generatorrepairservices.co.za/faq',
+    title: 'Freight & Logistics FAQ | Madimetsa Logistics',
+    description: 'Common questions about freight transport, dispatch and coverage, answered by our team.',
+    url: 'https://www.madimetsalogistics.co.za/faq',
     type: 'website',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -31,76 +29,76 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: 'How much does generator repair cost in South Africa?',
+    question: 'How much does freight transport cost?',
     answer:
-      'Generator repair costs depend on the fault, the brand and the parts required. Minor repairs such as oil changes, filter replacements or battery swaps typically range from R500–R1,500. Moderate repairs including AVR replacement, fuel system cleaning or control panel work generally cost R3,000–R8,000. Major overhauls, alternator rewinds or engine rebuilds can exceed R15,000. We provide a written quote before any work begins — no surprises.',
+      'Cost depends on load size, distance, route and turnaround time. A short local delivery is a fraction of the cost of a full load cross-border haul or an ongoing contract logistics arrangement. We give a clear written quote before any freight moves, so you know the number before you decide.',
     category: 'Costs & Pricing',
   },
   {
-    question: 'Do you offer emergency generator repair services?',
+    question: 'Do you charge extra for urgent or same-day dispatch?',
     answer:
-      'Yes. We provide same-day emergency callouts across all of Gauteng. Our response team is deployed province-wide and most callouts receive an on-site technician within 2–4 hours of your call. We prioritise businesses, essential services and properties with medical or security dependencies.',
-    category: 'Emergency Service',
+      'Urgent freight is priced on the route and load, not a flat surcharge. Get in touch with the details and we will give you a straightforward quote for the fastest option available.',
+    category: 'Costs & Pricing',
   },
   {
-    question: 'How often should I service my generator?',
+    question: 'How quickly can you arrange a pickup?',
     answer:
-      'We recommend servicing every 200–250 running hours or at minimum once per year — whichever comes first. For standby generators used regularly during loadshedding, quarterly inspections are advisable. Regular servicing prevents expensive breakdowns, extends equipment lifespan and ensures the generator performs to its rated capacity when you need it.',
-    category: 'Maintenance',
+      'We offer same-day and next-day dispatch nationwide, depending on load size and route, with the fastest turnaround on collections from our Gauteng hubs. For recurring freight, we can set up scheduled collection times so your goods move on a predictable timetable.',
+    category: 'Dispatch & Delivery',
   },
   {
-    question: 'What generator brands do you repair?',
+    question: 'How long does delivery typically take?',
     answer:
-      'We repair all major generator brands including Cummins, Caterpillar, Perkins, FG Wilson, Deutz, Volvo, John Deere, SDMO, Kipor, Ryobi, Honda, Yamaha and Atlas Copco. Our technicians are factory-trained and equipped to work on both diesel and petrol generators of all sizes, from small residential units to large industrial standby systems.',
-    category: 'Brands & Types',
+      'It depends on distance and route. Local Gauteng deliveries are usually same-day or next-day. Routes to other provinces and cross-border deliveries take longer, and we will give you a realistic estimate before the freight moves.',
+    category: 'Dispatch & Delivery',
   },
   {
-    question: 'Can you repair my generator on-site?',
+    question: 'What size loads can you handle?',
     answer:
-      'Yes. Our mobile workshops are fully equipped with diagnostic tools and common spare parts. The vast majority of faults — including AVR replacement, fuel system repairs, control panel work, battery replacement and general servicing — are resolved on-site on the first visit. Major repairs requiring specialist workshop equipment, such as alternator rewinding, are handled at our facility.',
-    category: 'On-Site Service',
+      'We handle full and part loads across general freight, palletised goods and contract cargo for businesses of all sizes. Whether it is a single pallet or a full trailer, our fleet is sized to fit the job.',
+    category: 'Cargo & Fleet',
   },
   {
-    question: 'What areas in Gauteng do you cover?',
+    question: 'Can you handle oversized or irregular freight?',
     answer:
-      'We cover the entire Gauteng province: Johannesburg, Pretoria, Sandton, Midrand, Centurion, Randburg, Roodepoort, Kempton Park, Boksburg, Benoni, Germiston, Alberton, Edenvale, Krugersdorp, Springs, Soweto, Fourways and Vereeniging — and all surrounding suburbs and industrial areas.',
+      'Tell us about the dimensions, weight and nature of the load and we will confirm whether it fits our standard fleet or needs special arrangements. It is always best to check with us before booking anything unusual.',
+    category: 'Cargo & Fleet',
+  },
+  {
+    question: 'What areas do you cover?',
+    answer:
+      'We operate from hubs across the entire Gauteng province, including Johannesburg, Pretoria, Sandton, Midrand, Centurion, Randburg, Roodepoort, Kempton Park, Boksburg, Benoni, Germiston, Alberton, Edenvale, Krugersdorp, Springs, Soweto, Fourways and Vereeniging.',
     category: 'Service Areas',
   },
   {
-    question: 'Do your repairs come with a warranty?',
+    question: 'Do you deliver outside Gauteng?',
     answer:
-      'Yes. All repairs are backed by a minimum 3-month workmanship warranty. Parts installed carry the relevant manufacturer warranty. If a fault we repaired recurs within the warranty period, we return and resolve it at no charge — no questions asked.',
-    category: 'Warranty',
+      'Yes. We dispatch nationwide from our Gauteng hubs, with regular routes to Durban, Cape Town and every major centre in between, plus cross-border into the wider SADC region.',
+    category: 'Service Areas',
   },
   {
-    question: 'Why is my generator not starting?',
+    question: 'Do you handle cross-border freight?',
     answer:
-      'The most common causes are: a flat or failed battery, fuel issues (empty tank, stale or contaminated diesel, clogged fuel filters), a faulty starter motor, glow plug failure (diesel), spark plug failure (petrol), or a control panel fault preventing the auto-start sequence. Our technicians carry diagnostic equipment and common parts to resolve most starting faults on the first visit.',
-    category: 'Troubleshooting',
+      'Yes. We offer cross-border logistics into the wider SADC region. Get in touch with your destination and cargo details and we will talk you through the route, timeline and requirements.',
+    category: 'Cross-Border',
   },
   {
-    question: 'What is load bank testing and do I need it?',
+    question: 'What documentation do I need for cross-border shipments?',
     answer:
-      'Load bank testing applies a controlled electrical load to your generator to verify it can deliver its full rated output under realistic conditions. It also clears wet stacking — unburned fuel deposits that build up in diesel generators that run infrequently or at low load. We recommend annual load bank testing for any critical standby system, and it is often required by insurance providers for compliance certification.',
-    category: 'Testing',
+      'Requirements vary by destination and cargo type. Contact us before booking a cross-border shipment and we will let you know exactly what paperwork is needed on your side.',
+    category: 'Cross-Border',
   },
   {
-    question: 'How long does a generator repair typically take?',
+    question: 'Can I track my delivery?',
     answer:
-      'Minor repairs such as battery replacement or oil changes take 1–2 hours on-site. Moderate repairs including AVR replacement or fuel system cleaning take 2–4 hours. Major repairs like alternator rewinding or engine overhauls typically require 2–5 days depending on parts availability. We give you a realistic time estimate before work begins.',
-    category: 'Repair Times',
+      'Our fleet is GPS tracked, so our team can give you an update on where your freight is at any point in the journey. Reach out and we will keep you informed.',
+    category: 'Guarantee & Tracking',
   },
   {
-    question: 'Do you stock generator parts and spares?',
+    question: 'What happens if something goes wrong with my delivery?',
     answer:
-      'Yes. We stock a broad range of genuine and quality-matched aftermarket parts including filters, belts, batteries, AVRs, control panels, fuel pumps, injectors and more. We can source parts for any generator brand and provide competitive pricing. Parts sourced through us come with full supplier traceability.',
-    category: 'Parts & Spares',
-  },
-  {
-    question: 'Can you install a new generator?',
-    answer:
-      'Yes. We provide complete installation services: site assessment, generator sizing advice, base or mounting installation, fuel tank and supply line setup, automatic or manual changeover switch wiring, full electrical connections and commissioning. All installations comply with SANS standards and local authority requirements.',
-    category: 'Installation',
+      'Tell us straight away and we will work to resolve it. Honest communication is part of how we operate, if there is a delay or an issue, you will hear it from us directly, not find out on your own.',
+    category: 'Guarantee & Tracking',
   },
 ]
 
@@ -108,11 +106,11 @@ const faqs = [
 const categories = [...new Set(faqs.map((f) => f.category))]
 
 const relatedLinks = [
-  { href: '/generator-repair-cost', label: 'Full Generator Repair Cost Guide' },
-  { href: '/services', label: 'All Generator Services' },
-  { href: '/emergency-generator-repair', label: 'Emergency Callouts' },
-  { href: '/generator-maintenance', label: 'Maintenance Plans' },
-  { href: '/areas', label: 'Service Areas' },
+  { href: '/services', label: 'All Logistics Services' },
+  { href: '/express-delivery', label: 'Express Delivery' },
+  { href: '/cross-border-logistics', label: 'Cross-Border Logistics' },
+  { href: '/contract-logistics', label: 'Contract Logistics' },
+  { href: '/areas', label: 'Where We Operate' },
   { href: '/contact', label: 'Get a Free Quote' },
 ]
 
@@ -129,17 +127,17 @@ export default function FAQPage() {
       </div>
 
       {/* ── Page hero ── */}
-      <section className="bg-[#0a0a0a] border-b border-[#c8a84b]/15">
+      <section className="bg-[#0a0a0a] border-b border-[#e8a33d]/15">
         <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">
+          <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">
             Got Questions?
           </p>
           <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4 max-w-3xl">
             Frequently Asked Questions
           </h1>
           <p className="text-white/55 text-lg max-w-2xl leading-relaxed">
-            Answers to the most common questions about generator repairs, servicing costs,
-            emergency callouts and maintenance across Gauteng.
+            Answers to common questions about freight transport, dispatch times,
+            cross-border shipments and coverage across South Africa.
           </p>
         </div>
       </section>
@@ -152,7 +150,7 @@ export default function FAQPage() {
               <li key={cat}>
                 <a
                   href={`#${cat.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')}`}
-                  className="inline-block px-3.5 py-1.5 text-[12px] font-medium text-[#1a1a1a]/65 hover:text-[#c8a84b] hover:bg-[#f5f4f0] border border-transparent hover:border-[#c8a84b]/25 transition-colors whitespace-nowrap"
+                  className="inline-block px-3.5 py-1.5 text-[12px] font-medium text-[#1a1a1a]/65 hover:text-[#e8a33d] hover:bg-[#f5f4f0] border border-transparent hover:border-[#e8a33d]/25 transition-colors whitespace-nowrap"
                 >
                   {cat}
                 </a>
@@ -176,8 +174,8 @@ export default function FAQPage() {
                 <div key={cat} id={anchorId} className="mb-12 scroll-mt-24">
                   {/* Category label */}
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="block w-3 h-3 bg-[#c8a84b]" aria-hidden="true" />
-                    <h2 className="text-xs font-bold tracking-[0.3em] uppercase text-[#c8a84b]">
+                    <span className="block w-3 h-3 bg-[#e8a33d]" aria-hidden="true" />
+                    <h2 className="text-xs font-bold tracking-[0.3em] uppercase text-[#e8a33d]">
                       {cat}
                     </h2>
                   </div>
@@ -189,11 +187,11 @@ export default function FAQPage() {
                         className="group border-b border-[#1a1a1a]/10"
                       >
                         <summary className="flex items-start justify-between gap-4 py-5 cursor-pointer list-none select-none">
-                          <h3 className="text-base font-bold text-[#1a1a1a] leading-snug group-open:text-[#c8a84b] transition-colors pr-2">
+                          <h3 className="text-base font-bold text-[#1a1a1a] leading-snug group-open:text-[#e8a33d] transition-colors pr-2">
                             {faq.question}
                           </h3>
                           {/* Plus / minus toggle */}
-                          <span className="shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center border border-[#1a1a1a]/20 group-open:border-[#c8a84b] group-open:bg-[#c8a84b] transition-colors">
+                          <span className="shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center border border-[#1a1a1a]/20 group-open:border-[#e8a33d] group-open:bg-[#e8a33d] transition-colors">
                             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true" className="group-open:hidden">
                               <path d="M5 1v8M1 5h8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
                             </svg>
@@ -215,28 +213,28 @@ export default function FAQPage() {
             })}
 
             {/* Still have questions */}
-            <div className="mt-4 p-7 bg-[#0a0a0a] border border-[#c8a84b]/20">
-              <div className="w-8 h-0.5 bg-[#c8a84b] mb-4" />
+            <div className="mt-4 p-7 bg-[#0a0a0a] border border-[#e8a33d]/20">
+              <div className="w-8 h-0.5 bg-[#e8a33d] mb-4" />
               <h2 className="text-xl font-black text-white mb-2">
                 Still Have Questions?
               </h2>
               <p className="text-white/50 text-sm leading-relaxed mb-5">
-                Our technicians are happy to answer any question about your specific
-                generator — call us or send a message and we will get back to you promptly.
+                Our team is happy to answer any question about your specific freight,
+                call us or send a message and we will get back to you promptly.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="tel:0603160484"
+                  href="tel:0723089983"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#b91c1c] text-white font-bold text-sm hover:bg-red-800 transition-colors"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
                   </svg>
-                  Call 060 316 0484
+                  Call 072 308 9983
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-white font-semibold text-sm hover:border-[#c8a84b] hover:text-[#c8a84b] transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-white font-semibold text-sm hover:border-[#e8a33d] hover:text-[#e8a33d] transition-colors"
                 >
                   Send a Message
                 </Link>
@@ -250,19 +248,19 @@ export default function FAQPage() {
             {/* Quick call card */}
             <div className="bg-[#b91c1c] p-6">
               <p className="text-white/70 text-xs font-bold tracking-[0.25em] uppercase mb-3">
-                Emergency?
+                Urgent Freight?
               </p>
               <p className="text-white font-black text-lg leading-snug mb-4">
-                Generator down?<br />We respond fast.
+                Need it moved today?<br />We dispatch fast.
               </p>
               <a
-                href="tel:0603160484"
+                href="tel:0723089983"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-white text-[#b91c1c] font-black text-base hover:bg-[#f5f4f0] transition-colors"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
                 </svg>
-                060 316 0484
+                072 308 9983
               </a>
             </div>
 
@@ -278,10 +276,10 @@ export default function FAQPage() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="flex items-center justify-between px-5 py-3.5 text-sm text-[#1a1a1a]/70 hover:text-[#c8a84b] hover:bg-white transition-colors group"
+                      className="flex items-center justify-between px-5 py-3.5 text-sm text-[#1a1a1a]/70 hover:text-[#e8a33d] hover:bg-white transition-colors group"
                     >
                       {link.label}
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="opacity-0 group-hover:opacity-100 transition-opacity text-[#c8a84b]" aria-hidden="true">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="opacity-0 group-hover:opacity-100 transition-opacity text-[#e8a33d]" aria-hidden="true">
                         <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </Link>
@@ -302,9 +300,9 @@ export default function FAQPage() {
                   <li key={cat}>
                     <a
                       href={`#${cat.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')}`}
-                      className="flex items-center gap-2.5 px-5 py-3 text-sm text-[#1a1a1a]/65 hover:text-[#c8a84b] hover:bg-[#f5f4f0] transition-colors group"
+                      className="flex items-center gap-2.5 px-5 py-3 text-sm text-[#1a1a1a]/65 hover:text-[#e8a33d] hover:bg-[#f5f4f0] transition-colors group"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#c8a84b]/40 group-hover:bg-[#c8a84b] transition-colors shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#e8a33d]/40 group-hover:bg-[#e8a33d] transition-colors shrink-0" />
                       {cat}
                     </a>
                   </li>
@@ -316,30 +314,30 @@ export default function FAQPage() {
       </div>
 
       {/* ── Bottom CTA ── */}
-      <section className="bg-[#0a0a0a] text-white border-t border-[#c8a84b]/10" aria-label="Contact CTA">
+      <section className="bg-[#0a0a0a] text-white border-t border-[#e8a33d]/10" aria-label="Contact CTA">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h2 className="text-xl md:text-2xl font-black mb-2">
-                Need Generator Service in Gauteng?
+                Need Freight Moved Nationwide?
               </h2>
               <p className="text-white/45 text-sm">
-                Same-day callouts · All brands · All Gauteng areas
+                Same-day dispatch &middot; Full & part loads &middot; Nationwide coverage
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <a
-                href="tel:0603160484"
+                href="tel:0723089983"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#b91c1c] text-white font-black text-base hover:bg-red-800 transition-colors"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
                 </svg>
-                060 316 0484
+                072 308 9983
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-7 py-3.5 border border-white/20 text-white font-semibold text-base hover:border-[#c8a84b] hover:text-[#c8a84b] transition-colors"
+                className="inline-flex items-center justify-center px-7 py-3.5 border border-white/20 text-white font-semibold text-base hover:border-[#e8a33d] hover:text-[#e8a33d] transition-colors"
               >
                 Contact Us
               </Link>
