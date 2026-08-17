@@ -4,20 +4,20 @@ import Image from 'next/image'
 import FAQSchema from '@/components/faq-schema'
 
 export const metadata: Metadata = {
-  title: 'Madimetsa Logistics | Freight Transport, Warehousing & Fleet Management Gauteng',
+  title: 'Madimetsa Logistics | Freight Transport, Warehousing & Fleet Management South Africa',
   description:
-    "Gauteng's trusted logistics partner. Freight transport, warehousing, fleet management and cross-border logistics. Serving Johannesburg, Pretoria, Sandton, Centurion & all Gauteng areas. Call 072 308 9983.",
+    "South Africa's trusted logistics partner. Freight transport, warehousing, fleet management and cross-border logistics, dispatched nationwide from our Gauteng hubs. Call 072 308 9983.",
   keywords: [
-    'logistics company Gauteng',
+    'logistics company South Africa',
+    'nationwide freight transport',
     'freight transport Johannesburg',
     'warehousing Pretoria',
-    'fleet management Gauteng',
+    'fleet management South Africa',
     'cross-border logistics South Africa',
-    'freight forwarding Gauteng',
+    'freight forwarding South Africa',
     'supply chain solutions Johannesburg',
-    'express delivery Gauteng',
-    'contract logistics Sandton',
-    'logistics company near me',
+    'express delivery nationwide',
+    'contract logistics Gauteng',
   ],
   alternates: { canonical: 'https://www.madimetsalogistics.co.za' },
   openGraph: {
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     locale: 'en_ZA',
     url: 'https://www.madimetsalogistics.co.za',
     siteName: 'Madimetsa Logistics',
-    title: 'Madimetsa Logistics | Freight, Warehousing & Fleet Management Gauteng',
-    description: "Gauteng's trusted logistics partner. Freight transport, warehousing, fleet management and cross-border logistics. Call 072 308 9983.",
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Madimetsa Logistics Gauteng', type: 'image/jpeg' }],
+    title: 'Madimetsa Logistics | Freight, Warehousing & Fleet Management South Africa',
+    description: "South Africa's trusted logistics partner. Freight transport, warehousing, fleet management and cross-border logistics, dispatched nationwide. Call 072 308 9983.",
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Madimetsa Logistics South Africa', type: 'image/jpeg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Madimetsa Logistics | Freight, Warehousing & Fleet Management Gauteng',
-    description: 'Freight transport, warehousing and fleet management. Serving all of Gauteng. Call 072 308 9983.',
+    title: 'Madimetsa Logistics | Freight, Warehousing & Fleet Management South Africa',
+    description: 'Freight transport, warehousing and fleet management, dispatched nationwide from our Gauteng hubs. Call 072 308 9983.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -96,7 +96,7 @@ const trustPillars = [
   },
   {
     heading: 'Nationwide Coverage',
-    body: 'Gauteng & cross-border routes',
+    body: 'Nationwide & cross-border routes',
     icon: (
       <svg width="38" height="38" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M21 4L9 20H18L15 32L27 16H18L21 4Z" stroke="#e8a33d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
@@ -130,15 +130,15 @@ const trustPillars = [
 const homepageFAQs = [
   {
     question: 'How quickly can you arrange a pickup or delivery?',
-    answer: 'We offer same-day and next-day dispatch across Gauteng, depending on load size and route. For businesses with recurring freight needs, we can set up scheduled collection times so your goods move on a predictable timetable.',
+    answer: 'We offer same-day and next-day dispatch nationwide, depending on load size and route, with the fastest turnaround on collections from our Gauteng hubs. For businesses with recurring freight needs, we can set up scheduled collection times so your goods move on a predictable timetable.',
   },
   {
     question: 'What types of freight and cargo do you handle?',
-    answer: 'We handle full and part loads across general freight, palletised goods, and contract cargo for businesses of all sizes. Our fleet is maintained and tracked, and we can accommodate both once-off moves and ongoing contract logistics.',
+    answer: 'We handle full and part loads across general freight, palletised goods, and contract cargo for businesses of all sizes. Our fleet is maintained and tracked, and we can accommodate both once off moves and ongoing contract logistics.',
   },
   {
     question: 'What areas do you cover?',
-    answer: 'We cover the entire Gauteng province — Johannesburg, Pretoria, Sandton, Midrand, Centurion, Randburg, Roodepoort, Kempton Park, Boksburg, Benoni, Germiston, Alberton, Edenvale, Krugersdorp, Springs, Soweto, Fourways and Vereeniging — plus cross-border routes into the wider SADC region.',
+    answer: 'We operate from hubs across the entire Gauteng province, including Johannesburg, Pretoria, Sandton, Midrand, Centurion, Randburg, Roodepoort, Kempton Park, Boksburg, Benoni, Germiston, Alberton, Edenvale, Krugersdorp, Springs, Soweto, Fourways and Vereeniging, and dispatch nationwide plus cross-border into the wider SADC region.',
   },
 ]
 
@@ -151,12 +151,12 @@ const whyReasons = [
   {
     num: '02',
     title: 'Same-Day & Next-Day Dispatch',
-    body: 'Need something moved fast? We prioritise urgent freight across Gauteng, with same-day and next-day options available on most routes.',
+    body: 'Need something moved fast? We prioritise urgent freight nationwide, with same-day and next-day options available on most routes.',
   },
   {
     num: '03',
     title: 'End-to-End Handling',
-    body: 'From collection to warehousing to final delivery, we manage the full chain — so you deal with one partner, not several.',
+    body: 'From collection to warehousing to final delivery, we manage the full chain, so you deal with one partner, not several.',
   },
   {
     num: '04',
@@ -166,7 +166,7 @@ const whyReasons = [
   {
     num: '05',
     title: 'Dependable, Professional Service',
-    body: 'Honest communication and a team that treats your cargo like it matters — because to your business, it does.',
+    body: 'Honest communication and a team that treats your cargo like it matters, because to your business, it does.',
   },
 ]
 
@@ -177,14 +177,22 @@ const localBusinessSchema = {
       '@type': 'LocalBusiness',
       '@id': 'https://www.madimetsalogistics.co.za/#business',
       name: 'Madimetsa Logistics',
-      description: 'Freight transport, warehousing, fleet management and cross-border logistics across Gauteng.',
+      description: 'Freight transport, warehousing, fleet management and cross-border logistics, serving businesses across South Africa.',
       url: 'https://www.madimetsalogistics.co.za',
       telephone: '+27723089983',
       email: 'info@madimetsalogistics.co.za',
       priceRange: '$$',
       currenciesAccepted: 'ZAR',
       paymentAccepted: 'Cash, EFT',
-      areaServed: { '@type': 'State', name: 'Gauteng', containsPlace: areas.map((a) => ({ '@type': 'City', name: a.name })) },
+      areaServed: {
+        '@type': 'Country',
+        name: 'South Africa',
+        containsPlace: {
+          '@type': 'State',
+          name: 'Gauteng',
+          containsPlace: areas.map((a) => ({ '@type': 'City', name: a.name })),
+        },
+      },
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Logistics Services',
@@ -213,7 +221,7 @@ export default function HomePage() {
       ═══════════════════════════════════════════════════════════════ */}
       <section
         className="relative overflow-hidden bg-[#0a0a0a] min-h-[88vh] flex flex-col"
-        aria-label="Madimetsa Logistics Gauteng"
+        aria-label="Madimetsa Logistics South Africa"
       >
         <div className="absolute inset-0 z-0">
           <Image
@@ -234,7 +242,7 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 w-full">
             <div className="max-w-2xl">
               <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-6">
-                Gauteng&apos;s Trusted Logistics Partner
+                South Africa&apos;s Trusted Logistics Partner
               </p>
               <h1 className="font-black text-white leading-[1.0] mb-3" style={{ fontSize: 'clamp(2.6rem, 6.5vw, 5rem)' }}>
                 Freight Moved.<br />On Time.
@@ -243,8 +251,9 @@ export default function HomePage() {
                 Every Load.<br />Every Route.
               </p>
               <p className="text-white/65 text-base md:text-lg leading-relaxed mb-10 max-w-md">
-                Freight transport, warehousing and fleet management you can rely on —
-                across Gauteng and beyond.
+                Freight transport, warehousing and fleet management you can rely on,
+                dispatched nationwide from our Gauteng hubs with cross-border routes
+                into the wider SADC region.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -358,7 +367,7 @@ export default function HomePage() {
                 {/* Overlay label */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a0a0a]/90 to-transparent px-5 py-6">
                   <p className="text-white font-black text-lg leading-tight">Nationwide Fleet.<br />We Deliver Anywhere.</p>
-                  <p className="text-white/55 text-xs mt-1">Direct collection — no third-party handoffs</p>
+                  <p className="text-white/55 text-xs mt-1">Direct collection, no third-party handoffs</p>
                 </div>
               </div>
 
@@ -392,7 +401,7 @@ export default function HomePage() {
             <div className="relative min-h-[420px] lg:min-h-full overflow-hidden">
               <Image
                 src="/images/hero-madimetsa-logistics-truck.png"
-                alt="Madimetsa Logistics fleet on the road in Gauteng"
+                alt="Madimetsa Logistics fleet on the road"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -402,7 +411,7 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { value: '18', label: 'Gauteng Areas Covered' },
+                    { value: '18', label: 'Gauteng Hubs' },
                     { value: '24/7', label: 'Dispatch Support' },
                     { value: 'GPS', label: 'Fleet Tracking' },
                     { value: '100%', label: 'Insured Loads' },
@@ -420,7 +429,7 @@ export default function HomePage() {
             <div className="py-16 md:py-20 px-8 md:px-12 lg:px-14">
               <p className="text-[#e8a33d] text-[11px] font-bold tracking-[0.35em] uppercase mb-4">Why Choose Us</p>
               <h2 id="why-us-heading" className="text-3xl md:text-4xl font-black text-white leading-tight mb-2">
-                Why Gauteng<br />Businesses Trust Us
+                Why Businesses Across<br />South Africa Trust Us
               </h2>
               <div className="w-10 h-[3px] bg-[#e8a33d] mb-10" />
 
@@ -469,7 +478,7 @@ export default function HomePage() {
             <div>
               <p className="text-[#e8a33d] text-[11px] font-bold tracking-[0.35em] uppercase mb-3">Where We Work</p>
               <h2 id="areas-heading" className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1a1a1a] leading-tight">
-                Freight & Logistics<br />Across All of Gauteng
+                Our Gauteng Hubs,<br />Nationwide Reach
               </h2>
             </div>
             <Link
@@ -534,9 +543,10 @@ export default function HomePage() {
           </div>
 
           <p className="text-[#1a1a1a]/45 text-sm max-w-2xl leading-relaxed">
-            Our fleet moves freight across all of Gauteng — direct collection and
-            delivery, no third-party handoffs. From Sandton corporate parks to
-            Vereeniging industrial zones and everywhere in between.
+            Our fleet dispatches nationwide from hubs across Gauteng, with direct
+            collection and delivery and no third-party handoffs. From Sandton
+            corporate parks to Vereeniging industrial zones, and every province
+            beyond.
           </p>
         </div>
       </section>
@@ -559,8 +569,8 @@ export default function HomePage() {
                 Need It Moved?<br />We Dispatch Fast.
               </h2>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">
-                Same-day and next-day dispatch across all of Gauteng. Tracked fleet,
-                direct routes, no third-party handoffs.
+                Same-day and next-day dispatch nationwide. Tracked fleet, direct
+                routes, no third-party handoffs.
               </p>
             </div>
             <div className="flex flex-col items-start md:items-end gap-3 shrink-0">
@@ -608,17 +618,17 @@ export default function HomePage() {
             <div className="order-1 md:order-2">
               <p className="text-[#e8a33d] text-[11px] font-bold tracking-[0.35em] uppercase mb-4">Pricing</p>
               <h2 id="cost-heading" className="text-2xl md:text-3xl lg:text-4xl font-black text-[#1a1a1a] mb-5 leading-tight">
-                What Does Freight &<br />Logistics Cost in Gauteng?
+                What Does Nationwide<br />Freight Cost?
               </h2>
               <div className="w-10 h-0.5 bg-[#e8a33d] mb-6" />
               <p className="text-base leading-relaxed text-[#1a1a1a]/65 mb-4">
                 Costs vary depending on load size, distance, route and turnaround time.
-                A short local delivery is a fraction of the cost of a full-load
+                A short local delivery is a fraction of the cost of a full load
                 cross-border haul or an ongoing contract logistics arrangement.
               </p>
               <p className="text-base leading-relaxed text-[#1a1a1a]/65 mb-8">
                 We provide honest written quotes before any freight moves. A clear
-                assessment, a clear number, then you decide — no surprise charges
+                assessment, a clear number, then you decide, with no surprise charges
                 on the invoice.
               </p>
               <Link
@@ -651,7 +661,7 @@ export default function HomePage() {
               <div className="w-10 h-0.5 bg-[#e8a33d] mb-6" />
               <p className="text-[#1a1a1a]/50 text-sm leading-relaxed mb-8 max-w-xs">
                 Everything you need to know about freight, delivery timelines and
-                coverage in Gauteng — answered by our team.
+                nationwide coverage, answered by our team.
               </p>
               <Link
                 href="/faq"
@@ -702,7 +712,7 @@ export default function HomePage() {
                 Ready to Get Your Freight Moving?
               </h2>
               <p className="text-white/35 text-sm">
-                Once-off or ongoing — reliable dispatch across all of Gauteng.
+                Once off or ongoing, reliable dispatch nationwide.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
