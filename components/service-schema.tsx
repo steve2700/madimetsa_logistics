@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.generatorrepairservices.co.za'
+const BASE_URL = 'https://www.madimetsalogistics.co.za'
 const BUSINESS_ID = `${BASE_URL}/#business`
 
 interface ServiceSchemaProps {
@@ -13,7 +13,7 @@ export default function ServiceSchema({
   name,
   description,
   url,
-  serviceType = 'Generator Repair Service',
+  serviceType = 'Logistics Service',
 }: ServiceSchemaProps) {
   if (!name?.trim() || !description?.trim() || !url?.trim()) return null
 
@@ -28,25 +28,21 @@ export default function ServiceSchema({
     provider: {
       '@type': 'LocalBusiness',
       '@id': BUSINESS_ID,
-      name: 'Generator Repair Services',
-      telephone: '+27603160484',
-      email: 'info@generatorrepairservices.co.za',
+      name: 'Madimetsa Logistics',
+      telephone: '+27723089983',
+      email: 'info@madimetsalogistics.co.za',
       url: BASE_URL,
     },
     areaServed: {
-      '@type': 'State',
-      name: 'Gauteng',
-      containedInPlace: {
-        '@type': 'Country',
-        name: 'South Africa',
-        sameAs: 'https://www.wikidata.org/wiki/Q258',
-      },
+      '@type': 'Country',
+      name: 'South Africa',
+      sameAs: 'https://www.wikidata.org/wiki/Q258',
     },
     availableChannel: {
       '@type': 'ServiceChannel',
       servicePhone: {
         '@type': 'ContactPoint',
-        telephone: '+27603160484',
+        telephone: '+27723089983',
         contactType: 'customer service',
         areaServed: 'ZA',
         availableLanguage: 'English',
