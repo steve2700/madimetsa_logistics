@@ -4,24 +4,23 @@ import Image from 'next/image'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'About Us | Generator Repair Services Gauteng — 15+ Years Experience',
+  title: 'About Us | Madimetsa Logistics South Africa',
   description:
-    "Gauteng's most trusted generator repair specialists since 2009. Factory-certified technicians, same-day emergency response, transparent pricing and a workmanship guarantee. Serving Johannesburg, Pretoria, Sandton & all of Gauteng.",
+    "South Africa's trusted logistics partner. Tracked fleet, transparent pricing, nationwide dispatch from our Gauteng hubs and cross-border routes into the wider SADC region.",
   keywords: [
-    'about generator repair services Gauteng',
-    'generator technicians Johannesburg',
-    'certified generator repair specialists',
-    'trusted generator service Gauteng',
-    'generator repair company Johannesburg',
-    'professional generator maintenance Gauteng',
+    'about Madimetsa Logistics',
+    'logistics company South Africa',
+    'freight transport company Gauteng',
+    'trusted logistics partner South Africa',
+    'freight company Johannesburg',
   ],
   alternates: {
-    canonical: 'https://www.generatorrepairservices.co.za/about',
+    canonical: 'https://www.madimetsalogistics.co.za/about',
   },
   openGraph: {
-    title: 'About Generator Repair Services | Gauteng\'s Trusted Specialists',
-    description: '15+ years repairing generators across Gauteng. Certified technicians, same-day callouts, workmanship guarantee. Call 060 316 0484.',
-    url: 'https://www.generatorrepairservices.co.za/about',
+    title: 'About Madimetsa Logistics | South Africa\'s Trusted Logistics Partner',
+    description: 'Tracked fleet, transparent pricing and nationwide dispatch. Call 072 308 9983.',
+    url: 'https://www.madimetsalogistics.co.za/about',
     type: 'website',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -30,71 +29,71 @@ export const metadata: Metadata = {
 const aboutSchema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
-  '@id': 'https://www.generatorrepairservices.co.za/about',
-  name: 'About Generator Repair Services',
-  url: 'https://www.generatorrepairservices.co.za/about',
+  '@id': 'https://www.madimetsalogistics.co.za/about',
+  name: 'About Madimetsa Logistics',
+  url: 'https://www.madimetsalogistics.co.za/about',
   mainEntity: {
     '@type': 'LocalBusiness',
-    '@id': 'https://www.generatorrepairservices.co.za/#business',
-    name: 'Generator Repair Services',
-    foundingDate: '2009',
-    description: 'Professional generator repair, servicing and maintenance across Gauteng.',
-    telephone: '+27603160484',
-    email: 'info@generatorrepairservices.co.za',
-    url: 'https://www.generatorrepairservices.co.za',
-    areaServed: { '@type': 'State', name: 'Gauteng' },
+    '@id': 'https://www.madimetsalogistics.co.za/#business',
+    name: 'Madimetsa Logistics',
+    description: 'Freight transport, warehousing, fleet management and cross-border logistics, serving businesses across South Africa.',
+    telephone: '+27723089983',
+    email: 'info@madimetsalogistics.co.za',
+    url: 'https://www.madimetsalogistics.co.za',
+    areaServed: { '@type': 'Country', name: 'South Africa' },
   },
 }
 
 const stats = [
-  { value: '15+', label: 'Years in Business' },
-  { value: '18', label: 'Gauteng Areas Covered' },
-  { value: '2–4hr', label: 'Emergency Response' },
-  { value: '100%', label: 'Workmanship Guaranteed' },
+  { value: '18', label: 'Gauteng Hubs' },
+  { value: 'Nationwide', label: 'Dispatch Network' },
+  { value: 'GPS', label: 'Fleet Tracking' },
+  { value: '100%', label: 'Insured Loads' },
 ]
 
 const pillars = [
   {
-    heading: '15+ Years Experience',
-    body: 'Decades of hands-on work across every generator brand and size in South Africa — from small residential petrol units to large industrial diesel standby systems.',
+    heading: 'Tracked, Maintained Fleet',
+    body: 'Every vehicle in our fleet is regularly serviced and tracked, so you always know where your freight is and when it will arrive.',
   },
   {
-    heading: 'Same-Day Emergency Response',
-    body: 'When your generator fails during loadshedding, we mobilise fast. Most Gauteng callouts receive an on-site technician within 2–4 hours of your call.',
+    heading: 'Nationwide Dispatch Network',
+    body: 'Our Gauteng hubs connect to every major centre in South Africa, with same-day and next-day options on most routes.',
   },
   {
     heading: 'Transparent Pricing',
-    body: 'You receive a clear written quote before a single bolt is turned. No hidden fees, no surprise call-out charges — just honest pricing every time.',
+    body: 'You receive a clear written quote before a single load moves. No hidden fees, no surprise charges, just honest pricing every time.',
   },
   {
-    heading: 'Workmanship Guarantee',
-    body: 'Every repair we carry out is backed by a workmanship guarantee. If something we fixed fails again, we return and resolve it — no arguments, no charge.',
+    heading: 'Dependable Service Guarantee',
+    body: 'If something goes wrong with a delivery we handled, we make it right. No arguments, no passing the blame to a third party.',
   },
   {
-    heading: 'Factory-Certified Technicians',
-    body: 'Our team holds certifications across Cummins, Perkins, Caterpillar, Deutz, Volvo, FG Wilson and more. Your equipment is always in qualified hands.',
+    heading: 'Experienced Logistics Team',
+    body: 'Our team plans routes, manages fleet maintenance and handles cargo with the care that comes from doing this work every day.',
   },
   {
-    heading: 'Mobile Workshop Fleet',
-    body: 'Our vehicles are stocked with diagnostic tools and common failure parts. Most repairs are completed on-site on the first visit — no towing, no delays.',
+    heading: 'Owned Fleet, No Subcontracting',
+    body: 'Your freight stays in our hands from collection to delivery. No handoffs to third party carriers, no lost accountability.',
   },
 ]
 
-const expertise = [
-  'Complete generator repairs and rebuilds',
-  'Preventive maintenance and scheduled servicing',
-  'Emergency breakdown callouts',
-  'AVR and control panel diagnostics',
-  'Alternator testing and rewinding',
-  'Fuel system repairs and cleaning',
-  'Load bank testing and certification',
-  'New generator installation and commissioning',
+const services = [
+  { href: '/freight-transport', label: 'Freight Transport' },
+  { href: '/warehousing', label: 'Warehousing & Distribution' },
+  { href: '/fleet-management', label: 'Fleet Management' },
+  { href: '/supply-chain-solutions', label: 'Supply Chain Solutions' },
+  { href: '/cross-border-logistics', label: 'Cross-Border Logistics' },
+  { href: '/express-delivery', label: 'Express Delivery' },
+  { href: '/contract-logistics', label: 'Contract Logistics' },
+  { href: '/freight-forwarding', label: 'Freight Forwarding' },
 ]
 
-const brands = [
-  'Cummins', 'Caterpillar', 'Perkins', 'FG Wilson',
-  'Deutz', 'Volvo', 'John Deere', 'SDMO',
-  'Kipor', 'Honda', 'Yamaha', 'Atlas Copco',
+const network = [
+  { name: 'Gauteng Hubs', body: 'Our home base, covering Johannesburg, Pretoria, Sandton, Midrand, Centurion and 13 other Gauteng centres.' },
+  { name: 'Durban', body: 'Regular routes connecting our Gauteng hubs to Durban and the wider KwaZulu-Natal region.' },
+  { name: 'Cape Town', body: 'Regular routes connecting our Gauteng hubs to Cape Town and the wider Western Cape region.' },
+  { name: 'Cross-Border', body: 'Freight forwarding into the wider SADC region for businesses trading beyond South Africa.' },
 ]
 
 const areas = [
@@ -137,8 +136,8 @@ export default function AboutPage() {
       <section className="relative bg-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero_generator_repair_services.png"
-            alt="Generator Repair Services team working on industrial generators across Gauteng"
+            src="/images/hero-madimetsa-logistics-truck.png"
+            alt="Madimetsa Logistics fleet on the road across South Africa"
             fill
             priority
             className="object-cover object-center opacity-20"
@@ -147,27 +146,27 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/55" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-14 md:py-20">
-          <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">
+          <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">
             Who We Are
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5 max-w-3xl">
-            Gauteng&apos;s Trusted Generator Repair Specialists
+            South Africa&apos;s Trusted Logistics Partner
           </h1>
           <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl">
-            Founded in 2009, Generator Repair Services has spent 15+ years building a
-            reputation for fast, honest and expert generator repair and maintenance across
-            all of Gauteng province.
+            Madimetsa Logistics moves freight for businesses across South Africa,
+            dispatched nationwide from our Gauteng hubs with cross-border routes
+            into the wider SADC region.
           </p>
         </div>
       </section>
 
       {/* ── Stats bar ── */}
-      <section className="bg-[#111111] border-b border-[#c8a84b]/15" aria-label="Company statistics">
+      <section className="bg-[#111111] border-b border-[#e8a33d]/15" aria-label="Company statistics">
         <div className="max-w-6xl mx-auto px-6 py-8">
           <dl className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-white/[0.07]">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col items-center text-center md:px-8">
-                <dt className="text-3xl md:text-4xl font-black text-[#c8a84b] mb-1">{s.value}</dt>
+                <dt className="text-2xl md:text-3xl font-black text-[#e8a33d] mb-1">{s.value}</dt>
                 <dd className="text-white/45 text-xs font-medium uppercase tracking-wider">{s.label}</dd>
               </div>
             ))}
@@ -180,41 +179,39 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div>
-              <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">Our Story</p>
+              <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">Our Story</p>
               <h2 id="story-heading" className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6 leading-tight">
-                Built on Trust,<br />Driven by Expertise
+                Built on Trust,<br />Driven by Reliability
               </h2>
-              <div className="w-10 h-0.5 bg-[#c8a84b] mb-6" />
+              <div className="w-10 h-0.5 bg-[#e8a33d] mb-6" />
               <div className="space-y-4 text-[#1a1a1a]/70 text-base leading-relaxed">
                 <p>
-                  Generator Repair Services was founded in 2009 with a straightforward
-                  mission: give Gauteng businesses and homeowners a generator repair
-                  partner they could genuinely rely on — not one that kept them waiting,
-                  overcharged them, or sent unqualified technicians.
+                  Madimetsa Logistics was built on a straightforward mission, give South
+                  African businesses a logistics partner they can genuinely rely on, not
+                  one that keeps them waiting, overcharges them, or loses track of their
+                  freight along the way.
                 </p>
                 <p>
-                  Over 15 years, our team has grown from a handful of technicians to a
-                  Gauteng-wide mobile service fleet, serving thousands of clients across
-                  the province. We have repaired generators on game farms, in data centres,
-                  at hospitals, on construction sites and in suburban homes — every
-                  environment, every brand, every size.
+                  Our team plans every route, maintains every vehicle and handles every
+                  load with the same standard, whether it is a single pallet moving across
+                  Gauteng or a full load crossing into the wider SADC region.
                 </p>
                 <p>
-                  What has not changed is the commitment to arriving prepared, diagnosing
-                  accurately, quoting honestly, and fixing it right the first time.
+                  What matters most has not changed, arrive prepared, quote honestly, and
+                  deliver it right the first time.
                 </p>
               </div>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden group">
               <Image
-                src="/images/generator-repair-technician.png"
-                alt="Generator Repair Services certified technician working on a diesel generator in Gauteng"
+                src="/images/hero-madimetsa-logistics-truck.png"
+                alt="Madimetsa Logistics truck on route"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#c8a84b]" />
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#c8a84b]" />
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8a33d]" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8a33d]" />
             </div>
           </div>
         </div>
@@ -223,14 +220,14 @@ export default function AboutPage() {
       {/* ── Why choose us — 6 pillars ── */}
       <section className="py-16 md:py-24 bg-[#f5f4f0]" aria-labelledby="why-heading">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">Why Choose Us</p>
+          <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">Why Choose Us</p>
           <h2 id="why-heading" className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-12 max-w-xl leading-tight">
             What Sets Us Apart
           </h2>
           <dl className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1a1a1a]/8">
             {pillars.map((p) => (
               <div key={p.heading} className="bg-white p-7 md:p-8">
-                <div className="w-8 h-[2px] bg-[#c8a84b] mb-5" />
+                <div className="w-8 h-[2px] bg-[#e8a33d] mb-5" />
                 <dt className="font-bold text-[#1a1a1a] text-base mb-3">{p.heading}</dt>
                 <dd className="text-[#1a1a1a]/60 text-sm leading-relaxed">{p.body}</dd>
               </div>
@@ -239,71 +236,60 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Expertise + brands ── */}
-      <section className="py-16 md:py-24 bg-white" aria-labelledby="expertise-heading">
+      {/* ── Services + national network ── */}
+      <section className="py-16 md:py-24 bg-white" aria-labelledby="services-heading">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
 
-            {/* Expertise list */}
+            {/* Services list */}
             <div>
-              <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">What We Do</p>
-              <h2 id="expertise-heading" className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6 leading-tight">
-                Our Areas of Expertise
+              <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">What We Do</p>
+              <h2 id="services-heading" className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6 leading-tight">
+                Our Services
               </h2>
-              <div className="w-10 h-0.5 bg-[#c8a84b] mb-7" />
+              <div className="w-10 h-0.5 bg-[#e8a33d] mb-7" />
               <p className="text-[#1a1a1a]/65 text-base leading-relaxed mb-7">
-                Our technicians are factory-trained and certified across all major brands.
-                We handle every aspect of generator care in-house — no subcontracting,
-                no outsourcing critical work.
+                We handle every part of the logistics chain in-house, no subcontracting,
+                no outsourcing critical work to third parties.
               </p>
               <ul className="space-y-3">
-                {expertise.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-[#1a1a1a]/75">
-                    <span className="mt-0.5 shrink-0">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <circle cx="8" cy="8" r="7.5" stroke="#c8a84b" strokeWidth="1"/>
-                        <path d="M5 8l2 2 4-4" stroke="#c8a84b" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </span>
-                    {item}
+                {services.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="flex items-start gap-3 text-sm text-[#1a1a1a]/75 hover:text-[#e8a33d] transition-colors"
+                    >
+                      <span className="mt-0.5 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                          <circle cx="8" cy="8" r="7.5" stroke="#e8a33d" strokeWidth="1"/>
+                          <path d="M5 8l2 2 4-4" stroke="#e8a33d" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Brands */}
+            {/* Network */}
             <div>
-              <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">Brands We Service</p>
+              <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">Where We Operate</p>
               <h3 className="text-2xl font-bold text-[#1a1a1a] mb-6">
-                All Major Generator Brands
+                Our Nationwide Network
               </h3>
-              <div className="w-10 h-0.5 bg-[#c8a84b] mb-7" />
+              <div className="w-10 h-0.5 bg-[#e8a33d] mb-7" />
               <p className="text-[#1a1a1a]/65 text-sm leading-relaxed mb-7">
-                Whether your generator is a small residential Honda or a large industrial
-                Cummins, our technicians have the training and tooling to service it correctly.
+                We dispatch from our Gauteng hubs to every major centre in South Africa,
+                with dedicated routes to Durban and Cape Town.
               </p>
-              <div className="grid grid-cols-3 gap-2">
-                {brands.map((brand) => (
-                  <div
-                    key={brand}
-                    className="px-3 py-3 bg-[#f5f4f0] border border-[#1a1a1a]/8 text-center text-sm font-semibold text-[#1a1a1a]/70"
-                  >
-                    {brand}
+              <div className="space-y-4">
+                {network.map((n) => (
+                  <div key={n.name} className="px-4 py-4 bg-[#f5f4f0] border border-[#1a1a1a]/8">
+                    <p className="text-sm font-bold text-[#1a1a1a] mb-1">{n.name}</p>
+                    <p className="text-[#1a1a1a]/55 text-xs leading-relaxed">{n.body}</p>
                   </div>
                 ))}
-              </div>
-
-              {/* Image below brands */}
-              <div className="relative aspect-[16/9] mt-8 overflow-hidden group">
-                <Image
-                  src="/images/generator-repairs.png"
-                  alt="Certified generator repair workshop servicing all major brands in Gauteng"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute top-0 left-0 w-7 h-7 border-t-2 border-l-2 border-[#c8a84b]" />
-                <div className="absolute bottom-0 right-0 w-7 h-7 border-b-2 border-r-2 border-[#c8a84b]" />
               </div>
             </div>
           </div>
@@ -314,24 +300,24 @@ export default function AboutPage() {
       <section className="py-14 bg-[#f5f4f0] border-t border-[#1a1a1a]/8" aria-labelledby="areas-heading">
         <div className="max-w-6xl mx-auto px-6">
           <h2 id="areas-heading" className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3">
-            Areas We Serve
+            Our Gauteng Hubs
           </h2>
           <p className="text-[#1a1a1a]/55 text-base mb-8 max-w-2xl">
-            We provide generator repair services throughout Gauteng province. Our mobile
-            technicians travel to your site — no drop-off required.
+            We operate from hubs across Gauteng province, with nationwide dispatch to
+            every major centre in South Africa, including Durban and Cape Town.
           </p>
           <nav aria-label="Service areas">
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
               {areas.map((area) => (
                 <li key={area.slug}>
                   <Link
-                    href={`/generator-repairs-${area.slug}`}
-                    className="group flex items-center justify-between px-4 py-3 bg-white border border-[#1a1a1a]/10 hover:border-[#c8a84b] transition-colors"
+                    href={`/logistics-${area.slug}`}
+                    className="group flex items-center justify-between px-4 py-3 bg-white border border-[#1a1a1a]/10 hover:border-[#e8a33d] transition-colors"
                   >
-                    <span className="text-sm font-medium text-[#1a1a1a] group-hover:text-[#c8a84b] transition-colors">
+                    <span className="text-sm font-medium text-[#1a1a1a] group-hover:text-[#e8a33d] transition-colors">
                       {area.name}
                     </span>
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="text-[#c8a84b] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="text-[#e8a33d] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
                       <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </Link>
@@ -340,39 +326,39 @@ export default function AboutPage() {
             </ul>
           </nav>
           <div className="mt-6">
-            <Link href="/areas" className="text-sm font-semibold tracking-wide uppercase text-[#c8a84b] hover:text-[#1a1a1a] transition-colors">
-              View full service area information
+            <Link href="/areas" className="text-sm font-semibold tracking-wide uppercase text-[#e8a33d] hover:text-[#1a1a1a] transition-colors">
+              View full coverage information
             </Link>
           </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#0a0a0a] text-white" aria-label="Contact Generator Repair Services">
+      <section className="bg-[#0a0a0a] text-white" aria-label="Contact Madimetsa Logistics">
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-18">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-xl">
               <h2 className="text-2xl md:text-3xl font-black mb-3">
-                Ready to Get Your Generator Fixed?
+                Ready to Get Your Freight Moving?
               </h2>
               <p className="text-white/55 text-base leading-relaxed">
-                Contact us for a free assessment and quote. Emergency callouts available
-                across all of Gauteng — call now and we will get a technician to you today.
+                Contact us for a free quote. Nationwide dispatch, with the fastest
+                turnaround on collections from our Gauteng hubs.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <a
-                href="tel:0603160484"
+                href="tel:0723089983"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#b91c1c] text-white font-black text-lg hover:bg-red-800 transition-colors"
               >
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
                 </svg>
-                060 316 0484
+                072 308 9983
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-semibold hover:border-[#c8a84b] hover:text-[#c8a84b] transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-semibold hover:border-[#e8a33d] hover:text-[#e8a33d] transition-colors"
               >
                 Contact Us
               </Link>
