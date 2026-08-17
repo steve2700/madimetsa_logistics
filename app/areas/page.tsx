@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/breadcrumbs'
 export const metadata: Metadata = {
   title: 'Where We Operate | Madimetsa Logistics South Africa',
   description:
-    'Freight transport, warehousing and fleet management dispatched nationwide from our Gauteng hubs, with routes to Durban, Cape Town and cross-border into the SADC region. Call 072 308 9983.',
+    'Freight transport, warehousing and fleet management dispatched nationwide from our Gauteng hubs, with routes to Durban, Cape Town, Gqeberha, Bloemfontein and cross-border into the SADC region. Call 072 308 9983.',
   keywords: [
     'logistics company Gauteng',
     'nationwide freight transport South Africa',
@@ -51,94 +51,120 @@ const areaSchema = {
       },
       { '@type': 'City', name: 'Durban', containedInPlace: { '@type': 'State', name: 'KwaZulu-Natal' } },
       { '@type': 'City', name: 'Cape Town', containedInPlace: { '@type': 'State', name: 'Western Cape' } },
+      { '@type': 'City', name: 'Gqeberha', containedInPlace: { '@type': 'State', name: 'Eastern Cape' } },
+      { '@type': 'City', name: 'Bloemfontein', containedInPlace: { '@type': 'State', name: 'Free State' } },
     ],
   },
 }
 
-// Gauteng areas grouped by region for better UX and semantic SEO
+/**
+ * hasPage: true  -> area has a dedicated route, renders as a Link
+ * hasPage: false -> no route built yet, renders as a plain label (no href, no 404 risk)
+ * When a new page goes live, just flip this to true and add its slug.
+ */
+
+// Gauteng areas grouped by region for UX and semantic SEO
 const regions = [
   {
     name: 'Johannesburg & CBD',
     description: 'The economic heart of South Africa. We serve all Johannesburg suburbs, business districts and industrial zones.',
     areas: [
-      { slug: 'johannesburg', name: 'Johannesburg' },
-      { slug: 'soweto', name: 'Soweto' },
-      { slug: 'randburg', name: 'Randburg' },
-      { slug: 'roodepoort', name: 'Roodepoort' },
-      { slug: 'krugersdorp', name: 'Krugersdorp' },
-      { slug: 'fourways', name: 'Fourways' },
+      { slug: 'johannesburg', name: 'Johannesburg', hasPage: true },
+      { slug: 'soweto', name: 'Soweto', hasPage: false },
+      { slug: 'randburg', name: 'Randburg', hasPage: false },
+      { slug: 'roodepoort', name: 'Roodepoort', hasPage: false },
+      { slug: 'krugersdorp', name: 'Krugersdorp', hasPage: false },
+      { slug: 'fourways', name: 'Fourways', hasPage: false },
     ],
   },
   {
     name: 'Pretoria & North',
     description: 'Full coverage across Pretoria and the northern Gauteng corridor, from Centurion to Midrand.',
     areas: [
-      { slug: 'pretoria', name: 'Pretoria' },
-      { slug: 'centurion', name: 'Centurion' },
-      { slug: 'midrand', name: 'Midrand' },
-      { slug: 'sandton', name: 'Sandton' },
+      { slug: 'pretoria', name: 'Pretoria', hasPage: true },
+      { slug: 'centurion', name: 'Centurion', hasPage: true },
+      { slug: 'midrand', name: 'Midrand', hasPage: false },
+      { slug: 'sandton', name: 'Sandton', hasPage: true },
     ],
   },
   {
     name: 'East Rand',
     description: 'Serving the industrial and business areas of the East Rand, from Kempton Park through to Springs.',
     areas: [
-      { slug: 'kempton-park', name: 'Kempton Park' },
-      { slug: 'boksburg', name: 'Boksburg' },
-      { slug: 'benoni', name: 'Benoni' },
-      { slug: 'germiston', name: 'Germiston' },
-      { slug: 'alberton', name: 'Alberton' },
-      { slug: 'edenvale', name: 'Edenvale' },
-      { slug: 'springs', name: 'Springs' },
+      { slug: 'kempton-park', name: 'Kempton Park', hasPage: false },
+      { slug: 'boksburg', name: 'Boksburg', hasPage: false },
+      { slug: 'benoni', name: 'Benoni', hasPage: false },
+      { slug: 'germiston', name: 'Germiston', hasPage: false },
+      { slug: 'alberton', name: 'Alberton', hasPage: false },
+      { slug: 'edenvale', name: 'Edenvale', hasPage: false },
+      { slug: 'springs', name: 'Springs', hasPage: false },
     ],
   },
   {
     name: 'South Gauteng',
     description: 'Coverage across the Vaal Triangle and southern Gauteng industrial corridor.',
     areas: [
-      { slug: 'vereeniging', name: 'Vereeniging' },
+      { slug: 'vereeniging', name: 'Vereeniging', hasPage: false },
     ],
   },
 ]
 
-// Beyond Gauteng, our dispatch network
+// Beyond Gauteng, our national dispatch network
 const nationalReach = [
   {
     slug: 'durban',
     name: 'Durban',
     province: 'KwaZulu-Natal',
     description: 'Regular routes connecting our Gauteng hubs to Durban and the wider KwaZulu-Natal region.',
+    hasPage: true,
   },
   {
     slug: 'capetown',
     name: 'Cape Town',
     province: 'Western Cape',
     description: 'Regular routes connecting our Gauteng hubs to Cape Town and the wider Western Cape region.',
+    hasPage: true,
+  },
+  {
+    slug: 'gqeberha',
+    name: 'Gqeberha',
+    province: 'Eastern Cape',
+    description: 'Regular routes connecting our Gauteng hubs to Gqeberha (Port Elizabeth) and the wider Eastern Cape region.',
+    hasPage: true,
+  },
+  {
+    slug: 'bloemfontein',
+    name: 'Bloemfontein',
+    province: 'Free State',
+    description: 'Regular routes connecting our Gauteng hubs to Bloemfontein and the wider Free State region.',
+    hasPage: true,
   },
 ]
 
-// Flat list for the full directory, Gauteng plus national reach
+// Flat list for the full directory: Gauteng plus national reach
 const allAreas = [
-  { slug: 'alberton', name: 'Alberton' },
-  { slug: 'benoni', name: 'Benoni' },
-  { slug: 'boksburg', name: 'Boksburg' },
-  { slug: 'centurion', name: 'Centurion' },
-  { slug: 'edenvale', name: 'Edenvale' },
-  { slug: 'fourways', name: 'Fourways' },
-  { slug: 'germiston', name: 'Germiston' },
-  { slug: 'johannesburg', name: 'Johannesburg' },
-  { slug: 'kempton-park', name: 'Kempton Park' },
-  { slug: 'krugersdorp', name: 'Krugersdorp' },
-  { slug: 'midrand', name: 'Midrand' },
-  { slug: 'pretoria', name: 'Pretoria' },
-  { slug: 'randburg', name: 'Randburg' },
-  { slug: 'roodepoort', name: 'Roodepoort' },
-  { slug: 'sandton', name: 'Sandton' },
-  { slug: 'soweto', name: 'Soweto' },
-  { slug: 'springs', name: 'Springs' },
-  { slug: 'vereeniging', name: 'Vereeniging' },
-  { slug: 'durban', name: 'Durban' },
-  { slug: 'capetown', name: 'Cape Town' },
+  { slug: 'alberton', name: 'Alberton', hasPage: false },
+  { slug: 'benoni', name: 'Benoni', hasPage: false },
+  { slug: 'boksburg', name: 'Boksburg', hasPage: false },
+  { slug: 'centurion', name: 'Centurion', hasPage: true },
+  { slug: 'edenvale', name: 'Edenvale', hasPage: false },
+  { slug: 'fourways', name: 'Fourways', hasPage: false },
+  { slug: 'germiston', name: 'Germiston', hasPage: false },
+  { slug: 'johannesburg', name: 'Johannesburg', hasPage: true },
+  { slug: 'kempton-park', name: 'Kempton Park', hasPage: false },
+  { slug: 'krugersdorp', name: 'Krugersdorp', hasPage: false },
+  { slug: 'midrand', name: 'Midrand', hasPage: false },
+  { slug: 'pretoria', name: 'Pretoria', hasPage: true },
+  { slug: 'randburg', name: 'Randburg', hasPage: false },
+  { slug: 'roodepoort', name: 'Roodepoort', hasPage: false },
+  { slug: 'sandton', name: 'Sandton', hasPage: true },
+  { slug: 'soweto', name: 'Soweto', hasPage: false },
+  { slug: 'springs', name: 'Springs', hasPage: false },
+  { slug: 'vereeniging', name: 'Vereeniging', hasPage: false },
+  { slug: 'durban', name: 'Durban', hasPage: true },
+  { slug: 'capetown', name: 'Cape Town', hasPage: true },
+  { slug: 'gqeberha', name: 'Gqeberha', hasPage: true },
+  { slug: 'bloemfontein', name: 'Bloemfontein', hasPage: true },
 ]
 
 const whyPoints = [
@@ -208,7 +234,8 @@ export default function AreasPage() {
           </h1>
           <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
             Our fleet covers every part of Gauteng province, with regular routes to
-            Durban, Cape Town and cross-border into the wider SADC region.
+            Durban, Cape Town, Gqeberha, Bloemfontein and cross-border into the
+            wider SADC region.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
@@ -254,25 +281,33 @@ export default function AreasPage() {
             Beyond Gauteng
           </h2>
           <p className="text-[#1a1a1a]/60 text-lg mb-12 max-w-2xl">
-            Our Gauteng hubs connect to major centres nationwide. Two of our busiest
-            routes have dedicated pages.
+            Our Gauteng hubs connect to major centres nationwide, with dedicated
+            pages for our busiest routes.
           </p>
           <div className="grid sm:grid-cols-2 gap-px bg-[#1a1a1a]/8">
-            {nationalReach.map((city) => (
-              <Link
-                key={city.slug}
-                href={`/logistics-${city.slug}`}
-                className="group bg-[#f5f4f0] hover:bg-[#0a0a0a] transition-colors duration-300 p-7 md:p-8"
-              >
-                <p className="text-xs font-bold tracking-[0.25em] uppercase text-[#e8a33d] mb-3">{city.province}</p>
-                <h3 className="text-2xl font-bold text-[#1a1a1a] group-hover:text-white transition-colors mb-3">
-                  {city.name}
-                </h3>
-                <p className="text-[#1a1a1a]/60 group-hover:text-white/50 text-sm leading-relaxed transition-colors">
-                  {city.description}
-                </p>
-              </Link>
-            ))}
+            {nationalReach.map((city) =>
+              city.hasPage ? (
+                <Link
+                  key={city.slug}
+                  href={`/logistics-${city.slug}`}
+                  className="group bg-[#f5f4f0] hover:bg-[#0a0a0a] transition-colors duration-300 p-7 md:p-8"
+                >
+                  <p className="text-xs font-bold tracking-[0.25em] uppercase text-[#e8a33d] mb-3">{city.province}</p>
+                  <h3 className="text-2xl font-bold text-[#1a1a1a] group-hover:text-white transition-colors mb-3">
+                    {city.name}
+                  </h3>
+                  <p className="text-[#1a1a1a]/60 group-hover:text-white/50 text-sm leading-relaxed transition-colors">
+                    {city.description}
+                  </p>
+                </Link>
+              ) : (
+                <div key={city.slug} className="bg-[#f5f4f0] p-7 md:p-8">
+                  <p className="text-xs font-bold tracking-[0.25em] uppercase text-[#1a1a1a]/35 mb-3">{city.province}</p>
+                  <h3 className="text-2xl font-bold text-[#1a1a1a]/50 mb-3">{city.name}</h3>
+                  <p className="text-[#1a1a1a]/45 text-sm leading-relaxed">{city.description}</p>
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -284,8 +319,8 @@ export default function AreasPage() {
             Our Gauteng Hubs
           </h2>
           <p className="text-[#1a1a1a]/60 text-lg mb-12 max-w-2xl">
-            We group our Gauteng coverage into four regions. Click any area for
-            dedicated service information.
+            We group our Gauteng coverage into four regions. Areas with a
+            dedicated page link through to more detail.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-px bg-[#1a1a1a]/8">
@@ -298,16 +333,24 @@ export default function AreasPage() {
                 </p>
                 <nav aria-label={`Areas in ${region.name}`}>
                   <ul className="flex flex-wrap gap-2">
-                    {region.areas.map((area) => (
-                      <li key={area.slug}>
-                        <Link
-                          href={`/logistics-${area.slug}`}
-                          className="inline-block px-3 py-1.5 bg-[#f5f4f0] border border-[#1a1a1a]/10 text-[#1a1a1a] text-xs font-medium hover:border-[#e8a33d] hover:text-[#e8a33d] transition-colors"
-                        >
-                          {area.name}
-                        </Link>
-                      </li>
-                    ))}
+                    {region.areas.map((area) =>
+                      area.hasPage ? (
+                        <li key={area.slug}>
+                          <Link
+                            href={`/logistics-${area.slug}`}
+                            className="inline-block px-3 py-1.5 bg-[#f5f4f0] border border-[#1a1a1a]/10 text-[#1a1a1a] text-xs font-medium hover:border-[#e8a33d] hover:text-[#e8a33d] transition-colors"
+                          >
+                            {area.name}
+                          </Link>
+                        </li>
+                      ) : (
+                        <li key={area.slug}>
+                          <span className="inline-block px-3 py-1.5 bg-[#f5f4f0] border border-[#1a1a1a]/10 text-[#1a1a1a]/45 text-xs font-medium cursor-default">
+                            {area.name}
+                          </span>
+                        </li>
+                      )
+                    )}
                   </ul>
                 </nav>
               </div>
@@ -327,21 +370,31 @@ export default function AreasPage() {
           </p>
           <nav aria-label="Full list of service areas">
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {allAreas.map((area) => (
-                <li key={area.slug}>
-                  <Link
-                    href={`/logistics-${area.slug}`}
-                    className="group flex items-center justify-between px-4 py-3 border border-[#1a1a1a]/10 bg-[#f5f4f0] hover:border-[#e8a33d] hover:bg-white transition-colors"
-                  >
-                    <span className="text-sm font-medium text-[#1a1a1a] group-hover:text-[#e8a33d] transition-colors">
-                      {area.name}
+              {allAreas.map((area) =>
+                area.hasPage ? (
+                  <li key={area.slug}>
+                    <Link
+                      href={`/logistics-${area.slug}`}
+                      className="group flex items-center justify-between px-4 py-3 border border-[#1a1a1a]/10 bg-[#f5f4f0] hover:border-[#e8a33d] hover:bg-white transition-colors"
+                    >
+                      <span className="text-sm font-medium text-[#1a1a1a] group-hover:text-[#e8a33d] transition-colors">
+                        {area.name}
+                      </span>
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="text-[#e8a33d] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+                        <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={area.slug}>
+                    <span className="flex items-center justify-between px-4 py-3 border border-[#1a1a1a]/10 bg-[#f5f4f0] cursor-default">
+                      <span className="text-sm font-medium text-[#1a1a1a]/45">
+                        {area.name}
+                      </span>
                     </span>
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="text-[#e8a33d] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-                      <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </Link>
-                </li>
-              ))}
+                  </li>
+                )
+              )}
             </ul>
           </nav>
         </div>
