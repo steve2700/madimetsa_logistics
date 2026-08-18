@@ -90,7 +90,7 @@ export default function FreightForwardingPage() {
       <section className="relative bg-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-madimetsa-logistics-truck.png"
+            src="/images/area-crossborder.webp"
             alt="Madimetsa Logistics freight forwarding services"
             fill
             priority

@@ -98,7 +98,7 @@ export default function FreightTransportPage() {
       <section className="relative bg-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-madimetsa-logistics-truck.png"
+            src="/images/hero-truck.webp"
             alt="Madimetsa Logistics truck loaded for a freight transport route"
             fill
             priority

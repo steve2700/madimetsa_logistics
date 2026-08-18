@@ -14,9 +14,9 @@ const areas = [
   { href: '/logistics-johannesburg', label: 'Johannesburg' },
   { href: '/logistics-pretoria', label: 'Pretoria' },
   { href: '/logistics-sandton', label: 'Sandton' },
-  { href: '/logistics-midrand', label: 'Midrand' },
   { href: '/logistics-centurion', label: 'Centurion' },
-  { href: '/logistics-randburg', label: 'Randburg' },
+  { href: '/logistics-durban', label: 'Durban' },
+  { href: '/logistics-capetown', label: 'Cape Town' },
 ]
 
 export default function SiteFooter() {
