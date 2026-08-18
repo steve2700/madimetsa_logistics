@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const heroImages = [
-  { src: '/images/Industrial_Generator_Repair_Team.webp',               alt: 'Industrial generator repair team on-site in Gauteng' },
-  { src: '/images/2026-06-11_Generator_Preventative_Maintenance.webp',  alt: 'Generator preventative maintenance Gauteng' },
-  { src: '/images/generator-repair-technician-onsite-midrand.webp',     alt: 'Generator repair technician on-site in Midrand' },
-  { src: '/images/generator-repair-services-technicians.webp',          alt: 'Generator Repair Services technician team' },
-  { src: '/images/Technician_Servicing_Generator.webp',                 alt: 'Technician servicing a generator' },
+  { src: '/images/hero-freight-truck-highway.webp',    alt: 'Madimetsa Logistics freight truck travelling at speed on a South African highway' },
+  { src: '/images/hero-truck-loaded-departing.webp',   alt: 'Loaded Madimetsa Logistics truck departing a Gauteng distribution depot' },
+  { src: '/images/hero-fleet-trucks-depot.webp',       alt: 'Row of Madimetsa Logistics trucks lined up at the fleet depot' },
+  { src: '/images/hero-cross-border-highway.webp',     alt: 'Long distance freight truck on an open highway heading to a border post' },
+  { src: '/images/hero-warehouse-loading.webp',        alt: 'Pallets of cargo being loaded into a trailer at a warehouse loading bay' },
 ]
 
 export default function HeroSlideshow() {
@@ -50,7 +50,7 @@ export default function HeroSlideshow() {
             onClick={() => setCurrent(i)}
             aria-label={`Show hero image ${i + 1}`}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === current ? 'bg-[#c8a84b] w-4' : 'bg-white/30 w-1.5 hover:bg-white/60'
+              i === current ? 'bg-[#e8a33d] w-4' : 'bg-white/30 w-1.5 hover:bg-white/60'
             }`}
           />
         ))}

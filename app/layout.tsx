@@ -12,32 +12,32 @@ import OrganizationSchema from '@/components/organization-schema'
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
-const BASE_URL = 'https://www.generatorrepairservices.co.za'
+const BASE_URL = 'https://www.madimetsalogistics.co.za'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: 'Generator Repair Services Gauteng | Expert Repairs, Servicing & Maintenance',
-    template: '%s | Generator Repair Services',
+    default: 'Madimetsa Logistics Gauteng | Freight Transport, Warehousing & Fleet Management',
+    template: '%s | Madimetsa Logistics',
   },
   description:
-    'Professional generator repair, servicing and maintenance across Gauteng. Same-day emergency callouts. All brands — diesel, petrol, industrial. Serving Johannesburg, Pretoria, Sandton & all Gauteng areas. Call 060 316 0484.',
+    'Reliable freight transport, warehousing, fleet management and cross border logistics across South Africa. Based in Gauteng, serving Johannesburg, Pretoria, Durban, Cape Town and beyond. Call 072 308 9983.',
   keywords: [
-    'generator repair Gauteng',
-    'generator repairs Johannesburg',
-    'generator servicing Pretoria',
-    'emergency generator repair Gauteng',
-    'diesel generator repairs',
-    'generator maintenance Gauteng',
-    'generator installation Gauteng',
-    'generator repair near me',
-    'industrial generator repairs Gauteng',
-    'generator repairs Sandton',
+    'logistics company Gauteng',
+    'freight transport South Africa',
+    'warehousing and distribution Johannesburg',
+    'fleet management Gauteng',
+    'cross border logistics South Africa',
+    'express delivery Gauteng',
+    'supply chain solutions',
+    'freight forwarding South Africa',
+    'contract logistics Gauteng',
+    'transport company Johannesburg',
   ],
-  authors: [{ name: 'Generator Repair Services', url: BASE_URL }],
-  creator: 'Generator Repair Services',
-  publisher: 'Generator Repair Services',
+  authors: [{ name: 'Madimetsa Logistics', url: BASE_URL }],
+  creator: 'Madimetsa Logistics',
+  publisher: 'Madimetsa Logistics',
 
   // ── Favicons & icons ──────────────────────────────────────────────
   icons: {
@@ -50,9 +50,6 @@ export const metadata: Metadata = {
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
-    other: [
-      { rel: 'mask-icon', url: '/favicon.ico' },
-    ],
   },
 
   // ── Web app manifest ──────────────────────────────────────────────
@@ -63,16 +60,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_ZA',
     url: BASE_URL,
-    siteName: 'Generator Repair Services',
-    title: 'Generator Repair Services Gauteng | Expert Repairs & Servicing',
+    siteName: 'Madimetsa Logistics',
+    title: 'Madimetsa Logistics Gauteng | Freight Transport, Warehousing & Fleet Management',
     description:
-      'Professional generator repair, servicing and maintenance across Gauteng. Same-day emergency callouts. All brands. Call 060 316 0484.',
+      'Reliable freight transport, warehousing, fleet management and cross border logistics across South Africa. Call 072 308 9983.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Generator Repair Services — Power When You Need It, Fixed Right, The First Time',
+        alt: 'Madimetsa Logistics — freight transport and logistics across South Africa',
         type: 'image/jpeg',
       },
     ],
@@ -81,9 +78,9 @@ export const metadata: Metadata = {
   // ── Twitter / X ───────────────────────────────────────────────────
   twitter: {
     card: 'summary_large_image',
-    title: 'Generator Repair Services Gauteng | Expert Repairs & Servicing',
+    title: 'Madimetsa Logistics Gauteng | Freight Transport & Warehousing',
     description:
-      'Same-day emergency callouts. All brands. Diesel & petrol generators. Serving all of Gauteng. Call 060 316 0484.',
+      'Freight transport, warehousing, fleet management and cross border logistics across South Africa. Call 072 308 9983.',
     images: ['/og-image.jpg'],
   },
 
@@ -106,7 +103,7 @@ export const metadata: Metadata = {
   },
 
   // ── Misc ──────────────────────────────────────────────────────────
-  category: 'Generator Repair Services',
+  category: 'Logistics & Freight Transport',
   formatDetection: {
     telephone: true,
     email: true,
@@ -115,10 +112,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#1a1a1a' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
-  ],
+  themeColor: '#e8a33d',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -133,7 +127,7 @@ export default function RootLayout({
         <OrganizationSchema />
         {/* MS Tile */}
         <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
-        <meta name="msapplication-TileColor" content="#1a1a1a" />
+        <meta name="msapplication-TileColor" content="#0a0a0a" />
         <meta name="msapplication-config" content="none" />
       </head>
       <body className="font-sans antialiased bg-background text-foreground min-h-screen flex flex-col">

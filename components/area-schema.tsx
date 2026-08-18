@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.generatorrepairservices.co.za'
+const BASE_URL = 'https://www.madimetsalogistics.co.za'
 const BUSINESS_ID = `${BASE_URL}/#business`
 
 interface AreaSchemaProps {
@@ -15,11 +15,11 @@ export default function AreaSchema({ areaName, url, suburbs }: AreaSchemaProps) 
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': BUSINESS_ID,
-    name: 'Generator Repair Services',
-    description: `Professional generator repair, servicing and maintenance in ${areaName}, Gauteng. Emergency callouts available — same-day response.`,
+    name: 'Madimetsa Logistics',
+    description: `Freight transport, warehousing, fleet management and cross border logistics serving ${areaName} and surrounding areas.`,
     url: BASE_URL,
-    telephone: '+27603160484',
-    email: 'info@generatorrepairservices.co.za',
+    telephone: '+27723089983',
+    email: 'info@madimetsalogistics.co.za',
     priceRange: '$$',
     currenciesAccepted: 'ZAR',
     paymentAccepted: 'Cash, EFT',
@@ -56,18 +56,16 @@ export default function AreaSchema({ areaName, url, suburbs }: AreaSchemaProps) 
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: `Generator Services in ${areaName}`,
+      name: `Logistics Services in ${areaName}`,
       itemListElement: [
-        'Generator Repairs',
-        'Generator Servicing',
-        'Emergency Callouts',
-        'Maintenance Plans',
-        'Generator Installation',
-        'Load Bank Testing',
-        'AVR Repairs',
-        'Control Panel Repairs',
-        'Fuel System Repairs',
-        'Generator Rewinding',
+        'Freight Transport',
+        'Warehousing & Distribution',
+        'Fleet Management',
+        'Supply Chain Solutions',
+        'Cross Border Logistics',
+        'Express Delivery',
+        'Contract Logistics',
+        'Freight Forwarding',
       ].map((service, i) => ({
         '@type': 'ListItem',
         position: i + 1,
