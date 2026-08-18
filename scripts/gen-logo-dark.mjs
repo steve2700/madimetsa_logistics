@@ -40,10 +40,11 @@ for (let i = 0; i < width * height; i++) {
 }
 
 await sharp(out, { raw: { width, height, channels: c } })
-  // Header renders the logo small; downscale + compress for fast loading
-  // while staying crisp on high-DPI screens.
-  .resize({ width: 700, withoutEnlargement: true })
-  .png({ compressionLevel: 9, palette: true, quality: 90 })
+  // Keep the native resolution and full color fidelity so the truck emblem
+  // stays identical to logo-horizontal.png. Palette quantization is disabled
+  // because it banded the emblem's gradients; max zlib compression still keeps
+  // the file small since the artwork is flat with lots of transparency.
+  .png({ compressionLevel: 9, palette: false, effort: 10 })
   .toFile(join(pub, 'logo-horizontal-light.png'))
 
-console.log('[v0] wrote logo-horizontal-light.png (emblem preserved, wordmark silver)')
+console.log('[v0] wrote logo-horizontal-light.png (emblem preserved at full fidelity, wordmark silver)')
