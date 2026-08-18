@@ -17,41 +17,36 @@ const services = [
 
 const areaRegions = [
   {
-    region: 'Johannesburg & CBD',
+    region: 'Gauteng',
     areas: [
       { slug: 'johannesburg', name: 'Johannesburg' },
-      { slug: 'soweto', name: 'Soweto' },
-      { slug: 'randburg', name: 'Randburg' },
-      { slug: 'roodepoort', name: 'Roodepoort' },
-      { slug: 'krugersdorp', name: 'Krugersdorp' },
-      { slug: 'fourways', name: 'Fourways' },
-    ],
-  },
-  {
-    region: 'Pretoria & North',
-    areas: [
       { slug: 'pretoria', name: 'Pretoria' },
-      { slug: 'centurion', name: 'Centurion' },
-      { slug: 'midrand', name: 'Midrand' },
       { slug: 'sandton', name: 'Sandton' },
+      { slug: 'centurion', name: 'Centurion' },
     ],
   },
   {
-    region: 'East Rand',
+    region: 'KwaZulu-Natal',
     areas: [
-      { slug: 'kempton-park', name: 'Kempton Park' },
-      { slug: 'boksburg', name: 'Boksburg' },
-      { slug: 'benoni', name: 'Benoni' },
-      { slug: 'germiston', name: 'Germiston' },
-      { slug: 'alberton', name: 'Alberton' },
-      { slug: 'edenvale', name: 'Edenvale' },
-      { slug: 'springs', name: 'Springs' },
+      { slug: 'durban', name: 'Durban' },
     ],
   },
   {
-    region: 'South Gauteng',
+    region: 'Western Cape',
     areas: [
-      { slug: 'vereeniging', name: 'Vereeniging' },
+      { slug: 'capetown', name: 'Cape Town' },
+    ],
+  },
+  {
+    region: 'Eastern Cape',
+    areas: [
+      { slug: 'gqeberha', name: 'Gqeberha' },
+    ],
+  },
+  {
+    region: 'Free State',
+    areas: [
+      { slug: 'bloemfontein', name: 'Bloemfontein' },
     ],
   },
 ]
@@ -60,7 +55,6 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services', dropdown: 'services' },
   { href: '/areas', label: 'Areas', dropdown: 'areas' },
-  { href: '/gallery', label: 'Gallery' },
   { href: '/about', label: 'About' },
   { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
@@ -68,8 +62,6 @@ const navLinks = [
 
 type DropdownKey = 'services' | 'areas' | null
 
-// Darker amber for text on a light background — the button/hero amber (#e8a33d)
-// doesn't have enough contrast against white to use for links.
 const GOLD_TEXT = '#b8791f'
 const GOLD_BTN = '#e8a33d'
 
@@ -124,7 +116,7 @@ export default function SiteHeader() {
       <div className="hidden md:block border-b border-black/[0.07] bg-[#f5f4f0]">
         <div className="max-w-6xl mx-auto px-6 h-9 flex justify-between items-center">
           <p className="text-black/45 text-xs tracking-wide">
-            Serving all of Gauteng — Johannesburg · Pretoria · Sandton · Centurion &amp; more
+            Serving South Africa nationwide — Gauteng · KwaZulu-Natal · Western Cape · Eastern Cape &amp; more
           </p>
           <div className="flex items-center gap-5">
             <a
@@ -237,13 +229,13 @@ export default function SiteHeader() {
                     {/* ── Areas dropdown ── */}
                     {link.dropdown === 'areas' && isOpen && (
                       <div
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[560px] bg-white border border-black/[0.08] shadow-2xl"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[480px] bg-white border border-black/[0.08] shadow-2xl"
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
                         <div className="h-[2px]" style={{ background: `linear-gradient(to right, transparent, ${GOLD_BTN}, transparent)` }} />
                         <div className="p-5">
                           <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-black/35 mb-4">
-                            Gauteng Service Areas
+                            Nationwide Service Areas
                           </p>
                           <div className="grid grid-cols-2 gap-x-6">
                             {areaRegions.map((group) => (
@@ -273,7 +265,7 @@ export default function SiteHeader() {
                             <Link href="/areas" style={{ color: GOLD_TEXT }} className="text-[12px] hover:text-black font-semibold tracking-wide uppercase transition-colors">
                               View all areas
                             </Link>
-                            <span className="text-[11px] text-black/30">18 areas covered</span>
+                            <span className="text-[11px] text-black/30">8 areas · 5 provinces</span>
                           </div>
                         </div>
                       </div>
@@ -396,7 +388,7 @@ export default function SiteHeader() {
                         <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     </button>
-                    <div className={`overflow-hidden transition-all duration-300 ${mobileAreasOpen ? 'max-h-[600px]' : 'max-h-0'}`}>
+                    <div className={`overflow-hidden transition-all duration-300 ${mobileAreasOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
                       <div className="pl-4 py-3 space-y-4">
                         {areaRegions.map((group) => (
                           <div key={group.region}>
