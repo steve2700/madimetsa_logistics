@@ -3,24 +3,24 @@ import Link from 'next/link'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Contact Generator Repair Services Gauteng | Free Quote & Emergency Callouts',
+  title: 'Contact Madimetsa Logistics | Freight & Logistics Quote',
   description:
-    'Contact Generator Repair Services for expert generator repairs across Gauteng. Call 060 316 0484 for same-day emergency callouts or request a free quote online.',
+    'Contact Madimetsa Logistics for freight transport, warehousing and logistics across South Africa. Call 072 308 9983 or request a free quote online.',
   keywords: [
-    'contact generator repair Gauteng',
-    'generator repair quote Johannesburg',
-    'emergency generator repair contact',
-    'generator service phone number Gauteng',
-    'generator repairs WhatsApp Gauteng',
-    'free generator repair quote South Africa',
+    'contact logistics company Gauteng',
+    'freight transport quote Johannesburg',
+    'logistics quote South Africa',
+    'transport company phone number Gauteng',
+    'logistics WhatsApp Gauteng',
+    'free freight quote South Africa',
   ],
   alternates: {
-    canonical: 'https://www.generatorrepairservices.co.za/contact',
+    canonical: 'https://www.madimetsalogistics.co.za/contact',
   },
   openGraph: {
-    title: 'Contact Generator Repair Services | Free Quote & Emergency Callouts',
-    description: 'Call 060 316 0484 or request a free quote online. Same-day emergency callouts across all of Gauteng.',
-    url: 'https://www.generatorrepairservices.co.za/contact',
+    title: 'Contact Madimetsa Logistics | Freight & Logistics Quote',
+    description: 'Call 072 308 9983 or request a free quote online. Freight, warehousing and logistics across South Africa.',
+    url: 'https://www.madimetsalogistics.co.za/contact',
     type: 'website',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -29,16 +29,16 @@ export const metadata: Metadata = {
 const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
-  '@id': 'https://www.generatorrepairservices.co.za/contact',
-  name: 'Contact Generator Repair Services',
-  url: 'https://www.generatorrepairservices.co.za/contact',
+  '@id': 'https://www.madimetsalogistics.co.za/contact',
+  name: 'Contact Madimetsa Logistics',
+  url: 'https://www.madimetsalogistics.co.za/contact',
   mainEntity: {
     '@type': 'LocalBusiness',
-    '@id': 'https://www.generatorrepairservices.co.za/#business',
-    name: 'Generator Repair Services',
-    telephone: '+27603160484',
-    email: 'info@generatorrepairservices.co.za',
-    url: 'https://www.generatorrepairservices.co.za',
+    '@id': 'https://www.madimetsalogistics.co.za/#business',
+    name: 'Madimetsa Logistics',
+    telephone: '+27723089983',
+    email: 'info@madimetsalogistics.co.za',
+    url: 'https://www.madimetsalogistics.co.za',
     areaServed: { '@type': 'State', name: 'Gauteng' },
     openingHoursSpecification: [
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '07:00', closes: '18:00' },
@@ -48,16 +48,14 @@ const contactSchema = {
 }
 
 const services = [
-  'Generator Repairs',
-  'Generator Servicing',
-  'Emergency Callout',
-  'Maintenance Plan',
-  'Generator Installation',
-  'Load Bank Testing',
-  'AVR / Voltage Repairs',
-  'Control Panel Repairs',
-  'Fuel System Repairs',
-  'Generator Rewinding',
+  'Freight Transport',
+  'Warehousing & Distribution',
+  'Fleet Management',
+  'Supply Chain Solutions',
+  'Cross Border Logistics',
+  'Express Delivery',
+  'Contract Logistics',
+  'Freight Forwarding',
   'Other',
 ]
 
@@ -83,17 +81,18 @@ export default function ContactPage() {
       </div>
 
       {/* ── Page hero ── */}
-      <section className="bg-[#0a0a0a] border-b border-[#c8a84b]/15">
+      <section className="bg-[#0a0a0a] border-b border-[#e8a33d]/15">
         <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">
+          <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">
             Get In Touch
           </p>
           <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4 max-w-2xl">
-            Contact Generator Repair Services
+            Contact Madimetsa Logistics
           </h1>
           <p className="text-white/55 text-lg max-w-xl leading-relaxed">
-            For emergency callouts, free quotes or general enquiries — we are ready
-            to help. Most Gauteng callouts receive a technician within 2–4 hours.
+            For freight bookings, warehousing enquiries, quotes or general questions —
+            we are ready to help. Most quote requests receive a response within 2 hours
+            during business hours.
           </p>
         </div>
       </section>
@@ -103,19 +102,19 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto px-6 py-5">
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
-              href="tel:0603160484"
+              href="tel:0723089983"
               className="flex items-center justify-center gap-2.5 px-6 py-3 bg-[#b91c1c] text-white font-bold text-sm hover:bg-red-800 transition-colors flex-1 sm:flex-none"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
               </svg>
-              Call 060 316 0484
+              Call 072 308 9983
             </a>
             <a
-              href="https://wa.me/27603160484?text=Hi%2C%20I%20need%20help%20with%20generator%20repairs."
+              href="https://wa.me/27723089983?text=Hi%2C%20I%27d%20like%20a%20freight%20or%20logistics%20quote."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2.5 px-6 py-3 bg-[#1a1a1a] border border-white/10 text-white font-bold text-sm hover:border-[#c8a84b]/40 hover:text-[#c8a84b] transition-colors flex-1 sm:flex-none"
+              className="flex items-center justify-center gap-2.5 px-6 py-3 bg-[#1a1a1a] border border-white/10 text-white font-bold text-sm hover:border-[#e8a33d]/40 hover:text-[#e8a33d] transition-colors flex-1 sm:flex-none"
             >
               {/* WhatsApp SVG */}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -124,8 +123,8 @@ export default function ContactPage() {
               WhatsApp Us
             </a>
             <a
-              href="mailto:info@generatorrepairservices.co.za"
-              className="flex items-center justify-center gap-2.5 px-6 py-3 bg-[#1a1a1a] border border-white/10 text-white font-bold text-sm hover:border-[#c8a84b]/40 hover:text-[#c8a84b] transition-colors flex-1 sm:flex-none"
+              href="mailto:info@madimetsalogistics.co.za"
+              className="flex items-center justify-center gap-2.5 px-6 py-3 bg-[#1a1a1a] border border-white/10 text-white font-bold text-sm hover:border-[#e8a33d]/40 hover:text-[#e8a33d] transition-colors flex-1 sm:flex-none"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -161,10 +160,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-1">Phone</p>
-                      <a href="tel:0603160484" className="text-[#1a1a1a] font-bold text-xl hover:text-[#c8a84b] transition-colors">
-                        060 316 0484
+                      <a href="tel:0723089983" className="text-[#1a1a1a] font-bold text-xl hover:text-[#e8a33d] transition-colors">
+                        072 308 9983
                       </a>
-                      <p className="text-[#1a1a1a]/50 text-sm mt-0.5">Available for emergencies at any hour</p>
+                      <p className="text-[#1a1a1a]/50 text-sm mt-0.5">Available for urgent freight at any hour</p>
                     </div>
                   </div>
 
@@ -178,12 +177,12 @@ export default function ContactPage() {
                     <div>
                       <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-1">WhatsApp</p>
                       <a
-                        href="https://wa.me/27603160484?text=Hi%2C%20I%20need%20help%20with%20generator%20repairs."
+                        href="https://wa.me/27723089983?text=Hi%2C%20I%27d%20like%20a%20freight%20or%20logistics%20quote."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#1a1a1a] font-bold text-xl hover:text-[#c8a84b] transition-colors"
+                        className="text-[#1a1a1a] font-bold text-xl hover:text-[#e8a33d] transition-colors"
                       >
-                        060 316 0484
+                        072 308 9983
                       </a>
                       <p className="text-[#1a1a1a]/50 text-sm mt-0.5">Quick responses via WhatsApp</p>
                     </div>
@@ -191,7 +190,7 @@ export default function ContactPage() {
 
                   {/* Email */}
                   <div className="px-7 py-5 flex items-start gap-5">
-                    <div className="shrink-0 w-10 h-10 flex items-center justify-center bg-[#c8a84b]">
+                    <div className="shrink-0 w-10 h-10 flex items-center justify-center bg-[#e8a33d]">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                         <polyline points="22,6 12,13 2,6"/>
@@ -200,10 +199,10 @@ export default function ContactPage() {
                     <div>
                       <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-1">Email</p>
                       <a
-                        href="mailto:info@generatorrepairservices.co.za"
-                        className="text-[#1a1a1a] font-bold text-base hover:text-[#c8a84b] transition-colors break-all"
+                        href="mailto:info@madimetsalogistics.co.za"
+                        className="text-[#1a1a1a] font-bold text-base hover:text-[#e8a33d] transition-colors break-all"
                       >
-                        info@generatorrepairservices.co.za
+                        info@madimetsalogistics.co.za
                       </a>
                       <p className="text-[#1a1a1a]/50 text-sm mt-0.5">We respond within 24 hours</p>
                     </div>
@@ -212,7 +211,7 @@ export default function ContactPage() {
                   {/* Service area */}
                   <div className="px-7 py-5 flex items-start gap-5">
                     <div className="shrink-0 w-10 h-10 flex items-center justify-center bg-[#f5f4f0] border border-[#1a1a1a]/10">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e8a33d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                         <circle cx="12" cy="10" r="3"/>
                       </svg>
@@ -223,7 +222,7 @@ export default function ContactPage() {
                       <p className="text-[#1a1a1a]/50 text-sm mt-0.5">
                         Johannesburg, Pretoria, Sandton, Midrand, Centurion &amp; all surrounding areas
                       </p>
-                      <Link href="/areas" className="text-[12px] text-[#c8a84b] hover:text-[#1a1a1a] font-semibold uppercase tracking-wider transition-colors mt-1.5 inline-block">
+                      <Link href="/areas" className="text-[12px] text-[#e8a33d] hover:text-[#1a1a1a] font-semibold uppercase tracking-wider transition-colors mt-1.5 inline-block">
                         View all service areas
                       </Link>
                     </div>
@@ -250,7 +249,7 @@ export default function ContactPage() {
                   <div className="mt-5 flex items-start gap-3 bg-[#b91c1c]/5 border border-[#b91c1c]/15 px-4 py-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#b91c1c] mt-1.5 shrink-0" />
                     <p className="text-[#b91c1c] text-sm font-medium leading-relaxed">
-                      24/7 emergency service available — call anytime for urgent generator failures
+                      Urgent and after-hours freight available — call anytime to arrange a priority collection
                     </p>
                   </div>
                 </div>
@@ -263,19 +262,19 @@ export default function ContactPage() {
                 </div>
                 <ul className="divide-y divide-[#1a1a1a]/8">
                   {[
-                    { href: '/services', label: 'View all generator services' },
-                    { href: '/emergency-generator-repair', label: 'Emergency generator repair' },
-                    { href: '/generator-repair-cost', label: 'Generator repair cost guide' },
+                    { href: '/services', label: 'View all logistics services' },
+                    { href: '/freight-transport', label: 'Freight transport' },
+                    { href: '/warehousing', label: 'Warehousing & distribution' },
                     { href: '/areas', label: 'Full service area coverage' },
                     { href: '/faq', label: 'Frequently asked questions' },
                   ].map((item) => (
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="flex items-center justify-between px-7 py-4 text-sm text-[#1a1a1a]/65 hover:text-[#c8a84b] hover:bg-[#f5f4f0] transition-colors group"
+                        className="flex items-center justify-between px-7 py-4 text-sm text-[#1a1a1a]/65 hover:text-[#e8a33d] hover:bg-[#f5f4f0] transition-colors group"
                       >
                         {item.label}
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="opacity-0 group-hover:opacity-100 transition-opacity text-[#c8a84b]" aria-hidden="true">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="opacity-0 group-hover:opacity-100 transition-opacity text-[#e8a33d]" aria-hidden="true">
                           <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </Link>
@@ -288,7 +287,7 @@ export default function ContactPage() {
             {/* ── Right: form ── */}
             <div className="bg-white border border-[#1a1a1a]/8 sticky top-24">
               <div className="px-7 py-6 border-b border-[#1a1a1a]/8 bg-[#0a0a0a]">
-                <div className="w-8 h-0.5 bg-[#c8a84b] mb-3" />
+                <div className="w-8 h-0.5 bg-[#e8a33d] mb-3" />
                 <h2 className="text-white font-black text-xl mb-1">Request a Free Quote</h2>
                 <p className="text-white/45 text-sm">
                   We respond within 2 hours during business hours.
@@ -300,7 +299,7 @@ export default function ContactPage() {
                   method="POST"
                   action="/api/contact"
                   className="space-y-4"
-                  aria-label="Generator repair quote request form"
+                  aria-label="Freight and logistics quote request form"
                 >
                   {/* Name */}
                   <div>
@@ -313,7 +312,7 @@ export default function ContactPage() {
                       name="name"
                       required
                       autoComplete="name"
-                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#c8a84b] focus:outline-none focus:bg-white transition-colors"
+                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#e8a33d] focus:outline-none focus:bg-white transition-colors"
                       placeholder="Your full name"
                     />
                   </div>
@@ -329,7 +328,7 @@ export default function ContactPage() {
                       name="phone"
                       required
                       autoComplete="tel"
-                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#c8a84b] focus:outline-none focus:bg-white transition-colors"
+                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#e8a33d] focus:outline-none focus:bg-white transition-colors"
                       placeholder="e.g. 082 123 4567"
                     />
                   </div>
@@ -344,7 +343,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       autoComplete="email"
-                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#c8a84b] focus:outline-none focus:bg-white transition-colors"
+                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#e8a33d] focus:outline-none focus:bg-white transition-colors"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -358,7 +357,7 @@ export default function ContactPage() {
                       id="service"
                       name="service"
                       required
-                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] focus:border-[#c8a84b] focus:outline-none focus:bg-white transition-colors"
+                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] focus:border-[#e8a33d] focus:outline-none focus:bg-white transition-colors"
                     >
                       <option value="">Select a service…</option>
                       {services.map((s) => (
@@ -367,17 +366,17 @@ export default function ContactPage() {
                     </select>
                   </div>
 
-                  {/* Generator type */}
+                  {/* Cargo details */}
                   <div>
-                    <label htmlFor="generator-type" className="block text-xs font-bold uppercase tracking-wider text-[#1a1a1a]/50 mb-1.5">
-                      Generator Brand / Type
+                    <label htmlFor="cargo-details" className="block text-xs font-bold uppercase tracking-wider text-[#1a1a1a]/50 mb-1.5">
+                      Cargo / Load Details
                     </label>
                     <input
                       type="text"
-                      id="generator-type"
-                      name="generator-type"
-                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#c8a84b] focus:outline-none focus:bg-white transition-colors"
-                      placeholder="e.g. Cummins 20kVA diesel"
+                      id="cargo-details"
+                      name="cargo-details"
+                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#e8a33d] focus:outline-none focus:bg-white transition-colors"
+                      placeholder="e.g. 6 pallets, 2 tonnes, Johannesburg to Durban"
                     />
                   </div>
 
@@ -391,7 +390,7 @@ export default function ContactPage() {
                       id="location"
                       name="location"
                       required
-                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#c8a84b] focus:outline-none focus:bg-white transition-colors"
+                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#e8a33d] focus:outline-none focus:bg-white transition-colors"
                       placeholder="e.g. Sandton, Johannesburg"
                     />
                   </div>
@@ -399,29 +398,29 @@ export default function ContactPage() {
                   {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-[#1a1a1a]/50 mb-1.5">
-                      Describe the Issue <span className="text-[#b91c1c]">*</span>
+                      Tell Us What You Need <span className="text-[#b91c1c]">*</span>
                     </label>
                     <textarea
                       id="message"
                       name="message"
                       rows={4}
                       required
-                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#c8a84b] focus:outline-none focus:bg-white transition-colors resize-none"
-                      placeholder="Describe your generator fault or the service you require…"
+                      className="block w-full border border-[#1a1a1a]/15 bg-[#f5f4f0] px-4 py-2.5 text-sm text-[#1a1a1a] placeholder:text-[#1a1a1a]/35 focus:border-[#e8a33d] focus:outline-none focus:bg-white transition-colors resize-none"
+                      placeholder="Tell us about your freight, collection and delivery points, and timing…"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-[#1a1a1a] text-white font-bold text-sm tracking-wide uppercase hover:bg-[#c8a84b] hover:text-[#0a0a0a] transition-colors focus:outline-none focus:ring-2 focus:ring-[#c8a84b] focus:ring-offset-2"
+                    className="w-full py-3.5 bg-[#1a1a1a] text-white font-bold text-sm tracking-wide uppercase hover:bg-[#e8a33d] hover:text-[#0a0a0a] transition-colors focus:outline-none focus:ring-2 focus:ring-[#e8a33d] focus:ring-offset-2"
                   >
                     Send Enquiry
                   </button>
 
                   <p className="text-center text-xs text-[#1a1a1a]/40">
                     Or call us directly:{' '}
-                    <a href="tel:0603160484" className="text-[#c8a84b] font-semibold hover:text-[#1a1a1a] transition-colors">
-                      060 316 0484
+                    <a href="tel:0723089983" className="text-[#e8a33d] font-semibold hover:text-[#1a1a1a] transition-colors">
+                      072 308 9983
                     </a>
                   </p>
                 </form>
@@ -431,25 +430,25 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── Emergency CTA ── */}
-      <section className="bg-[#b91c1c] text-white" aria-label="Emergency generator repair CTA">
+      {/* ── Urgent freight CTA ── */}
+      <section className="bg-[#b91c1c] text-white" aria-label="Urgent freight CTA">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h2 className="text-2xl md:text-3xl font-black mb-2">Generator Emergency?</h2>
+              <h2 className="text-2xl md:text-3xl font-black mb-2">Urgent Freight?</h2>
               <p className="text-white/75 text-base">
-                Our emergency team covers all of Gauteng — same-day response, all hours.
+                We arrange priority and express loads across South Africa — call now to get moving.
               </p>
             </div>
             <a
-              href="tel:0603160484"
+              href="tel:0723089983"
               className="inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-white text-[#b91c1c] font-black text-xl hover:bg-[#f5f4f0] transition-colors shrink-0"
-              aria-label="Call our emergency line: 060 316 0484"
+              aria-label="Call Madimetsa Logistics: 072 308 9983"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
               </svg>
-              060 316 0484
+              072 308 9983
             </a>
           </div>
         </div>

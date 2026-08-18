@@ -3,23 +3,23 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Generator Repair Services Gauteng',
+  title: 'Privacy Policy | Madimetsa Logistics',
   description:
-    'Privacy policy for Generator Repair Services Gauteng. Learn how we collect, use and protect your personal information.',
+    'Privacy policy for Madimetsa Logistics. Learn how we collect, use and protect your personal information under POPIA.',
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://www.generatorrepairservices.co.za/privacy-policy',
+    canonical: 'https://www.madimetsalogistics.co.za/privacy-policy',
   },
 }
 
 const sections = [
   {
     heading: '1. Who We Are',
-    body: `Generator Repair Services Gauteng ("we", "us", "our") is a generator repair, servicing and maintenance business operating across Gauteng, South Africa. Our contact details are:
+    body: `Madimetsa Logistics ("we", "us", "our") is a freight transport, warehousing and logistics business based in Gauteng and operating across South Africa. Our contact details are:
 
-Phone: 060 316 0484
-Email: info@generatorrepairservices.co.za
-Website: www.generatorrepairservices.co.za`,
+Phone: 072 308 9983
+Email: info@madimetsalogistics.co.za
+Website: www.madimetsalogistics.co.za`,
   },
   {
     heading: '2. Information We Collect',
@@ -37,7 +37,7 @@ We do not collect sensitive personal information such as identity numbers, finan
     body: `We use the information you provide solely for the following purposes:
 
 — To respond to your service enquiry or quote request
-— To schedule and carry out generator repair, servicing or maintenance work
+— To schedule and carry out freight transport, warehousing or logistics services
 — To send you service reminders if you are on a maintenance plan (only with your consent)
 — To improve the quality of our services
 
@@ -79,7 +79,7 @@ You can disable cookies in your browser settings at any time. Doing so will not 
 — Object to the processing of your personal information
 — Lodge a complaint with the Information Regulator of South Africa
 
-To exercise any of these rights, contact us at info@generatorrepairservices.co.za or call 060 316 0484.`,
+To exercise any of these rights, contact us at info@madimetsalogistics.co.za or call 072 308 9983.`,
   },
   {
     heading: '9. Contact the Information Regulator',
@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
       {/* ── Hero ── */}
       <section className="bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <p className="text-[#c8a84b] text-xs font-bold tracking-[0.35em] uppercase mb-4">Legal</p>
+          <p className="text-[#e8a33d] text-xs font-bold tracking-[0.35em] uppercase mb-4">Legal</p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
             Privacy Policy
           </h1>
@@ -121,7 +121,7 @@ export default function PrivacyPolicyPage() {
       <section className="py-14 md:py-20 bg-[#f5f4f0]">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-[#1a1a1a]/70 text-base leading-relaxed mb-10 pb-10 border-b border-[#1a1a1a]/10">
-            At Generator Repair Services Gauteng, we respect your privacy and are committed to
+            At Madimetsa Logistics, we respect your privacy and are committed to
             protecting the personal information you share with us. This policy explains what
             information we collect, how we use it, and what rights you have under South African law.
           </p>
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
             {sections.map((section) => (
               <div key={section.heading}>
                 <h2 className="text-lg font-bold text-[#1a1a1a] mb-3">{section.heading}</h2>
-                <div className="w-8 h-0.5 bg-[#c8a84b] mb-4" />
+                <div className="w-8 h-0.5 bg-[#e8a33d] mb-4" />
                 <p className="text-[#1a1a1a]/65 text-sm leading-relaxed whitespace-pre-line">
                   {section.body}
                 </p>
@@ -146,16 +146,16 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="tel:0603160484"
+                href="tel:0723089983"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#b91c1c] text-white font-semibold text-sm hover:bg-red-800 transition-colors"
               >
-                Call 060 316 0484
+                Call 072 308 9983
               </a>
               <a
-                href="mailto:info@generatorrepairservices.co.za"
-                className="inline-flex items-center justify-center px-5 py-2.5 border border-[#1a1a1a]/15 text-[#1a1a1a] font-semibold text-sm hover:border-[#c8a84b] hover:text-[#c8a84b] transition-colors"
+                href="mailto:info@madimetsalogistics.co.za"
+                className="inline-flex items-center justify-center px-5 py-2.5 border border-[#1a1a1a]/15 text-[#1a1a1a] font-semibold text-sm hover:border-[#e8a33d] hover:text-[#e8a33d] transition-colors"
               >
-                info@generatorrepairservices.co.za
+                info@madimetsalogistics.co.za
               </a>
             </div>
           </div>
@@ -165,13 +165,13 @@ export default function PrivacyPolicyPage() {
       {/* ── Footer links ── */}
       <section className="py-10 bg-white border-t border-[#1a1a1a]/8">
         <div className="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row gap-4 text-sm">
-          <Link href="/terms" className="text-[#1a1a1a]/50 hover:text-[#c8a84b] transition-colors">
+          <Link href="/terms" className="text-[#1a1a1a]/50 hover:text-[#e8a33d] transition-colors">
             Terms &amp; Conditions
           </Link>
-          <Link href="/contact" className="text-[#1a1a1a]/50 hover:text-[#c8a84b] transition-colors">
+          <Link href="/contact" className="text-[#1a1a1a]/50 hover:text-[#e8a33d] transition-colors">
             Contact Us
           </Link>
-          <Link href="/" className="text-[#1a1a1a]/50 hover:text-[#c8a84b] transition-colors">
+          <Link href="/" className="text-[#1a1a1a]/50 hover:text-[#e8a33d] transition-colors">
             Back to Home
           </Link>
         </div>

@@ -6,9 +6,9 @@ import { cn } from '@/lib/utils'
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false)
 
-  // Phone number 060 316 0484 formatted for WhatsApp (SA country code 27, drop leading 0)
-  const phoneNumber = '27603160484'
-  const message = encodeURIComponent("Hi Generator Repair Services! I'd like to enquire about your services.")
+  // Phone number 072 308 9983 formatted for WhatsApp (SA country code 27, drop leading 0)
+  const phoneNumber = '27723089983'
+  const message = encodeURIComponent("Hi Madimetsa Logistics! I'd like to enquire about your services.")
 
   // Live conversion tracking function with window redirect delay to prevent tag dropping
   const handleWhatsAppClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
