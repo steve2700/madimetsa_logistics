@@ -229,7 +229,7 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-madimetsa-logistics-truck.png"
+            src="/images/hero-truck.webp"
             alt="Madimetsa Logistics truck on route near Kempton Park industrial hub, Gauteng"
             fill
             priority
@@ -359,7 +359,7 @@ export default function HomePage() {
             <div className="flex flex-col gap-6 lg:sticky lg:top-28">
               <div className="relative aspect-[3/4] overflow-hidden group">
                 <Image
-                  src="/images/hero-madimetsa-logistics-truck.png"
+                  src="/images/warehouse-distribution.webp"
                   alt="Madimetsa Logistics truck ready for dispatch"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
@@ -404,7 +404,7 @@ export default function HomePage() {
             {/* Left: image — full height */}
             <div className="relative min-h-[420px] lg:min-h-full overflow-hidden">
               <Image
-                src="/images/hero-madimetsa-logistics-truck.png"
+                src="/images/fleet-lineup.webp"
                 alt="Madimetsa Logistics fleet on the road"
                 fill
                 className="object-cover object-center"
@@ -621,7 +621,7 @@ export default function HomePage() {
             {/* Left: image */}
             <div className="relative aspect-[4/3] overflow-hidden group order-2 md:order-1">
               <Image
-                src="/images/hero-madimetsa-logistics-truck.png"
+                src="/images/route-planning.webp"
                 alt="Madimetsa Logistics freight pricing and route planning"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"

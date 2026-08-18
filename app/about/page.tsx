@@ -136,7 +136,7 @@ export default function AboutPage() {
       <section className="relative bg-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-madimetsa-logistics-truck.png"
+            src="/images/fleet-lineup.webp"
             alt="Madimetsa Logistics fleet on the road across South Africa"
             fill
             priority
@@ -204,7 +204,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden group">
               <Image
-                src="/images/hero-madimetsa-logistics-truck.png"
+                src="/images/route-planning.webp"
                 alt="Madimetsa Logistics truck on route"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

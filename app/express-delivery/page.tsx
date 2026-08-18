@@ -96,7 +96,7 @@ export default function ExpressDeliveryPage() {
       <section className="relative bg-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-madimetsa-logistics-truck.png"
+            src="/images/route-planning.webp"
             alt="Express same-day delivery dispatch from Madimetsa Logistics"
             fill
             priority

@@ -97,7 +97,7 @@ export default function FleetManagementPage() {
       <section className="relative bg-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-madimetsa-logistics-truck.png"
+            src="/images/fleet-lineup.webp"
             alt="Madimetsa Logistics fleet management and vehicle tracking"
             fill
             priority

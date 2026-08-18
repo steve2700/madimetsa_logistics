@@ -96,7 +96,7 @@ const services = [
     href: '/freight-transport',
     title: 'Freight Transport',
     shortTitle: 'Freight',
-    image: '/images/hero-madimetsa-logistics-truck.png',
+    image: '/images/hero-truck.webp',
     alt: 'Madimetsa Logistics truck loaded for a freight transport route',
     badge: 'Most Requested',
     description:
@@ -112,7 +112,7 @@ const services = [
     href: '/warehousing',
     title: 'Warehousing & Distribution',
     shortTitle: 'Warehousing',
-    image: '/images/hero-madimetsa-logistics-truck.png',
+    image: '/images/warehouse-distribution.webp',
     alt: 'Warehousing and distribution storage facility used by Madimetsa Logistics',
     badge: null,
     description:
@@ -128,7 +128,7 @@ const services = [
     href: '/fleet-management',
     title: 'Fleet Management',
     shortTitle: 'Fleet',
-    image: '/images/hero-madimetsa-logistics-truck.png',
+    image: '/images/fleet-lineup.webp',
     alt: 'Madimetsa Logistics fleet management and vehicle tracking',
     badge: 'Popular for Business',
     description:
@@ -144,7 +144,7 @@ const services = [
     href: '/supply-chain-solutions',
     title: 'Supply Chain Solutions',
     shortTitle: 'Supply Chain',
-    image: '/images/hero-madimetsa-logistics-truck.png',
+    image: '/images/warehouse-distribution.webp',
     alt: 'End-to-end supply chain solutions managed by Madimetsa Logistics',
     badge: null,
     description:
@@ -160,7 +160,7 @@ const services = [
     href: '/cross-border-logistics',
     title: 'Cross-Border Logistics',
     shortTitle: 'Cross-Border',
-    image: '/images/hero-madimetsa-logistics-truck.png',
+    image: '/images/area-crossborder.webp',
     alt: 'Cross-border freight logistics into the wider SADC region',
     badge: null,
     description:
@@ -176,7 +176,7 @@ const services = [
     href: '/express-delivery',
     title: 'Express Delivery',
     shortTitle: 'Express',
-    image: '/images/hero-madimetsa-logistics-truck.png',
+    image: '/images/route-planning.webp',
     alt: 'Express same-day delivery dispatch from Madimetsa Logistics',
     badge: '2-4 Hour Response',
     description:
@@ -192,7 +192,7 @@ const services = [
     href: '/contract-logistics',
     title: 'Contract Logistics',
     shortTitle: 'Contract',
-    image: '/images/hero-madimetsa-logistics-truck.png',
+    image: '/images/fleet-lineup.webp',
     alt: 'Dedicated contract logistics fleet arrangement for ongoing business freight',
     badge: 'Workshop Service',
     description:
@@ -208,7 +208,7 @@ const services = [
     href: '/freight-forwarding',
     title: 'Freight Forwarding',
     shortTitle: 'Forwarding',
-    image: '/images/hero-madimetsa-logistics-truck.png',
+    image: '/images/area-crossborder.webp',
     alt: 'Import and export freight forwarding handled by Madimetsa Logistics',
     badge: null,
     description:
@@ -264,7 +264,7 @@ export default function ServicesPage() {
       <section className="relative bg-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-madimetsa-logistics-truck.png"
+            src="/images/hero-truck.webp"
             alt="Madimetsa Logistics truck ready for dispatch across South Africa"
             fill
             priority
