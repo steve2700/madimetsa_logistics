@@ -224,10 +224,12 @@ export default function HomePage() {
           HERO
       ═══════════════════════════════════════════════════════════════ */}
       <section
-        className="relative overflow-hidden bg-[#0a0a0a] min-h-[88vh] flex flex-col"
+        className="relative overflow-hidden bg-[#0a0a0a] md:min-h-[88vh] flex flex-col"
         aria-label="Madimetsa Logistics South Africa"
       >
-        <div className="absolute inset-0 z-0">
+        {/* Desktop / tablet: full-bleed background, wide enough to keep the
+            branded trailer in frame beside the text. */}
+        <div className="absolute inset-0 z-0 hidden md:block">
           <Image
             src="/images/hero-truck.webp"
             alt="Madimetsa Logistics truck on route near Kempton Park industrial hub, Gauteng"
@@ -278,6 +280,25 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Mobile: dedicated truck visual so the branded trailer (and its
+            MADIMETSA logo) is fully visible, not cropped behind the copy. */}
+        <div className="relative z-10 md:hidden">
+          <div className="relative aspect-[3/2] w-full">
+            <Image
+              src="/images/hero-truck.webp"
+              alt="Madimetsa Logistics branded freight truck on route near Kempton Park, Gauteng"
+              fill
+              priority
+              fetchPriority="high"
+              className="object-cover object-center"
+              sizes="100vw"
+              quality={82}
+            />
+            <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
           </div>
         </div>
 
