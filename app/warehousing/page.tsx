@@ -157,6 +157,27 @@ export default function WarehousingPage() {
         </div>
       </section>
 
+      {/* ── Showcase image ── */}
+      <section className="bg-white py-4 md:py-6">
+        <div className="max-w-6xl mx-auto px-6">
+          <figure className="relative aspect-[21/9] overflow-hidden">
+            <Image
+              src="/images/warehouse-distribution.webp"
+              alt="Interior of a Madimetsa Logistics warehousing and distribution facility"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1152px) 100vw, 1152px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/70 via-transparent to-transparent" />
+            <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-[#e8a33d]" />
+            <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-[#e8a33d]" />
+            <figcaption className="absolute bottom-5 left-6 right-6 text-white font-semibold text-sm md:text-base">
+              Secure storage and pick-and-pack fulfilment, connected to our dispatch network.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       {/* ── Why choose us ── */}
       <section className="py-16 md:py-24 bg-[#f5f4f0]" aria-labelledby="why-heading">
         <div className="max-w-6xl mx-auto px-6">
