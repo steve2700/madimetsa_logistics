@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-const categories = ['All', 'Repairs', 'Servicing', 'Maintenance', 'Installation', 'Emergency'] as const
+const categories = ['All', 'Fleet', 'Freight', 'Warehousing', 'Cross-Border', 'Express'] as const
 type Category = (typeof categories)[number]
 
 interface GalleryItem {
@@ -14,92 +14,84 @@ interface GalleryItem {
   featured?: boolean
 }
 
+// NOTE: every item below currently points at the single fleet photo the
+// site launched with (see README — "Images" section). Swap each `src`
+// for a real freight/warehouse/fleet photo as they become available;
+// leave the alt/caption/category as a guide for what each slot is for.
 const items: GalleryItem[] = [
   {
-    src: '/images/2026-06-11_Generator_Preventative_Maintenance.webp',
-    alt: 'Generator preventative maintenance in Gauteng — June 2026',
-    caption: 'Preventative Maintenance — June 2026',
-    category: 'Maintenance',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Madimetsa Logistics truck dispatched from our Gauteng hub',
+    caption: 'Fleet Ready for Dispatch',
+    category: 'Fleet',
     featured: true,
   },
   {
-    src: '/images/Industrial_Generator_Repair_Team.webp',
-    alt: 'Industrial generator repair team on-site in Gauteng',
-    caption: 'Industrial Repair Team On-Site',
-    category: 'Repairs',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Madimetsa Logistics full load freight transport',
+    caption: 'Full Load Freight Transport',
+    category: 'Freight',
     featured: true,
   },
   {
-    src: '/images/Technician_Servicing_Generator.webp',
-    alt: 'Technician performing a full generator service',
-    caption: 'Full Generator Service',
-    category: 'Servicing',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Palletised goods loaded for freight transport',
+    caption: 'Palletised Goods Loaded',
+    category: 'Freight',
   },
   {
-    src: '/images/compressed_Diesel_Gen_Repair.webp',
-    alt: 'Diesel generator repair — fault diagnosis and fix',
-    caption: 'Diesel Generator Repair',
-    category: 'Repairs',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Secure warehousing and storage facility',
+    caption: 'Secure Storage Facility',
+    category: 'Warehousing',
   },
   {
-    src: '/images/compressed_Grip_7.5KVA_Petrol_Generator_Repair.jpg',
-    alt: 'Grip 7.5 kVA petrol generator repair',
-    caption: 'Grip 7.5 kVA Petrol Generator Repair',
-    category: 'Repairs',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Pick and pack order fulfilment for distribution',
+    caption: 'Pick-and-Pack Fulfilment',
+    category: 'Warehousing',
   },
   {
-    src: '/images/compressed_Ryobi_Petrol_Generator_3.5kVA_Maintenance.webp',
-    alt: 'Ryobi 3.5 kVA petrol generator maintenance',
-    caption: 'Ryobi 3.5 kVA Maintenance',
-    category: 'Maintenance',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'GPS tracked fleet vehicle on route',
+    caption: 'GPS-Tracked Fleet Vehicle',
+    category: 'Fleet',
   },
   {
-    src: '/images/expert_generator_maintanance.webp',
-    alt: 'Expert generator maintenance service Gauteng',
-    caption: 'Expert Generator Maintenance',
-    category: 'Maintenance',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Fleet vehicle serviced and maintained',
+    caption: 'Fleet Maintenance Check',
+    category: 'Fleet',
   },
   {
-    src: '/images/generator-repair-services-technicians.webp',
-    alt: 'Generator Repair Services technicians ready to deploy',
-    caption: 'Our Technician Team',
-    category: 'Repairs',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Cross-border freight route into the SADC region',
+    caption: 'Cross-Border Route, SADC Region',
+    category: 'Cross-Border',
   },
   {
-    src: '/images/generator-repair-technician-onsite-midrand.webp',
-    alt: 'Generator repair technician on-site in Midrand',
-    caption: 'On-Site Repair — Midrand',
-    category: 'Repairs',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Freight loaded and documented for cross-border dispatch',
+    caption: 'Cross-Border Load Documentation',
+    category: 'Cross-Border',
   },
   {
-    src: '/images/avr-repair.png',
-    alt: 'AVR and voltage regulator repair for generators',
-    caption: 'AVR & Voltage Regulator Repair',
-    category: 'Repairs',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Same-day express delivery dispatch',
+    caption: 'Same-Day Express Dispatch',
+    category: 'Express',
   },
   {
-    src: '/images/control-panel.png',
-    alt: 'Generator control panel repair and reprogramming',
-    caption: 'Control Panel Repair',
-    category: 'Repairs',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Urgent freight prioritised for collection',
+    caption: 'Priority Collection, Urgent Freight',
+    category: 'Express',
   },
   {
-    src: '/images/emergency-repair.png',
-    alt: 'Emergency generator repair callout in Gauteng',
-    caption: 'Emergency Callout Response',
-    category: 'Emergency',
-  },
-  {
-    src: '/images/fuel-system.png',
-    alt: 'Generator fuel system repair including injector cleaning',
-    caption: 'Fuel System Repair',
-    category: 'Repairs',
-  },
-  {
-    src: '/images/generator-repair-technician.png',
-    alt: 'Generator repair technician on site',
-    caption: 'Generator Repair Technician',
-    category: 'Servicing',
+    src: '/images/hero-madimetsa-logistics-truck.png',
+    alt: 'Freight transport arriving at destination on schedule',
+    caption: 'On-Time Delivery',
+    category: 'Freight',
   },
 ]
 
@@ -124,8 +116,8 @@ export default function GalleryGrid() {
             onClick={() => setActive(cat)}
             className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold transition-all border ${
               active === cat
-                ? 'bg-[#c8a84b] text-[#0a0a0a] border-[#c8a84b]'
-                : 'bg-transparent text-[#1a1a1a]/60 border-[#1a1a1a]/15 hover:border-[#c8a84b]/50 hover:text-[#c8a84b]'
+                ? 'bg-[#e8a33d] text-[#0a0a0a] border-[#e8a33d]'
+                : 'bg-transparent text-[#1a1a1a]/60 border-[#1a1a1a]/15 hover:border-[#e8a33d]/50 hover:text-[#e8a33d]'
             }`}
           >
             {cat}
@@ -142,15 +134,15 @@ export default function GalleryGrid() {
 
       {/* Masonry-style grid */}
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-        {filtered.map((item) => (
+        {filtered.map((item, i) => (
           <div
-            key={item.src}
+            key={`${item.src}-${i}`}
             className="break-inside-avoid group relative overflow-hidden cursor-pointer"
             onClick={() => setLightbox(item)}
           >
             {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#c8a84b] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#c8a84b] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#e8a33d] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#e8a33d] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             <div className={`relative w-full overflow-hidden ${item.featured ? 'aspect-[16/10]' : 'aspect-[4/3]'}`}>
               <Image
@@ -165,7 +157,7 @@ export default function GalleryGrid() {
 
               {/* Category pill */}
               <div className="absolute top-3 left-3 z-10">
-                <span className="px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase bg-[#0a0a0a]/70 text-[#c8a84b] backdrop-blur-sm">
+                <span className="px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase bg-[#0a0a0a]/70 text-[#e8a33d] backdrop-blur-sm">
                   {item.category}
                 </span>
               </div>
@@ -176,7 +168,7 @@ export default function GalleryGrid() {
               </div>
 
               {/* Expand icon */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-[#c8a84b] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-[#e8a33d] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M2 2h5M2 2v5M14 2h-5M14 2v5M2 14h5M2 14v-5M14 14h-5M14 14v-5" stroke="#0a0a0a" strokeWidth="1.8" strokeLinecap="round"/>
                 </svg>
@@ -199,7 +191,7 @@ export default function GalleryGrid() {
             {/* Close */}
             <button
               onClick={() => setLightbox(null)}
-              className="absolute -top-10 right-0 text-white/60 hover:text-[#c8a84b] transition-colors text-sm font-semibold flex items-center gap-2"
+              className="absolute -top-10 right-0 text-white/60 hover:text-[#e8a33d] transition-colors text-sm font-semibold flex items-center gap-2"
               aria-label="Close lightbox"
             >
               Close
@@ -209,7 +201,7 @@ export default function GalleryGrid() {
             </button>
 
             {/* Gold accent line */}
-            <div className="w-full h-0.5 bg-[#c8a84b] mb-1" />
+            <div className="w-full h-0.5 bg-[#e8a33d] mb-1" />
 
             <div className="relative aspect-[16/10] w-full overflow-hidden">
               <Image
@@ -223,7 +215,7 @@ export default function GalleryGrid() {
 
             <div className="mt-3 flex items-center justify-between">
               <p className="text-white font-semibold text-sm">{lightbox.caption}</p>
-              <span className="text-[10px] font-bold tracking-widest uppercase text-[#c8a84b]">
+              <span className="text-[10px] font-bold tracking-widest uppercase text-[#e8a33d]">
                 {lightbox.category}
               </span>
             </div>
@@ -231,7 +223,7 @@ export default function GalleryGrid() {
             {/* Prev / Next */}
             <div className="flex gap-2 mt-4">
               {(() => {
-                const idx = filtered.findIndex((i) => i.src === lightbox.src)
+                const idx = filtered.findIndex((i) => i.src === lightbox.src && i.caption === lightbox.caption)
                 const prev = filtered[idx - 1]
                 const next = filtered[idx + 1]
                 return (
@@ -239,14 +231,14 @@ export default function GalleryGrid() {
                     <button
                       disabled={!prev}
                       onClick={() => prev && setLightbox(prev)}
-                      className="px-4 py-2 text-xs font-bold border border-white/15 text-white/50 hover:border-[#c8a84b]/50 hover:text-[#c8a84b] transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+                      className="px-4 py-2 text-xs font-bold border border-white/15 text-white/50 hover:border-[#e8a33d]/50 hover:text-[#e8a33d] transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
                     >
                       ← Previous
                     </button>
                     <button
                       disabled={!next}
                       onClick={() => next && setLightbox(next)}
-                      className="px-4 py-2 text-xs font-bold border border-white/15 text-white/50 hover:border-[#c8a84b]/50 hover:text-[#c8a84b] transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+                      className="px-4 py-2 text-xs font-bold border border-white/15 text-white/50 hover:border-[#e8a33d]/50 hover:text-[#e8a33d] transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
                     >
                       Next →
                     </button>
