@@ -1,4 +1,4 @@
-# Madimetsa Logistics Gauteng
+# Madimetsa Logistics South Africa
 
 Freight transport, warehousing, fleet management and cross-border logistics website built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**.
 
@@ -28,7 +28,7 @@ app/
 ├── layout.tsx                      # Root layout (nav, footer, mobile call bar)
 ├── globals.css                     # Global styles + Tailwind base
 ├── robots.ts                       # robots.txt generation
-├── sitemap.ts                      # sitemap.xml generation (36 URLs)
+├── sitemap.ts                      # sitemap.xml generation (25 URLs)
 │
 ├── about/                          # About Us
 ├── areas/                          # Service areas overview
@@ -48,24 +48,14 @@ app/
 ├── contract-logistics/             # Contract logistics
 ├── freight-forwarding/             # Freight forwarding
 │
-├── logistics-alberton/             # Area page, Alberton
-├── logistics-benoni/               # Area page, Benoni
-├── logistics-boksburg/             # Area page, Boksburg
-├── logistics-centurion/            # Area page, Centurion
-├── logistics-edenvale/             # Area page, Edenvale
-├── logistics-fourways/             # Area page, Fourways
-├── logistics-germiston/            # Area page, Germiston
-├── logistics-johannesburg/         # Area page, Johannesburg
-├── logistics-kempton-park/         # Area page, Kempton Park
-├── logistics-krugersdorp/          # Area page, Krugersdorp
-├── logistics-midrand/              # Area page, Midrand
-├── logistics-pretoria/             # Area page, Pretoria
-├── logistics-randburg/             # Area page, Randburg
-├── logistics-roodepoort/           # Area page, Roodepoort
-├── logistics-sandton/              # Area page, Sandton
-├── logistics-soweto/               # Area page, Soweto
-├── logistics-springs/              # Area page, Springs
-└── logistics-vereeniging/          # Area page, Vereeniging
+├── logistics-johannesburg/         # Area page, Johannesburg (Gauteng)
+├── logistics-pretoria/             # Area page, Pretoria (Gauteng)
+├── logistics-sandton/              # Area page, Sandton (Gauteng)
+├── logistics-centurion/            # Area page, Centurion (Gauteng)
+├── logistics-durban/               # Area page, Durban (KwaZulu-Natal)
+├── logistics-capetown/             # Area page, Cape Town (Western Cape)
+├── logistics-gqeberha/             # Area page, Gqeberha (Eastern Cape)
+└── logistics-bloemfontein/         # Area page, Bloemfontein (Free State)
 
 components/
 ├── site-header.tsx                 # Main nav, services & areas dropdowns
@@ -77,6 +67,46 @@ public/images/                      # All optimised images (WebP + PNG + JPG)
 ```
 
 > Note: this structure is carried over from the previous build and updated for the logistics rebrand. Confirm folder names against your actual repo before relying on this as documentation, since some routes or components may differ.
+
+---
+
+## Service Coverage
+
+All 8 core services have a dedicated, live page — nothing on `/services` or the homepage links to an unbuilt service:
+
+| Service | Route |
+|---|---|
+| Freight Transport | `/freight-transport` |
+| Warehousing & Distribution | `/warehousing` |
+| Fleet Management | `/fleet-management` |
+| Supply Chain Solutions | `/supply-chain-solutions` |
+| Cross-Border Logistics | `/cross-border-logistics` |
+| Express Delivery | `/express-delivery` |
+| Contract Logistics | `/contract-logistics` |
+| Freight Forwarding | `/freight-forwarding` |
+
+---
+
+## Area Coverage
+
+Not every location mentioned on the site has a dedicated page yet. To avoid 404s while the remaining pages are built out, `app/areas/page.tsx` and `app/page.tsx` (homepage) both use a `builtAreaSlugs` set (or an equivalent `hasPage` flag) to control which area names render as clickable links versus plain, non-clickable text. When a new area page ships, add its slug to that set and it lights up automatically — no other code changes needed.
+
+**Currently live (8):**
+
+| Area | Province | Route |
+|---|---|---|
+| Johannesburg | Gauteng | `/logistics-johannesburg` |
+| Pretoria | Gauteng | `/logistics-pretoria` |
+| Sandton | Gauteng | `/logistics-sandton` |
+| Centurion | Gauteng | `/logistics-centurion` |
+| Durban | KwaZulu-Natal | `/logistics-durban` |
+| Cape Town | Western Cape | `/logistics-capetown` |
+| Gqeberha | Eastern Cape | `/logistics-gqeberha` |
+| Bloemfontein | Free State | `/logistics-bloemfontein` |
+
+**Mentioned but not yet built (shown as plain text, no link):** Midrand, Randburg, Roodepoort, Kempton Park, Boksburg, Benoni, Germiston, Alberton, Edenvale, Krugersdorp, Springs, Soweto, Fourways, Vereeniging.
+
+Building one of these out means copying the pattern from an existing area page (e.g. `logistics-centurion` for another Gauteng town, or `logistics-gqeberha` for another out-of-province hub), swapping `CITY`, `PROVINCE` and the URL slug, then adding the slug to `builtAreaSlugs` in both `areas/page.tsx` and `page.tsx`.
 
 ---
 
@@ -133,12 +163,16 @@ The homepage and services page inject the following schema blocks:
 | `FAQPage` | Q&As eligible for Google rich results |
 | `BreadcrumbList` | Breadcrumb trail for rich results |
 
+Each individual service page (`/freight-transport`, `/warehousing`, etc.) and area page (`/logistics-johannesburg`, etc.) also carries its own `Service` and `BreadcrumbList` JSON-LD.
+
 ### Sitemap
 Auto-generated at `/sitemap.xml` via `app/sitemap.ts`:
-- 10 main/info pages
+- 9 main/info pages (home, about, areas, contact, faq, gallery, privacy-policy, services, terms)
 - 8 service pages
-- 18 area pages (one per Gauteng location)
-- 36 URLs total
+- 8 area pages (live locations only — see Area Coverage above)
+- 25 URLs total
+
+Update this count in `app/sitemap.ts` as new area pages go live.
 
 ### Robots
 `/robots.txt` via `app/robots.ts`:
@@ -174,9 +208,9 @@ Key images:
 
 | File | Used on |
 |---|---|
-| `hero-madimetsa-logistics-truck.png` | Hero, services section, why choose us, pricing section |
+| `hero-madimetsa-logistics-truck.png` | Hero, services section, why choose us, pricing section, and as the shared hero image across every individual service and area page |
 
-> The site currently runs on a single fleet photo across several sections. Add more freight, warehouse and fleet photos to `public/images/` and swap them into `app/page.tsx` as they become available.
+> The site currently runs on a single fleet photo across nearly every section and page. Add more freight, warehouse and fleet photos to `public/images/` and swap them in as they become available, particularly for the individual service pages where a repeated image across 8 pages can read as generic.
 
 ---
 
